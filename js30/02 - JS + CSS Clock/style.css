@@ -1,0 +1,50 @@
+html {
+    background-color: #018DED; /* 颜色随意 */
+    background-image: url(./background_image.png);
+    background-size: cover;
+    font-family: 'helvetica neue';
+    font-size: 10px;
+    text-align: center;
+}
+
+body {
+    font-size: 2rem;
+    display: flex; /* 默认左对齐 */
+    flex: 1;
+    min-height: 100vh;
+    align-items: center; /* 居中 */
+}
+
+.clock {
+    border: 20px solid white;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    margin: 50px auto; /* 水平居中 */
+    padding: 2rem;
+
+    position: relative;
+
+    box-shadow:
+      0 0 0 4px rgba(0,0,0,0.1),
+      inset 0 0 0 3px #EFEFEF,
+      inset 0 0 10px black,
+      0 0 10px rgba(0,0,0,0.2); /* 使时钟具有质感 */
+}
+
+.clock-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    transform: translateY(-3px); /* 往上移动了 3px */
+    /* account for the height of the clock hands */
+}
+
+.hand {
+    width: 50%;
+    height: 6px; /* 这里是上面移动的原因 */
+    background-color: black;
+    position: absolute;
+    top: 50%;
+}
