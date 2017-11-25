@@ -1,3 +1,11 @@
+JavaScript30仿写：
+> [JavaScript30](https://javascript30.com) 教程原作者：[Wes Bos](https://github.com/wesbos)    
+> 完整指南在 [GitHub](https://github.com/soyaine/JavaScript30)  
+> 中文参考指南：[GitHub](https://github.com/soyaine/JavaScript30)  
+> 作者：[缉熙Soyaine](https://github.com/soyaine)  
+
+[demo 预览链接](https://hehe1111.github.io/js_demo/js30/01%20-%20JavaScript%20Drum%20Kit/)
+
 ## JS脚本思路：
 
 1. 监听键盘事件。当 ASDFGHJKL 按键被按下时，执行`window.addEventListener("keydown", playSound); `这一行代码。按下按键时，会触发`keydown`事件，调用`playSound`函数。
