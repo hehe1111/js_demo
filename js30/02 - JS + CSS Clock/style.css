@@ -47,4 +47,9 @@ body {
     background-color: black;
     position: absolute;
     top: 50%;
+
+    transform-origin: 100%; /* 将旋转中心从元素中间调整为元素右下角 */
+    transform: rotate(90deg); /* 使针的起始位置从 0 时开始，即水平改为竖直状态；这一句其实可以不加，因为 JS 脚本里已经加了 */
+    transition: all 0.05s; /* 改变角度所花费的时间 */
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /* 使秒针具有类似“滴答滴答”的跳动效果 */
 }
