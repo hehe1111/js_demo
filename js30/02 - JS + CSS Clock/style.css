@@ -30,6 +30,9 @@ body {
       inset 0 0 0 3px #EFEFEF,
       inset 0 0 10px black,
       0 0 10px rgba(0,0,0,0.2); /* 使时钟具有质感 */
+
+    background-color: rgba(0, 0, 0, .4); /* 增加一个半透明的表盘 */
+
 }
 
 .clock-face {
@@ -41,14 +44,33 @@ body {
     /* account for the height of the clock hands */
 }
 
+.clock-face:after { /* 为表盘添加一个中心 */
+    content: '';
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #a8c5d1;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    box-shadow:
+            0 0 0 2px rgba(0,0,0,0.1),
+            0 0 10px rgba(0,0,0,0.2);
+    /*transition: all .05s;*/
+}
+
 .hand {
     width: 50%;
     height: 6px; /* 这里是上面移动的原因 */
-    background-color: black;
+    background-color: #fff; /* 将指针颜色设置为白色 */
     position: absolute;
     top: 50%;
+    right: 50%; /* 调整时针的位置 */
 
-    transform-origin: 100%; /* 将旋转中心从元素中间调整为元素右下角 */
+    transform-origin: 100% 50%; /* 将旋转中心从元素中间调整为元素右边中点 */
     transform: rotate(90deg); /* 使针的起始位置从 0 时开始，即水平改为竖直状态；这一句其实可以不加，因为 JS 脚本里已经加了 */
     transition: all 1s; /* 改变角度所花费的时间 */
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /* 使秒针具有类似“滴答滴答”的跳动效果 */
@@ -58,4 +80,37 @@ body {
     /* transition-timing-function: cubic-bezier(0.94, 1.08, 1, 1) */
 
     /* 在开发者工具下调试，还可以清楚地看到因为每一秒调用一次 setDate() 而导致的 rotate() 值的不断刷新 */
+
+    /* 添加指针阴影 */
+    box-shadow:
+            0 0 0 .1px #fff,
+            0 0 0 1px rgba(0,0,0,0.1),
+            0 0 8px rgba(0,0,0,0.4),
+            2px 5px 1px rgba(0, 0, 0, .5);
+}
+
+/* 为不同指针添加独立样式 */
+.hour-hand {
+    width: 40%;
+    height:10px;
+    margin-top: -5px;
+    border-bottom-left-radius: .5em;
+    border-top-left-radius: .5em;
+    transition: all 3s;
+}
+
+.minute-hand {
+    width: 45%;
+    height:5px;
+    margin-top: -2.5px;
+    transition: all 1s;
+}
+
+.second-hand {
+    height: 2px;
+    background-color: red;
+    margin-top: -1px;
+    border-bottom-left-radius: 100%;
+    border-top-left-radius: 100%;
+    transition: all 0.5s;
 }
