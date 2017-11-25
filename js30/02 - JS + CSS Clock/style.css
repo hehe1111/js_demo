@@ -50,6 +50,12 @@ body {
 
     transform-origin: 100%; /* 将旋转中心从元素中间调整为元素右下角 */
     transform: rotate(90deg); /* 使针的起始位置从 0 时开始，即水平改为竖直状态；这一句其实可以不加，因为 JS 脚本里已经加了 */
-    transition: all 0.05s; /* 改变角度所花费的时间 */
+    transition: all 1s; /* 改变角度所花费的时间 */
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); /* 使秒针具有类似“滴答滴答”的跳动效果 */
+
+    /* 以下是平滑转圈效果 */
+    /* transition: all 1s; */
+    /* transition-timing-function: cubic-bezier(0.94, 1.08, 1, 1) */
+
+    /* 在开发者工具下调试，还可以清楚地看到因为每一秒调用一次 setDate() 而导致的 rotate() 值的不断刷新 */
 }
