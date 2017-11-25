@@ -36,7 +36,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     transform: translateY(-3px); /* 往上移动了 3px */
     /* account for the height of the clock hands */
 }
