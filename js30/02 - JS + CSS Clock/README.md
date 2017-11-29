@@ -62,6 +62,8 @@ JavaScript30仿写：
 - `.hand { // 样式 }`: 对应页面中三个样式
 
 - `transform-origin`属性：改变旋转的轴心
+    - 查看[MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-origin)
+
 
 - [box-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow)
 
