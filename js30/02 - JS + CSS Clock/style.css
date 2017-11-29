@@ -40,8 +40,6 @@ body {
     width: 100%;
     height: 100%;
     /*border: 1px solid red;*/
-    transform: translateY(-3px); /* 往上移动了 3px */
-    /* account for the height of the clock hands */
 }
 
 .clock-face:after { /* 为表盘添加一个中心 */
@@ -69,6 +67,8 @@ body {
     position: absolute;
     top: 50%;
     right: 50%; /* 调整时针的位置 */
+    transform: translateY(-3px); /* 往上移动了 3px */
+    /* account for the height of the clock hands */
 
     transform-origin: 100% 50%; /* 将旋转中心从元素中间调整为元素右边中点 */
     transform: rotate(90deg); /* 使针的起始位置从 0 时开始，即水平改为竖直状态；这一句其实可以不加，因为 JS 脚本里已经加了 */
