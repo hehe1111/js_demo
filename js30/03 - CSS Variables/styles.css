@@ -1,0 +1,20 @@
+/*
+  misc styles, nothing to do with CSS variables
+*/
+
+body {
+    text-align: center; /* 使标题、滑动条、图片水平居中 */
+    background-color: #193549;
+    color: white;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: 100;
+    font-size: 50px;
+}
+
+.controls {
+    margin-bottom: 50px; /* 将图片往下推，隔开滑动条与图片 */
+}
+
+input {
+    width: 100px; /* 滑动条长度 */
+}
