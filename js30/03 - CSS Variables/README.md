@@ -6,3 +6,5 @@ JavaScript30仿写：
 
 
 第三篇开坑于：2017.11.30
+
+[demo预览链接](http://hehe1111.github.io/js_demo/js30/03%20-%20CSS%20Variables/)
