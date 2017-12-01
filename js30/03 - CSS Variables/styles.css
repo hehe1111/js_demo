@@ -10,7 +10,7 @@ img {
     filter: blur(var(--blur));
 }
 
-.hl {
+.change-color {
     color: var(--base);
 }
 
