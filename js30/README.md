@@ -7,3 +7,5 @@ JavaScript30仿写：
 1. [JavaScript Drum Kit](https://hehe1111.github.io/js_demo/js30/01%20-%20JavaScript%20Drum%20Kit/) - 2017.11.22
 
 2. [JS + CSS Clock](https://hehe1111.github.io/js_demo/js30/02%20-%20JS%20+%20CSS%20Clock/) - 2017.11.25
+
+3. [CSS Variables](http://hehe1111.github.io/js_demo/js30/03%20-%20CSS%20Variables/) - 2017.11.30
