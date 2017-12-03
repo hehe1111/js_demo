@@ -33,7 +33,7 @@ JavaScript30仿写：
 
     - `document.documentElement`：获取根元素。[查看 MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/documentElement)
 
-    - `document.documentElement.style`：`:root{  // 这里是 CSS 变量样式 }`？？？
+    - `document.documentElement.style`：`:root{  // 这里是 CSS 变量样式 }`
 
 - `document.getElementById(ID 名)`：ID 名前不用加 `#`
 
