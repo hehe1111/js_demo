@@ -9,6 +9,8 @@ JavaScript30仿写：
 
 [demo预览链接](http://hehe1111.github.io/js_demo/js30/03%20-%20CSS%20Variables/)
 
+[参考链接](https://github.com/soyaine/JavaScript30/tree/master/03%20-%20CSS%20Variables)
+
 ## JS 重点：
 
 - 获取页面中所有的`<input>`元素，`document.querySelectorAll()`获取一组符合的元素快照，类型为`NodeList`（此对象是对于文档的实时运行的**动态**查询）。用`forEach`方法遍历该数组。
@@ -60,8 +62,10 @@ JavaScript30仿写：
 
 - `<code>`标签：[查看 MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/code)
 
-- `<label>`标签：[查看 MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/label)
+- `<label>`标签：[查看 MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/label)：用于显示页面参数。是`element.innerText`中的`element`。
 
 - `CSS`变量：[CSS 变量教程](http://www.ruanyifeng.com/blog/2017/05/css-variables.html)
+    - `:root`：根元素。全局的`CSS`变量通常放在根元素`:root`里面
+
 
 - `<img>`标签的`filter`样式：[CSS滤镜（filter）](https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter)
