@@ -12,6 +12,8 @@
 
 2. [JS + CSS Clock](https://hehe1111.github.io/js_demo/js30/02%20-%20JS%20+%20CSS%20Clock/) - 2017.11.25
 
-3. [CSS Variables](http://hehe1111.github.io/js_demo/js30/03%20-%20CSS%20Variables/) - 2017.11.30
+3. [CSS Variables](https://hehe1111.github.io/js_demo/js30/03%20-%20CSS%20Variables/) - 2017.11.30
 
-4. [Array Cardio Day 1](http://hehe1111.github.io/js_demo/js30/04%20-%20Array%20Cardio%20Day%201/) - 2017.12.03
+4. [Array Cardio Day 1](https://hehe1111.github.io/js_demo/js30/04%20-%20Array%20Cardio%20Day%201/) - 2017.12.03
+
+5. [Flex Panel Gallery](https://hehe1111.github.io/js_demo/js30/05%20-%20Flex%20Panel%20Gallery/) - 2017.12.05

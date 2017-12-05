@@ -12,3 +12,5 @@
 [查看背景图片来源请点击此链接](https://dummyimage.com/)
 
 [参考链接](https://github.com/soyaine/JavaScript30/tree/master/05%20-%20Flex%20Panel%20Gallery)
+
+[demo 预览链接](https://hehe1111.github.io/js_demo/js30/05%20-%20Flex%20Panel%20Gallery/)
