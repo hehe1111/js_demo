@@ -32,6 +32,7 @@ body {
 
     display: flex; /* 使其子元素即 <p> 元素由竖直堆叠改为水平排列  */
     flex: 1; /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
+    flex-direction: column; /* 子元素即 <p> 元素重新变为竖直堆叠 */
     text-align: center;
     align-items: center;
     /* Safari transitionend event.propertyName === flex */
