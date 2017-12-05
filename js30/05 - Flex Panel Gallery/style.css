@@ -30,6 +30,7 @@ body {
     background-position: center;
     box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
 
+    display: flex; /* 使其子元素即 <p> 元素由竖直堆叠改为水平排列  */
     flex: 1; /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
     text-align: center;
     align-items: center;
