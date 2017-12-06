@@ -71,7 +71,7 @@ body {
     transition: transform 0.5s;
 
     flex: 1 0 auto; /* 各子元素在竖直方向上均等分布，总高度和占父高 */
-    
+
     display: flex; /* 使各子元素左对齐 */
     justify-content: center; /* 文字水平居中 */
     align-items: center; /* 文字垂直居中 */
@@ -87,3 +87,31 @@ body {
 .panel p:nth-child(2) { /* .panel 下的第 2 个 <p> 元素 */
   font-size: 4em;
 }
+
+/* 配合 JS 脚本产生交互效果 */
+
+.panel > *:first-child { /* 第一个子元素 */
+    transform: translateY(-100%); /* 默认不出现在 viewport 中 */
+}
+
+.panel.open-active > *:first-child {
+    transform: translateY(0); /* 当被点击时，则平移会原来的位置，从而出现在 viewport 中 */
+}
+
+.panel > *:last-child { /* 最后一个子元素 */
+    transform: translateY(100%);
+}
+
+.panel.open-active > *:last-child {
+    transform: translateY(0);
+}
+
+.panel.open { /* 被点击时，对应元素的宽度放大的同时，文字也变大 */
+  flex: 5;
+  font-size:40px;
+}
+
+/*.cta {
+  color:white;
+  text-decoration: none;
+}*/
