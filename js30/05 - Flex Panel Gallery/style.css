@@ -72,7 +72,7 @@ body {
 
     flex: 1 0 auto; /* 各子元素在竖直方向上均等分布，总高度和占父高 */
 
-    display: flex; /* 使各子元素左对齐 */
+    display: flex; /* 使文字左对齐 */
     justify-content: center; /* 文字水平居中 */
     align-items: center; /* 文字垂直居中 */
 }
