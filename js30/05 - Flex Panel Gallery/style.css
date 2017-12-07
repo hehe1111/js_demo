@@ -42,7 +42,7 @@ body {
     transition:
     font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
     flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-    background 0.2s;
+    background 0.2s; /* .panel 所在元素字体大小、元素宽度及背景图片的变化过程 */
 }
 
 .panel1{
@@ -68,7 +68,7 @@ body {
 .panel > * {
     margin: 0;
     width: 100%;
-    transition: transform 0.5s;
+    transition: transform 0.5s; /* 作用于子元素即第一个和最后一个 <p> 的飞入、飞出，可在开发者工具下将时间调为 5s 即可清楚看到 */
 
     flex: 1 0 auto; /* 各子元素在竖直方向上均等分布，总高度和占父高 */
 
