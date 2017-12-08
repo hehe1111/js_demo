@@ -17,6 +17,8 @@
 
 [demo 预览链接](https://hehe1111.github.io/js_demo/js30/05%20-%20Flex%20Panel%20Gallery/)
 
+[demo2.0 预览链接](http://hehe1111.github.io/js_demo/js30//05%20-%20Flex%20Panel%20Gallery/version2.0/)
+
 
 ## JS 重点：
 
