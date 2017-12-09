@@ -18,3 +18,5 @@
 
 5. [Flex Panel Gallery](https://hehe1111.github.io/js_demo/js30/05%20-%20Flex%20Panel%20Gallery/) - 2017.12.05
     - [demo2.0 预览链接](http://hehe1111.github.io/js_demo/js30//05%20-%20Flex%20Panel%20Gallery/version2.0/) - 2017.12.08
+
+6. [Type Ahead](http://hehe1111.github.io/js_demo/js30/06%20-%20Type%20Ahead/) - 2017.12.09
