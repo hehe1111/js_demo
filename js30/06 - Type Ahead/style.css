@@ -1,0 +1,79 @@
+html {
+    box-sizing: border-box;
+    background: hsla(193, 30%, 64%, 0.78); /* 相当于 rgba(136, 179, 191, 0.78)：在开发者工具下点击颜色小方框，再点击上下箭头即可转换 */
+    font-family: 'Kaiti', 'SimHei', 'Hiragino Sans GB ', 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+}
+
+body {
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+input {
+    width: 100%; /* input 是内联元素，不会自动占父框 */
+    padding:20px; /* placeholder 与输入框之间的间距 */
+    font-family:'Kaiti', 'helvetica neue'; /* 改变 placeholder 的字体样式 */
+}
+
+.search-form {
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+input.search {
+    width: 120%;
+    border: 10px solid #9dbcbf; /* 原是 #F7F7F7 */
+    border-radius: 5px;
+    margin: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+
+    z-index: 2;
+    position: relative;
+    top: 10px; /* 从原来的位置往下移动 10px */
+    left: -10%; /* 弥补 width: 120%; 使输入框居中 */
+
+    text-align: center; /* placeholder 文字居中 */
+    font-size: 40px; /* placeholder 文字大小 */
+
+    outline: 0;
+}
+
+.suggestions {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.suggestions li {
+    list-style: none;
+
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+    border-bottom: 1px solid #698db1; /* 原是 #D8D8D8 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+
+    transition: background 0.2s;
+
+    display: flex;
+    justify-content: space-between;
+
+    text-transform: capitalize;
+}
+
+.suggestions li:nth-child(even) { /* 偶数个会有放大属性 scale，但不明显 */
+  transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+  background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
+}
+
+.suggestions li:nth-child(odd) {
+  transform: perspective(100px) rotateX(-3deg) translateY(3px);
+  background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);
+}
