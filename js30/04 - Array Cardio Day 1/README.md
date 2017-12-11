@@ -15,6 +15,8 @@
 
 [参考链接](https://github.com/soyaine/JavaScript30/tree/master/04%20-%20Array%20Cardio%20Day%201)
 
+[数组操作方法学习记录二](https://github.com/hehe1111/js_demo/tree/master/js30/07%20-%20Array%20Cardio%20Day%202#数组操作方法学习记录二)
+
 - <kbd>F12</kbd>打开开发者工具，在 Console 面板中，输入`console.table(thing)`,`thing`参数指代`inventors`/`flavours`/`people`/`data`等列表，可以以**表格**形式打印出列表。
 
 - [Array.prototype.filter()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
