@@ -11,7 +11,7 @@
 
 [demo 预览链接](https://hehe1111.github.io/js_demo/js30/04%20-%20Array%20Cardio%20Day%201/)
 
-## 学习过程记录
+## 数组操作方法学习记录一
 
 [参考链接](https://github.com/soyaine/JavaScript30/tree/master/04%20-%20Array%20Cardio%20Day%201)
 
