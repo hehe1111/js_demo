@@ -11,6 +11,8 @@
 
 [参考链接](https://github.com/soyaine/JavaScript30/tree/master/08%20-%20Fun%20with%20HTML5%20Canvas)
 
+[demo 预览链接](https://hehe1111.github.io/js_demo/js30/08%20-%20Fun%20with%20HTML5%20Canvas/)
+
 ## HTML&CSS 重点：
 
 - [Canvas](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)
