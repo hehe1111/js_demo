@@ -7,7 +7,9 @@
     <title>Console Tricks!</title>
 </head>
 <body>
-    <p onClick="makeGreen()">×BREAK×DOWN×</p>
+    <p onClick="makeGreen()">单击这一行，能助其变身哦！</p>
+
+    <div>可按<kbd>F12</kbd>打开开发者工具，到 Console 面板查看输出。</div>
 
     <script>
         const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
@@ -17,6 +19,93 @@
             p.style.color = '#BADA55';
             p.style.fontSize = '50px';
         }
+
+        // Regular
+        // 常规输出
+        console.log("这只是一条简单的 console.log() 语句。");
+
+        // Interpolated
+        // 字符替换
+        console.log("字符串替换： %s ", "百分号 加上 s");
+        console.log("浮点数替换，百分号 加上 f： %f ", 1.23);
+        console.log("对象替换，百分号 加上 o： %o ", {1.23: 12});
+
+        // Styled
+        // 设定输出的样式
+        console.log("这是一条带有样式的输出 %c 要用（百分号 加上 c）并放在字符串中", "color: #00fdff; font-size: 2em;");
+
+        // warning!
+        console.warn("warning! 输出一条警告。好像在 console 面板中没有输出这一句！为什么？");
+
+        // Error :|
+        console.error("error 输出一条报错。");
+
+        // Info
+        console.info("info 输出一条信息。");
+
+        // Viewing DOM Elements
+        // 打印输出 DOM 元素
+        const p = document.querySelector('p');
+        console.log("打印输出 DOM 元素：");
+        console.log(p);
+        console.log("console.dir() 打印输出 DOM 元素，点击 p 左边的灰小三角可以查看属性哦：");
+        console.dir(p);
+
+        // Testing
+        console.assert(1 === 1, "判断为 true 时，无输出");
+        console.assert(1 === 0, "判断为 false 时，输出这一句");
+        console.assert(p.innerHTML.match("她"), "判断为 false 时，输出这一句");
+
+        // clearing
+        //   console.clear(); // 这一行会清除以上代码在 console 面板所有的输出
+
+        // Grouping together
+        console.log("以下都是以 console.groupEnd(); 结尾：");
+        console.log("console.group(); console.groupEnd(); 展开列表输出：");
+        dogs.forEach(dog => {
+        console.group();
+        console.log(`${dog.name}`);
+        console.log(`${dog.age}`);
+        console.log(`${dog.name} 有 ${dog.age} 岁了`);
+        console.groupEnd();
+        });
+
+        console.log("console.groupCollapsed(); console.groupEnd(); 折叠列表输出：");
+        dogs.forEach(dog => {
+        console.groupCollapsed(); // 收起列表
+        console.log(`${dog.name}`);
+        console.log(`${dog.age}`);
+        console.log(`${dog.name} 有 ${dog.age} 岁了`);
+        console.groupEnd();
+        });
+
+        //
+        console.log("以下以列表方式输出：");
+        console.table(dogs);
+        console.log("以下以列表方式输出，除了主键（即数字键），只输出 age 属性：");
+        console.table(dogs, ["age"]);
+
+        // counting
+        console.log("以下开始计数，相同字符串会累加：");
+        console.count("橘子个数");
+        console.count("橘子个数");
+        console.count("苹果个数");
+        console.count("橘子个数");
+        console.count("橘子个数");
+        console.count("苹果个数");
+        console.count("苹果个数");
+        console.count("橘子个数");
+
+        // timing
+        console.log("以下用于计时，可以算出一个操作所花费的准确时间：");
+        console.time('fetch my data');
+        fetch("https://api.github.com/users/hehe1111")
+            .then(data => data.json())
+            .then(data => {
+            console.timeEnd('fetch my data');
+            console.log(data);
+            console.table(data);
+  	  });
     </script>
 </body>
 </html>
