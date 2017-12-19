@@ -24,3 +24,5 @@
 7. [Array Cardio Day 2](http://hehe1111.github.io/js_demo/js30/07%20-%20Array%20Cardio%20Day%202/) - 2017.12.11
 
 8. [Fun with HTML5 Canvas](https://hehe1111.github.io/js_demo/js30/08%20-%20Fun%20with%20HTML5%20Canvas/) - 2017.12.17
+
+9. [Dev Tools Domination](https://hehe1111.github.io/js_demo/js30/09%20-%20Dev%20Tools%20Domination/) - 2017.11.19
