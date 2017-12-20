@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shift 多选或取消</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+ <!--
+ The following is a common layout you would see in an email client.
+
+ When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+
+-->
+    <div class="inbox">
+        <div class="item">
+            <input type="checkbox">
+            <p>这是一个邮件收件箱。</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>选中一项</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>然后按住<kbd>Shift</kbd>键</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>选择另外一项</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>则在它们之间的项都会被选中</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>试着不借助任何库来实现这个功能</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>只用原生 JS </p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Happy coding!</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>记得展示你的成果♪(^∇^*)</p>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
