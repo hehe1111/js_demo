@@ -98,3 +98,7 @@ video.addEventListener('click', togglePlay);
 // 其他代码
 toggle.addEventListener('click', togglePlay);
 ```
+
+- 全屏功能：
+[Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API)
+全屏之后，自定义的控件被`Fullscreen API`自身的控件取代。
