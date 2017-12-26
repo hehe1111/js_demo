@@ -26,3 +26,5 @@ JavaScript30仿写：
 10. [Hold Shift and Check Checkboxes](https://hehe1111.github.io/js_demo/js30/10%20-%20Hold%20Shift%20and%20Check%20Checkboxes/) - 2017.12.21
 
 11. [Custom Video Player](https://hehe1111.github.io/js_demo/js30/11%20-%20Custom%20Video%20Player/) - 2017.12.24
+
+12. [Key Sequence Detection](https://hehe1111.github.io/js_demo/js30/12%20-%20Key%20Sequence%20Detection/) - 2017.12.26
