@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key Detection</title>
+    <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+    <p>1. 请按 F12 查看 Console 面板的输出。</p>
+    <p>2. 请保持焦点在页面上，再进行输入。</p>
+    <p>3. 在 Console 面板上的输入无效。</p>
+    <p>4. 可以随意输入任意字符。</p>
+    <p>5. 当连续输入“hello”字符串时，会有惊喜哦！</p>
+
+    <script>
+        const pressed = [];
+        const secretCode = 'hello';
+
+        window.addEventListener('keyup', (e) => {
+            console.log(e.key);
+            pressed.push(e.key);
+            pressed.splice((- secretCode.length) - 1, pressed.length - secretCode.length);
+            if (pressed.join('').includes(secretCode)) {
+                console.log('%cBingo!!!', 'color: red; font-size: 24px; background-color: yellow;');
+                cornify_add();
+            }
+            console.log(pressed);
+        })
+    </script>
+</body>
+</html>
