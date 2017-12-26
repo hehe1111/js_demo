@@ -52,7 +52,7 @@
 
 ### Flex 布局
 
-```
+```javascript
 .panels {
     ...
     display: flex;
