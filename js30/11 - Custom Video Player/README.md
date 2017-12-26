@@ -52,10 +52,10 @@ function updateButton() {
 }
 ```
     图标是文本，所以可以用`Element.textContent`属性来更新
-    - [Node.textContent](http://javascript.ruanyifeng.com/dom/node.html#toc7)
-    - [Element.innerHTML](http://javascript.ruanyifeng.com/dom/element.html#toc3)
-    > 为了安全考虑，如果插入的是文本，最好用textContent属性代替innerHTML。
-    - [Element.insertAdjacentHTML()](http://javascript.ruanyifeng.com/dom/element.html#toc33)
+- [Node.textContent](http://javascript.ruanyifeng.com/dom/node.html#toc7)
+- [Element.innerHTML](http://javascript.ruanyifeng.com/dom/element.html#toc3)
+> 为了安全考虑，如果插入的是文本，最好用textContent属性代替innerHTML。
+- [Element.insertAdjacentHTML()](http://javascript.ruanyifeng.com/dom/element.html#toc33)
 
 - 实现快进快退：
 ```javascript
@@ -78,7 +78,7 @@ function handleProgress() {
     progressBar.style.flexBasis = `${percent}%`;
 }
 ```
-    [flexBasis 属性](https://github.com/hehe1111/doc/blob/master/flex_tutorial.md#%E8%AF%AD%E6%B3%95%E7%AF%87%E9%87%8D%E7%82%B9%E8%AF%A6%E7%BB%86%E8%AF%B7%E7%82%B9%E5%87%BB%E4%BB%A5%E4%B8%8A%E8%AF%AD%E6%B3%95%E7%AF%87%E7%9A%84%E9%93%BE%E6%8E%A5)
+[flexBasis 属性](https://github.com/hehe1111/doc/blob/master/flex_tutorial.md#%E8%AF%AD%E6%B3%95%E7%AF%87%E9%87%8D%E7%82%B9%E8%AF%A6%E7%BB%86%E8%AF%B7%E7%82%B9%E5%87%BB%E4%BB%A5%E4%B8%8A%E8%AF%AD%E6%B3%95%E7%AF%87%E7%9A%84%E9%93%BE%E6%8E%A5)
 
 - 手动拖动进度条：
 ```javascript
@@ -87,10 +87,10 @@ function scrub(e) {
     video.currentTime = scrubTime;
 }
 ```
-    > Element.offsetWidth属性返回元素的水平宽度。  
-    > screenX属性返回鼠标位置相对于屏幕左上角的水平坐标，单位为像素。
-    - [Element.offsetHeight，Element.offsetWidth](http://javascript.ruanyifeng.com/dom/element.html#toc11)
-    - [clientX，clientY，movementX，movementY，screenX，screenY](http://javascript.ruanyifeng.com/dom/event-type.html#toc10)
+> Element.offsetWidth属性返回元素的水平宽度。  
+> screenX属性返回鼠标位置相对于屏幕左上角的水平坐标，单位为像素。
+- [Element.offsetHeight，Element.offsetWidth](http://javascript.ruanyifeng.com/dom/element.html#toc11)
+- [clientX，clientY，movementX，movementY，screenX，screenY](http://javascript.ruanyifeng.com/dom/event-type.html#toc10)
 
 - 同时在视频和播放/暂停按钮上添加单击事件，使点击视频画面或按钮都能使视频播放或是暂停：
 ```javascript
