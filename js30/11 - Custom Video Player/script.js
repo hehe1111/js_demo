@@ -9,13 +9,16 @@ const ranges = player.querySelectorAll('.player-slider');
 
 /* Build out functions */
 function togglePlay() {
-    const method = video.paused ? 'play' : 'pause';
-    video[method]();
+    video.paused ? video.play() : video.pause();
+
+    // 另一种写法：
+    // const method = video.paused ? 'play' : 'pause';
+    // video[method]();
 }
 
 function updateButton() {
     const icon = this.paused ? '►' : '❚ ❚';
-    console.log(icon);
+    // console.log(icon);
     toggle.textContent = icon;
 }
 
