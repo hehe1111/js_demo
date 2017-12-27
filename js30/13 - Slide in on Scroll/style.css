@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+    background-color: #ffc600;
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+h1 {
+    margin-top: 0;
+}
+.site-wrap {
+    max-width: 700px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 40px;
+    text-align: justify;
+    word-wrap: break-word;
+}
+.align-left {
+    float: left;
+    margin-right: 20px;
+}
+.align-right {
+    float: right;
+    margin-left: 20px;
+}
+.slide-in {
+    opacity: 0; /* 隐去图片，形成空位 */
+    transition: all 0.5s;
+}
+.align-left.slide-in {
+    /* 使图片左移，并缩小为原来的 95% */
+    transform: translateX(-30%) scale(0.95);
+}
+.align-right.slide-in {
+    /* 使图片右移，并缩小为原来的 95% */
+    transform: translateX(30%) scale(0.95);
+}
+.slide-in.active {
+    /* active 时，使图片恢复到原位及原样 */
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+}
