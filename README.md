@@ -32,3 +32,5 @@
 11. [Custom Video Player](https://hehe1111.github.io/js_demo/js30/11%20-%20Custom%20Video%20Player/) - 2017.12.24
 
 12. [Key Sequence Detection](https://hehe1111.github.io/js_demo/js30/12%20-%20Key%20Sequence%20Detection/) - 2017.12.26
+
+13. [Slide in on Scroll](https://hehe1111.github.io/js_demo/js30/13%20-%20Slide%20in%20on%20Scroll/) - 2017.12.27
