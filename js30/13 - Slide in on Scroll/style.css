@@ -10,7 +10,7 @@ body {
     padding: 0;
 }
 *, *::before, *::after {
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 h1 {
     margin-top: 0;
@@ -33,7 +33,7 @@ h1 {
 }
 .slide-in {
     opacity: 0; /* 隐去图片，形成空位 */
-    transition: all 0.5s;
+    transition: all 0.7s;
 }
 .align-left.slide-in {
     /* 使图片左移，并缩小为原来的 95% */
