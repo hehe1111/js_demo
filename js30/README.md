@@ -30,3 +30,5 @@ JavaScript30仿写：
 12. [Key Sequence Detection](https://hehe1111.github.io/js_demo/js30/12%20-%20Key%20Sequence%20Detection/) - 2017.12.26
 
 13. [Slide in on Scroll](https://hehe1111.github.io/js_demo/js30/13%20-%20Slide%20in%20on%20Scroll/) - 2017.12.27
+
+14. [JavaScript References VS Copying](https://hehe1111.github.io/js_demo/js30/14%20-%20JavaScript%20References%20VS%20Copying/) - 2017.12.28
