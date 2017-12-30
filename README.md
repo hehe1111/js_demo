@@ -36,3 +36,5 @@
 13. [Slide in on Scroll](https://hehe1111.github.io/js_demo/js30/13%20-%20Slide%20in%20on%20Scroll/) - 2017.12.27
 
 14. [JavaScript References VS Copying](https://hehe1111.github.io/js_demo/js30/14%20-%20JavaScript%20References%20VS%20Copying/) - 2017.12.28
+
+15. [LocalStorage](https://hehe1111.github.io/js_demo/js30/15%20-%20LocalStorage/) - 2017.12.30
