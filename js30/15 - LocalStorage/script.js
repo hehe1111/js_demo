@@ -42,3 +42,30 @@ addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 
 // populateList(items, itemsList); // 动态显示页面内容
+
+// 延伸部分
+const checkAllBtn = document.querySelector('.check-all');
+const unCheckAllBtn = document.querySelector('.uncheck-all');
+const deleteAllBtn = document.querySelector('.delete-all');
+
+checkAllBtn.addEventListener('click', () => {
+    items.forEach(item => {
+        item.done = true;
+    });
+    populateList(items, itemsList);
+    localStorage.setItem('items', JSON.stringify(items));
+});
+
+unCheckAllBtn.addEventListener('click', () => {
+    items.forEach(item => {
+        item.done = false;
+    });
+    populateList(items, itemsList);
+    localStorage.setItem('items', JSON.stringify(items));
+});
+
+deleteAllBtn.addEventListener('click', () => {
+    items = [];
+    populateList(items, itemsList);
+    localStorage.setItem('items', JSON.stringify(items));
+});
