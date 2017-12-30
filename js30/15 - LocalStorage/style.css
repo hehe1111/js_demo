@@ -48,27 +48,28 @@ h2 {
     padding: 10px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     font-weight: 100;
+    word-break: break-all; /* 使过长的单词能换行显示 */
 
     display: flex;
 }
 
-/*.plates label {
+.plates label {
     flex: 1;
     cursor: pointer;
 }
 
 .plates input {
-    display: none;
+    display: none; /* 隐藏默认的复选框 */
 }
 
 .plates input + label::before {
-    content: '⬜️';
+    content: '⬜️'; /* 使用自定义的复选框 */
     margin-right: 10px;
 }
 
-.plates input:checked + label:before {
+.plates input:checked + label::before {
     content: '🌮';
-}*/
+}
 
 .add-items {
     margin-top: 20px;
