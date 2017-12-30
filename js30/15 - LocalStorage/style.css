@@ -1,0 +1,81 @@
+html {
+    box-sizing: border-box;
+    background: url('./imgs/wallhaven-567462.png') center no-repeat;
+    background-size: cover;
+
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    text-align: center;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+svg {
+    width: 200px;
+    margin-bottom: 50px; /* 隔开图片与文字 */
+    padding: 20px;
+    border-radius: 50%; /* 使 svg 图片圆化 */
+
+    fill: white; /* 鱼变成了白色，与背景色一致，导致看不到了 */
+    background-color: rgba(0, 0, 0, 0.1); /* 灰色，区别于一开始的白色背景 */
+}
+
+.wrapper {
+    max-width: 350px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    font-weight: 200;
+}
+
+.plates {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+}
+
+.plates li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-weight: 100;
+
+    display: flex;
+}
+
+/*.plates label {
+    flex: 1;
+    cursor: pointer;
+}
+
+.plates input {
+    display: none;
+}
+
+.plates input + label::before {
+    content: '⬜️';
+    margin-right: 10px;
+}
+
+.plates input:checked + label:before {
+    content: '🌮';
+}*/
+
+.add-items {
+    margin-top: 20px;
+}
+
+.add-items input {
+    padding: 10px;
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
