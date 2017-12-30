@@ -41,4 +41,4 @@ function toggleDone(e) {
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 
-populateList(items, itemsList); // 动态显示页面内容
+// populateList(items, itemsList); // 动态显示页面内容
