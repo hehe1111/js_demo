@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 版 Mouse Shadow</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="hero">
+        <h1 contenteditable="true">🔥WOAH!</h1>
+    </div>
+
+    <script type="text/javascript">
+        const hero = document.querySelector('.hero');
+        const text = hero.querySelector('h1');
+        const factor = 0.4;
+
+        function shadowMove(e) {
+            // 解构赋值
+            const {offsetWidth: width, offsetHeight: height} = hero;
+            let {offsetX: x, offsetY: y} = e;
+
+            //将鼠标位置转换为相对视口左上角的坐标，本例中由于 hero 元素占满视口故未起实际作用
+            if (this !== e.target) {
+                x += e.target.offsetLeft;
+                y += e.target.offsetTop;
+            }
+
+            // 计算阴影移动的距离
+            const positionX = parseInt((x - (width / 2)) * factor);
+            const positionY = parseInt((y - (height / 2)) * factor);
+
+            // 修改阴影样式
+            text.style.textShadow = `
+                ${positionX}px ${positionY}px 0 rgba(255,0,255,0.7),
+                ${positionX * -1}px ${positionY}px 0 rgba(0,255,255,0.7),
+                ${positionY}px ${positionX * -1}px 0 rgba(0,255,0,0.7),
+                ${positionY * -1}px ${positionX}px 0 rgba(0,0,255,0.7)
+            `;
+        }
+
+        hero.addEventListener('mousemove', shadowMove);
+    </script>
+</body>
+</html>
