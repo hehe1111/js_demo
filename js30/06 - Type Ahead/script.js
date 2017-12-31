@@ -1,4 +1,4 @@
-const endpoint = 'https://gist.githubusercontent.com/soyaine/81399bb2b24ca1bb5313e1985533c640/raw/bdf7df2cbcf70706c4a5e51a7dfb8c933ed78878/TangPoetry.json';
+const endpoint = 'https://gist.githubusercontent.com/hehe1111/098c62bdbfb745add72cb7d09f4cc4a7/raw/1a6c1a1bc15a27a3ee4165c6bac661dafeb7bd6a/poetry.json';
 
 const poetrys = []; // 声明一个空数组，用于存放解析 json 后的数据
 fetch(endpoint)

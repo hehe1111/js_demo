@@ -104,3 +104,19 @@
     - [Using CSS gradients](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_CSS_gradients)
 
 - `font-family`,`text-align`,`font-size`等属性也可用于`placeholder`属性的值。
+
+#### 所用到的 JSON 数据的拷贝来源：
+https://gist.githubusercontent.com/soyaine/81399bb2b24ca1bb5313e1985533c640/raw/bdf7df2cbcf70706c4a5e51a7dfb8c933ed78878/TangPoetry.json
+
+拷贝的目的：
+除留作备份外，也会偶尔添加新的诗词到拷贝得到的 JSON 文件中。新添加的诗词数据会简化，不会有译文注释等内容。
+
+#### 创建新的 gists：
+拷贝得到的 JSON 文件，可以放在 GitHubGist 上。
+步骤：
+1. 登录 GitHub 后，点击右上角的头像，在弹出的框中，选择 Your Gists 选项。
+2. 页面跳转后会直接进入编辑模式。一次输入描述、文件名、内容后，点击右下角的其中一个 Create xxx 按钮即可。
+3. 创建后，进入新生成的文件，点击 Raw 按钮。
+4. 跳转之后，复制页面的 URL。
+5. 将 URL 赋值给变量`endpoint`。
+6. 每次更新 JSON 文件后，URL 也会变化，所以也要更新变量`endpoint`。
