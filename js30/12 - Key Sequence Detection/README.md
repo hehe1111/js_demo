@@ -22,7 +22,7 @@ window.addEventListener('keyup', (e) => {
     // 代码
 })
 ```
-`keyup`事件是绑定在`window`对象上的，故输入时焦点应该是在页面上才会触发事件。
+`keyup`事件是绑定在`window`对象上的，故输入时**焦点应该是在页面**上才会触发事件。
 
 `e.key`：按键的键名。
 
@@ -31,4 +31,4 @@ pressed.splice((- secretCode.length) - 1, pressed.length - secretCode.length);
 ```
 - 一开始输入时，第二个参数（即`pressed.length - secretCode.length`）小于零，故`splice()`不会删除 pressed 数组中的元素；
 - 当第二个参数的值**等于**1时，第一个参数（即`(- secretCode.length) - 1`）对应的字符就是 pressed 数组相比 secretCode 变量记录的字符串多出的那一个字符（这个字符是 pressed 数组的第一个元素）。这一个字符会被`splice()`删除。原数组会被改变。
-- 此后，在后续的输入中，pressed 数组总是比 secretCode 变量记录的字符串多出一个字符，这一个字符总是会被`splice()`删除。
+- 此后，在后续的输入中，pressed 数组**总是**比`secretCode`变量记录的字符串**多出一个**字符，这一个字符总是会被`splice()`删除。
