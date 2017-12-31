@@ -66,6 +66,8 @@ input.search {
     justify-content: space-between;
 
     text-transform: capitalize;
+
+    overflow: auto;
 }
 
 .suggestions li:nth-child(even) { /* 偶数个会有放大属性 scale，但不明显 */
