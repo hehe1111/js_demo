@@ -26,7 +26,7 @@
 - [MouseEvent.offsetX](https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/offsetX)：事件对象与目标节点的内填充边（padding edge）在 X 轴方向上的偏移量。
 - [MouseEvent.offsetY](https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/offsetY)：事件对象与目标节点的内填充边（padding edge）在 Y 轴方向上的偏移量。
 
-- `div`的高度覆盖了视口：
+- `div`的高度覆盖了视口，所以可以在其上面直接监听`mousemove`事件；另外就是`Element.offsetLeft`，`Element.offsetTop`两个属性则都为零：
 ```
 .hero {
     //
