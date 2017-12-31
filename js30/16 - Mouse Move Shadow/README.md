@@ -13,7 +13,7 @@
 
 [demo 预览链接 - ES5 版](https://hehe1111.github.io/js_demo/js30/16%20-%20Mouse%20Move%20Shadow/)
 
-[demo 预览链接 - ES6 版](https://hehe1111.github.io/js_demo/js30/16%20-%20Mouse%20Move%20Shadow/)
+[demo 预览链接 - ES6 版](http://chendongming.info/js_demo/js30/16%20-%20Mouse%20Move%20Shadow/index_es6.html)
 
 ## 记录：
 - [HTMLElement.contentEditable](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/contentEditable)
