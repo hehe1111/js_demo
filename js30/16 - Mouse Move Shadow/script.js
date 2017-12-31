@@ -22,5 +22,5 @@ function shadowMove(e) {
     var distanceY = parseInt((position.y - (range.y / 2)) * factor);
 
     // 修改阴影样式
-    text.style.textShadow = distanceX + 'px ' + distanceY + 'px 0 #3498db, ' + (-distanceX) + 'px ' + distanceY + 'px 0 #1abc9c, ' + distanceY + 'px ' + (-distanceX) + 'px 0 #9b59b6, ' + (-distanceY) + 'px ' + (-distanceX) + 'px 0 #e74c3c';
+    text.style.textShadow = distanceX + 'px ' + distanceY + 'px 0 red, ' + (-distanceX) + 'px ' + distanceY + 'px 0 yellow, ' + distanceY + 'px ' + (-distanceX) + 'px 0 blue, ' + (-distanceY) + 'px ' + (-distanceX) + 'px 0 purple';
 }
