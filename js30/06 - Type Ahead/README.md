@@ -31,13 +31,13 @@
 
     >  fetch() 必须接受一个参数——资源的路径。无论请求成功与否，它都返回一个 promise 对象，resolve 对应请求的 Response。
 
-        - 这只是一个 HTTP 响应，而不是真的资源。
+    - 这只是一个 HTTP 响应，而不是真的资源。
 
-        - [使用 Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
+    - [使用 Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
 
-        > 全局 fetch()方法，该方法提供了一种简单，合乎逻辑的方式来跨网络异步获取资源。 - MDN
+    > 全局 fetch()方法，该方法提供了一种简单，合乎逻辑的方式来跨网络异步获取资源。 - MDN
 
-        > 在这个挑战中，我们主要是利用 .json()，以使用 JSON 对象来读取 Response 流中的数据，读取之后，Body 的 body.Uesd 属性值会变为已读。另外较为常用的方法还有：blob()、text()、arrayBuffer()、formData()。 - [来源](https://github.com/soyaine/JavaScript30/tree/master/06%20-%20Type%20Ahead#相关知识)
+    > 在这个挑战中，我们主要是利用 .json()，以使用 JSON 对象来读取 Response 流中的数据，读取之后，Body 的 body.Uesd 属性值会变为已读。另外较为常用的方法还有：blob()、text()、arrayBuffer()、formData()。 - [来源](https://github.com/soyaine/JavaScript30/tree/master/06%20-%20Type%20Ahead#相关知识)
 
     - [then()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/then)
 
@@ -47,9 +47,9 @@
 
     > 使用一个 Response 流，并将其读取完成。它返回一个 promise ，解析结果是将文本体解析为 JSON。即返回一个被解析为JSON格式的promise对象。
 
-        - [Fetch mixin - Body](https://developer.mozilla.org/zh-CN/docs/Web/API/Body)
+    - [Fetch mixin - Body](https://developer.mozilla.org/zh-CN/docs/Web/API/Body)
 
-        - [JSON](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON)：本挑战中不会用到。
+    - [JSON](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON)：本挑战中不会用到。
 
     - [Array.prototype.push()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 
