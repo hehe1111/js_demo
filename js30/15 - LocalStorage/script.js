@@ -4,7 +4,7 @@ var items = JSON.parse(localStorage.getItem('items')) || [];
 
 
 function addItem(e) {
-    e.preventDefault(); // 取消点击提交按钮后触发的 submit 事件的默认行为：刷新整个页面
+    e.preventDefault(); // 取消点击提交按钮后触发的 submit 事件的默认行为：刷新整个页面。刷新会导致重新加载之后的页面中，会丢失刚提交的内容。
     const text = this.querySelector('[name=item]').value; // 获取输入框中的值；this 指向 form 表单
     const item = {
         text: text, // ES6中可简写为 text,
@@ -52,7 +52,7 @@ checkAllBtn.addEventListener('click', () => {
     items.forEach(item => {
         item.done = true;
     });
-    populateList(items, itemsList);
+    populateList(items, itemsList); // 动态显示页面内容
     localStorage.setItem('items', JSON.stringify(items));
 });
 
@@ -60,12 +60,12 @@ unCheckAllBtn.addEventListener('click', () => {
     items.forEach(item => {
         item.done = false;
     });
-    populateList(items, itemsList);
+    populateList(items, itemsList); // 动态显示页面内容
     localStorage.setItem('items', JSON.stringify(items));
 });
 
 deleteAllBtn.addEventListener('click', () => {
     items = [];
-    populateList(items, itemsList);
+    populateList(items, itemsList); // 动态显示页面内容
     localStorage.setItem('items', JSON.stringify(items));
 });
