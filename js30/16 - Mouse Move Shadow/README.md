@@ -17,8 +17,6 @@
 
 ## 记录：
 - [HTMLElement.contentEditable](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/contentEditable)
-- [`text-shadow`属性](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)
-    - 字体本身变大，阴影（text-shadow）也会跟着变大。
 - [Element.offsetHeight，Element.offsetWidth](http://javascript.ruanyifeng.com/dom/element.html#toc11)：元素的垂直高度和水平宽度
 - [Element.offsetLeft，Element.offsetTop](http://javascript.ruanyifeng.com/dom/element.html#toc12)
 - [Element.offsetParent](http://javascript.ruanyifeng.com/dom/element.html#toc19)
@@ -34,3 +32,15 @@
     //
 }
 ```
+
+- 计算阴影移动的距离：根据鼠标与`.hero`所在元素的中心的距离来计算：
+```javascript
+var distanceX = parseInt((position.x - (range.x / 2)) * factor);
+var distanceY = parseInt((position.y - (range.y / 2)) * factor);
+```
+
+- [`text-shadow`属性](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)
+    - 字体本身变大，阴影（text-shadow）也会跟着变大。
+    - 不同阴影的生成：
+        - `text-shadow`属性可以添加**一或多个**阴影值，阴影值之间用**逗号**隔开，每个阴影可指定文字的偏移量、模糊半径、可选的颜色。多个阴影**从前往后**叠加，第一个阴影在最前面。
+        - 通过颠倒 x 和 y，或是乘以 -1，来获取其他阴影值。
