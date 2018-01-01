@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url("./wallhaven-528635.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(218, 83, 128, 0.7);
+
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+}
+
+#bands {
+    width: 500px;
+    padding: 0;
+    margin: auto;
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+    background-color: white;
+
+    font-size: 20px;
+
+    list-style: inside square;
+}
+
+#bands li {
+    padding: 20px;
+    border-bottom: 1px solid #efefef;
+}
+
+#bands li:last-child {
+    border-bottom: 0;
+}
+
+a {
+    color: #ffc600;
+    text-decoration: none;
+}
