@@ -37,3 +37,13 @@ bands.sort(function(a, b) {
 });
 
 displayArray2(bands);
+
+// 用 ES6 语法改写：
+// const delPrefix = item => item.replace(/^(The|An|A)\s{1}/, '');
+
+// const displayArray = arr => {
+//     document.getElementById('bands').innerHTML = (
+//         '<li>' + arr.join('</li><li>') + 'li'); // 加括号是为了换行
+// };
+
+// bands.sort((a, b) => delPrefix(a) > delPrefix(b) ? 1 : -1);
