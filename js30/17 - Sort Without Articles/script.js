@@ -14,9 +14,26 @@ function displayArray(arr) {
         '<li>' + arr.join('</li><li>') + 'li'); // 加括号是为了换行
 }
 
+/*
+ * displayArray2() 函数用 document.createDocumentFragment()、
+ * document.createElement() 及 appendChild() 可达到与
+ * displayArray() 函数相同的效果；
+ * 使用 document.createDocumentFragment() 减少了更改DOM现场的次数，
+ * 可以提高性能。
+ */
+function displayArray2(arr) {
+    var docFrag = document.createDocumentFragment();
+    for (var i = 0; i < arr.length; i++) {
+        var liElement = document.createElement('li');
+        liElement.textContent = arr[i];
+        docFrag.appendChild(liElement);
+    }
+    document.getElementById('bands').appendChild(docFrag);
+}
+
 //按要求排序，先大后小
 bands.sort(function(a, b) {
     return delPrefix(a) > delPrefix(b) ? 1 : -1; // 去除前缀后再进行比较，但最终并不会改变数组元素
 });
 
-displayArray(bands);
+displayArray2(bands);
