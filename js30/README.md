@@ -38,3 +38,5 @@ JavaScript30仿写：
 16. [Mouse Move Shadow](https://hehe1111.github.io/js_demo/js30/16%20-%20Mouse%20Move%20Shadow/) - 2017.12.31
 
 17. [Sort Without Articles](https://hehe1111.github.io/js_demo/js30/17%20-%20Sort%20Without%20Articles/) - 2018.01.01
+
+18. [Adding Up Times With Reduce](https://hehe1111.github.io/js_demo/js30/18%20-%20Adding%20Up%20Times%20With%20Reduce/) - 2018.01.02
