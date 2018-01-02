@@ -18,8 +18,8 @@
 ## 记录：
 
 - 数据拷贝：
-    1. 活用 emmet 语法：[参考链接](https://docs.emmet.io/cheat-sheet/)
-    2. 活用 <kbd>ctrl</kbd> + <kbd>alt</kbd> + 向下箭头 的组合键；复制时，前后复制的数量与能够存放复制内容的位置个数要一致。
+    1. 使用 emmet 语法：[参考链接](https://docs.emmet.io/cheat-sheet/)
+    2. 使用 <kbd>ctrl</kbd> + <kbd>alt</kbd> + 向下箭头 的组合键；复制时，前后复制的数量与能够存放复制内容的位置个数要一致。
 - [document.getElementsByTagName()](http://javascript.ruanyifeng.com/dom/document.html#toc23)
 > 返回值是一个类似数组的 HTMLCollection 对象，可以实时反映 HTML 文档的变化。如果没有任何匹配的元素，就返回一个空集。
 
