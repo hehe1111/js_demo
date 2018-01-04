@@ -89,8 +89,8 @@ function checkFilter(name, value) {
 
 // 申请网络摄像头操作权限
 function askWebcam() {
-    if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({
+    if (window.navigator.mediaDevices.getUserMedia) {
+        window.navigator.mediaDevices.getUserMedia({
             audio: false,
             video: {
                 width: 300,
