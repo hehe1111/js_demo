@@ -46,3 +46,5 @@
 18. [Adding Up Times With Reduce](https://hehe1111.github.io/js_demo/js30/18%20-%20Adding%20Up%20Times%20With%20Reduce/) - 2018.01.02
 
 19. [Webcam Fun](https://hehe1111.github.io/js_demo/js30/19%20-%20Webcam%20Fun/) - 2018.01.04
+
+20. [Speech Detection](https://hehe1111.github.io/js_demo/js30/20%20-%20Speech%20Detection/) - 2018.01.06
