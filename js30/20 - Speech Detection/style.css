@@ -1,15 +1,18 @@
 html {
     font-size: 10px;
 }
+
 body {
     background-color: #ffc600;
     font-family: 'helvetica neue';
     font-weight: 200;
     font-size: 20px;
 }
+
 p {
     margin: 0 0 3rem;
 }
+
 .words {
     max-width: 500px;
     padding: 1rem 2rem 1rem 5rem;
@@ -22,6 +25,7 @@ p {
     position: relative;
     line-height: 3rem;
 }
+
 .words::before {
     content: '';
 
