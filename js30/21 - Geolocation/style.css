@@ -1,0 +1,46 @@
+html {
+    font-size: 100px;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* 背景黑点的来源 */
+    background:
+        radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 50px; /* 设定背景黑点的大小，改为 60px 更明显点 */
+    background-attachment: fixed; /* 在视口中固定背景黑点的位置 */
+}
+
+/*.arrow {
+    width: 250px;
+    overflow: hidden;
+    transition: all 0.2s;
+    transform: rotate(0deg);
+
+    display: inline-block;
+}*/
+
+h1 {
+    color: white;
+    font-weight: 100;
+    font-size: 60px;
+
+    display: flex;
+    align-items: center;
+}
+
+.units {
+    font-size: 15px;
+}
