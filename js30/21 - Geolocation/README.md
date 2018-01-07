@@ -40,3 +40,5 @@
 > 该属性是可读写的，设置该属性的值，会用一个新的文本节点，替换所有原来的子节点。它还有一个好处，就是自动对HTML标签转义。
 
 - 本任务可参考 MDN 上该 API 给出的示例代码。
+
+![出错截图](https://github.com/hehe1111/js_demo/blob/master/js30/21%20-%20Geolocation/error.png)
