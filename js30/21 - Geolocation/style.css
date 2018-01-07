@@ -23,14 +23,14 @@ body {
     background-attachment: fixed; /* 在视口中固定背景黑点的位置 */
 }
 
-/*.arrow {
-    width: 250px;
+.arrow { /* svg 图片的样式 */
+    width: 450px; /* 原为 250 */
     overflow: hidden;
     transition: all 0.2s;
     transform: rotate(0deg);
 
     display: inline-block;
-}*/
+}
 
 h1 {
     color: white;
