@@ -50,3 +50,5 @@
 20. [Speech Detection](https://hehe1111.github.io/js_demo/js30/20%20-%20Speech%20Detection/) - 2018.01.06
 
 21. [Geolocation](https://hehe1111.github.io/js_demo/js30/21%20-%20Geolocation/) - 2018.01.07
+
+22. [Follow Along Link Highlighter](https://hehe1111.github.io/js_demo/js30/22%20-%20Follow%20Along%20Link%20Highlighter/) - 2018.01.08
