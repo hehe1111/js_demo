@@ -36,7 +36,7 @@ a {
     text-decoration: none;
 }
 
-/*.highlight {
+.highlight {
     border-radius: 20px;
     border-bottom: 2px solid white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -45,12 +45,13 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -1; /* 位于文字下方 */
 
     display: block;
 
     transition: all 0.2s;
-}*/
+}
+
 .menu {
     list-style: none;
 
@@ -60,6 +61,7 @@ a {
     display: flex; /* li 元素由原本的纵向排列改为水平排列，且相互间没有间隔 */
     justify-content: center; /* 水平居中 */
 }
+
 .menu a {
     padding: 20px; /* 给 a 标签加上 padding；由 5px 改为 20px 看起来明显一点 */
     margin: 0 20px; /* 给各 a 标签之间加上间距 */
