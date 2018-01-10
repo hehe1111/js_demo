@@ -48,3 +48,5 @@ JavaScript30仿写：
 21. [Geolocation](https://hehe1111.github.io/js_demo/js30/21%20-%20Geolocation/) - 2018.01.07
 
 22. [Follow Along Link Highlighter](https://hehe1111.github.io/js_demo/js30/22%20-%20Follow%20Along%20Link%20Highlighter/) - 2018.01.08
+
+23. [Speech Synthesis](https://hehe1111.github.io/js_demo/js30/23%20-%20Speech%20Synthesis/) - 2018.01.09
