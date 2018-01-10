@@ -34,3 +34,8 @@
     - [SpeechSynthesis.speak()](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speak)：adds an utterance to the utterance queue; it will be spoken when any other utterances queued before it have been spoken.
     - [SpeechSynthesis.cancel()](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/cancel)：removes all utterances from the utterance queue.
     - [voiceschanged 事件](https://developer.mozilla.org/en-US/docs/Web/Events/voiceschanged)
+
+### 步骤简述：
+- 点击语言选择的下拉列表时，实时生成各个语言的备选项；
+- 语速、语调滑动条的值，以及文本输入框的文本发生变动时，实时更新 `msg` 实例的值；
+- 监听`speak`，`stop`按钮；将 `msg` 传给 `speak` 函数，浏览器才能调用机器的相关设备进行文本的朗读。
