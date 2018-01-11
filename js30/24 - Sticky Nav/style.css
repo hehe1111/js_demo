@@ -108,3 +108,36 @@ nav a {
 .fixed-nav {
   position:fixed;
 }
+
+/* 以下来自挑战 13 */
+
+.align-left {
+    float: left;
+    margin-right: 20px;
+}
+
+.align-right {
+    float: right;
+    margin-left: 20px;
+}
+
+.slide-in {
+    opacity: 0; /* 隐去图片，形成空位 */
+    transition: all 0.7s;
+}
+
+.align-left.slide-in {
+    /* 使图片左移，并缩小为原来的 95% */
+    transform: translateX(-30%) scale(0.95);
+}
+
+.align-right.slide-in {
+    /* 使图片右移，并缩小为原来的 95% */
+    transform: translateX(30%) scale(0.95);
+}
+
+.slide-in.active {
+    /* active 时，使图片恢复到原位及原样 */
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+}
