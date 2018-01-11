@@ -50,3 +50,5 @@ JavaScript30仿写：
 22. [Follow Along Link Highlighter](https://hehe1111.github.io/js_demo/js30/22%20-%20Follow%20Along%20Link%20Highlighter/) - 2018.01.08
 
 23. [Speech Synthesis](https://hehe1111.github.io/js_demo/js30/23%20-%20Speech%20Synthesis/) - 2018.01.09
+
+24. [Sticky Nav](https://hehe1111.github.io/js_demo/js30/24%20-%20Sticky%20Nav/) - 2018.01.11
