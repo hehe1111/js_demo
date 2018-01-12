@@ -56,3 +56,5 @@
 23. [Speech Synthesis](https://hehe1111.github.io/js_demo/js30/23%20-%20Speech%20Synthesis/) - 2018.01.09
 
 24. [Sticky Nav](https://hehe1111.github.io/js_demo/js30/24%20-%20Sticky%20Nav/) - 2018.01.11
+
+25. [Event Related](https://hehe1111.github.io/js_demo/js30/25%20-%20Event%20Related/) - 2018.01.12
