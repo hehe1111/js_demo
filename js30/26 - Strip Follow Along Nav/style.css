@@ -76,13 +76,13 @@ nav ul {
     text-decoration: none;
 }
 
-/*.trigger-enter .dropdown {
+.trigger-enter .dropdown {
     display: block;
 }
 
 .trigger-enter-active .dropdown {
     opacity: 1;
-}*/
+}
 
 .dropdown-background {
     width: 100px;
@@ -105,9 +105,9 @@ nav ul {
     opacity: 0;
 }
 
-/*.dropdown-background.open {
+.dropdown-background.open {
     opacity: 1;
-}*/
+}
 
 .arrow {
     width: 20px;
