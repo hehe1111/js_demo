@@ -57,9 +57,9 @@ nav ul {
     padding: 20px;
     border-radius: 2px;
 
-    opacity: 0;
+    opacity: 0; /* 将元素隐藏，元素位置仍存在网页中，可以用开发者工具选中 */
 
-    display: none;
+    display: none; /* 元素位置消失，即使使用开发者工具也无法选中 */
 
     overflow: hidden;
 
