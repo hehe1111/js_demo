@@ -32,3 +32,4 @@ JavaScript30仿写：
 | 23. [Speech Synthesis](https://hehe1111.github.io/js_demo/js30/23%20-%20Speech%20Synthesis/) - 2018.01.09 | [模拟阅读器](https://github.com/hehe1111/js_demo/tree/master/js30/23%20-%20Speech%20Synthesis) |
 | 24. [Sticky Nav](https://hehe1111.github.io/js_demo/js30/24%20-%20Sticky%20Nav/) - 2018.01.11 | [模拟滚动时置顶的导航条](https://github.com/hehe1111/js_demo/tree/master/js30/24%20-%20Sticky%20Nav) |
 | 25. [Event Related](https://hehe1111.github.io/js_demo/js30/25%20-%20Event%20Related/) - 2018.01.12 | [JS 事件模型学习](https://github.com/hehe1111/js_demo/tree/master/js30/25%20-%20Event%20Related) |
+| 26. [Strip Follow Along Nav](https://hehe1111.github.io/js_demo/js30/26%20-%20Strip%20Follow%20Along%20Nav/) - 2018.01.14 | [鼠标悬浮链接弹出小方框](https://github.com/hehe1111/js_demo/tree/master/js30/26%20-%20Strip%20Follow%20Along%20Nav#26---strip-follow-along-nav) |
