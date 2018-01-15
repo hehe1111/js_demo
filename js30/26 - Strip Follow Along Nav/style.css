@@ -78,11 +78,12 @@ nav ul {
 
 .trigger-enter .dropdown {
     display: block;
-}
-
-.trigger-enter-active .dropdown {
     opacity: 1;
 }
+
+/*.trigger-enter-active .dropdown {
+    opacity: 1;
+}*/
 
 .dropdown-background {
     width: 100px;

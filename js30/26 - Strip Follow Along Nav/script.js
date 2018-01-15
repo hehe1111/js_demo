@@ -9,7 +9,7 @@ anchorsArr.map(function (item, index) {
 
         // 在父元素即 li 元素上添加类
         item.parentNode.classList.add('trigger-enter');
-        item.parentNode.classList.add('trigger-enter-active');
+        // item.parentNode.classList.add('trigger-enter-active');
         toggleBackground(index + 1);
     }
     item.onmouseout = function () {
@@ -17,7 +17,7 @@ anchorsArr.map(function (item, index) {
 
         // 移除类
         item.parentNode.classList.remove('trigger-enter');
-        item.parentNode.classList.remove('trigger-enter-active');
+        // item.parentNode.classList.remove('trigger-enter-active');
         toggleBackground(); // 不需要传参
     }
 })
