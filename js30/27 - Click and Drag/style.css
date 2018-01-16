@@ -1,0 +1,89 @@
+html {
+    box-sizing: border-box;
+    background-size: cover;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0; /* 去掉不必要的 margin 之后，就能去掉滚动条了 */
+
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.items {
+    width: 100%; /* 数字会从正中间位置变更到视口左边 */
+    height: 670px; /* 800px 改为 670px */
+    padding: 70px;
+    box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.09);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+    /*border: 1px solid red;*/
+
+    white-space: nowrap;
+
+    user-select: none;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+    transform: scale(0.98);
+
+    position: relative;
+
+    font-size: 0;  /* 去掉 item 之间的缝隙 */
+
+    perspective: 500px;
+}
+
+/*.items.active {
+    background-color: rgba(255, 255, 255, 0.3);
+
+    cursor: grabbing; /* MDN 上不推荐在公开网页上使用这些指针 
+    cursor: -webkit-grabbing;
+
+    transform: scale(1);
+}*/
+
+.item {
+    width: 200px;
+    height: calc(100% - 40px);
+    box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.15);
+    /*border: 1px solid red;*/
+
+    display: inline-flex;
+    justify-content: center; /* 使内部文字水平居中 */
+    align-items: center; /* 使内部文字垂直居中 */
+
+    font-size: 80px;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.item:nth-child(9n+1) { background: #ff0000;}
+.item:nth-child(9n+2) { background: #ff5d00;}
+.item:nth-child(9n+3) { background: #f2ff00;}
+.item:nth-child(9n+4) { background: #77ff77;}
+.item:nth-child(9n+5) { background: #89ddff;}
+.item:nth-child(9n+6) { background: #ee82ee;}
+.item:nth-child(9n+7) { background: #ffcfd7;}
+.item:nth-child(9n+8) { background: #ffffff;}
+.item:nth-child(9n+9) { background: #bfbfbf;}
+
+.item:nth-child(even) { transform: scaleX(1.31) rotateY(40deg); }
+.item:nth-child(odd) { transform: scaleX(1.31) rotateY(-40deg); }
+
+/*.wrap {
+    width: auto;
+    height: 100%;
+    border: 2px solid green;
+}*/
