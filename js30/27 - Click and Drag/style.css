@@ -45,14 +45,14 @@ body {
     perspective: 500px;
 }
 
-/*.items.active {
+.items.active {
     background-color: rgba(255, 255, 255, 0.3);
 
-    cursor: grabbing; /* MDN 上不推荐在公开网页上使用这些指针 
+    cursor: grabbing; /* MDN 上暂时不推荐在公开网页上使用这些指针 */
     cursor: -webkit-grabbing;
 
     transform: scale(1);
-}*/
+}
 
 .item {
     width: 200px;
