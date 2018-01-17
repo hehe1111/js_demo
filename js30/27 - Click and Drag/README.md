@@ -51,7 +51,7 @@ body {
 - [box-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow#%E6%91%98%E8%A6%81)：`inset | offset-x | offset-y | blur-radius | spread-radius | color`
 > **默认阴影在边框外**。使用inset后，阴影在边框内（即使是透明边框），**背景之上内容之下**。
 
-    - [Box-shadow generator](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Box-shadow_generator)
+- [Box-shadow generator](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Box-shadow_generator)
 
 - [perspective](https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective)：与`transform`属性的`rotate()`有关。
 > 指定了观察者与z=0平面的距离，使具有三维位置变换的元素产生透视效果。z>0的三维元素比正常大，而z<0时则比正常小，大小程度由该属性的值决定。
