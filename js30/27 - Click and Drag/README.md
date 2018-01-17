@@ -57,7 +57,7 @@ body {
 > 指定了观察者与z=0平面的距离，使具有三维位置变换的元素产生透视效果。z>0的三维元素比正常大，而z<0时则比正常小，大小程度由该属性的值决定。
 ---
 
-- [UIEvent.pageX](https://developer.mozilla.org/zh-CN/docs/Web/API/UIEvent/pageX#Syntax)：**鼠标事件触发**时，鼠标指针相对于整个文档 X 坐标上像素点的整数值。这一属性同时也参照了**页面的水平滚动距离**。
+- [UIEvent.pageX](https://developer.mozilla.org/zh-CN/docs/Web/API/UIEvent/pageX#Syntax)：**鼠标事件触发**时，鼠标指针相对于整个文档 X 坐标上像素点的整数值。这一属性同时也参照了**页面的水平滚动距离**。过时的非标准属性。
 - [Element.offsetLeft，Element.offsetTop](http://javascript.ruanyifeng.com/dom/element.html#toc12)
 - [Element.offsetParent](http://javascript.ruanyifeng.com/dom/element.html#toc19)
 > 如果某个元素的所有上层节点的`position`属性都是`static`，则`Element.offsetParent`属性指向`<body>`元素。
