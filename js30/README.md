@@ -35,3 +35,4 @@ JavaScript30仿写：
 | 26. [Strip Follow Along Nav](https://hehe1111.github.io/js_demo/js30/26%20-%20Strip%20Follow%20Along%20Nav/) - 2018.01.14 | [鼠标悬浮链接弹出小方框](https://github.com/hehe1111/js_demo/tree/master/js30/26%20-%20Strip%20Follow%20Along%20Nav#26---strip-follow-along-nav) |
 | 27. [Click and Drag](https://hehe1111.github.io/js_demo/js30/27%20-%20Click%20and%20Drag/) - 2018.01.16 | [按住鼠标左键拖动](https://github.com/hehe1111/js_demo/tree/master/js30/27%20-%20Click%20and%20Drag) |
 | 28. [Video Speed Controller](https://hehe1111.github.io/js_demo/js30/28%20-%20Video%20Speed%20Controller/) - 2018.01.20 | [模拟视频快进快退功能](https://github.com/hehe1111/js_demo/tree/master/js30/28%20-%20Video%20Speed%20Controller) |
+| 29. [Countdown Timer](https://hehe1111.github.io/js_demo/js30/29%20-%20Countdown%20Timer/) - 2018.01.20 | [模拟倒计时功能](https://github.com/hehe1111/js_demo/blob/master/js30/29%20-%20Countdown%20Timer/) |
