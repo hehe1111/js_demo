@@ -8,8 +8,12 @@ function changeSpeed(e) {
     const min = 0.5;
     const max = 5;
     const playbackRate = percentage * (max - min) + min;
+
+    // 实时更新 speedBar 的显示高度、文本
     speedBar.style.height = Math.round(percentage * 100) + '%';
     speedBar.textContent = playbackRate.toFixed(2) + '×';
+
+    // 实时更新播放速率
     video.playbackRate = playbackRate;
 }
 
