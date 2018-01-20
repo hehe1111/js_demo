@@ -13,4 +13,4 @@ function changeSpeed(e) {
     video.playbackRate = playbackRate;
 }
 
-speed.addEventListener('click',changeSpeed);
+speed.addEventListener('click', changeSpeed);
