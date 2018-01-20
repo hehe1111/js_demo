@@ -12,11 +12,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .wrapper {
     width: 850px;
 
     display: flex;
 }
+
 video {
     box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -33,6 +35,7 @@ video {
 
     overflow: hidden;
 }
+
 .speed-bar {
     width: 100%;
     height: 16.3%;
