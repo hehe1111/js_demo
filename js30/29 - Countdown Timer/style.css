@@ -1,0 +1,92 @@
+html {
+    box-sizing: border-box;
+    background-color: #8E24AA;
+    background: linear-gradient(45deg, #42a5f5 0%, #478ed1 50%, #0d47a1 100%);
+
+    font-size: 12px;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+}
+
+.timer {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-controls {
+    display: flex;
+}
+
+.timer-controls > * {
+    flex: 1;
+}
+
+.timer-controls form {
+    /*flex: 1;*/
+
+    display: flex;
+}
+
+.timer-controls input {
+    padding: 2rem;
+    border-width: 0;
+
+    flex: 1;
+}
+
+.timer-button {
+    padding: 1rem;
+    border-width: 0;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    background-image: none; /* 使 button 元素显示 body 的背景色 */
+    background-color: rgba(0, 0, 0, 0.1);
+
+    cursor: pointer;
+
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'Inconsolata', monospace;
+    text-transform: uppercase;
+}
+
+.timer-button:hover,
+.timer-button:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+
+    outline: 0;
+}
+
+.display {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-time-left {
+    margin: 0;
+
+    color: white;
+    font-weight: 100;
+    font-size: 20rem;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.display-end-time {
+    color: white;
+    font-size: 4rem;
+}
