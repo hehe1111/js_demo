@@ -11,7 +11,7 @@
 
 [参考链接](https://github.com/soyaine/JavaScript30/blob/master/29%20-%20Countdown%20Timer/README.md)
 
-[demo 预览链接]()
+[demo 预览链接](https://hehe1111.github.io/js_demo/js30/29%20-%20Countdown%20Timer/)
 
 ## 记录：
 
