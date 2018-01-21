@@ -40,6 +40,7 @@ function startGame() {
     timeUp = false;
     score = 0;
     peep();
+    count = 1;
     setTimeout(() => {
         timeUp = true;
         console.log('共执行了 ' + count + ' 次！');
