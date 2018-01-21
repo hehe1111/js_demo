@@ -5,6 +5,7 @@ const startButton = document.querySelector('.start-button');
 let lastHole;
 let timeUp = false;
 let score = 0;
+let count = 0; // 用于记录函数 peep 的执行次数
 
 function getRandomTime(min, max) {
     return Math.round((Math.random() * Math.abs(max - min)) + min);
@@ -29,6 +30,7 @@ function peep() {
         hole.classList.remove('up');
         if (!timeUp) {
             peep();
+            count += 1;
         }
     }, time);
 }
@@ -40,7 +42,10 @@ function startGame() {
     peep();
     setTimeout(() => {
         timeUp = true;
+        console.log('共执行了 ' + count + ' 次！');
+        count = 0; // 重置为零，避免累加
     }, 10000); // 10 秒之后停止游戏
+    console.clear(); // 清空控制台，便于输出本次执行的相关信息
 }
 
 function bonk(e) {
