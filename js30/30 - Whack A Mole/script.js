@@ -23,7 +23,7 @@ function getRandomHole(holes) {
 }
 
 function peep() {
-    const time = getRandomTime(200, 1000); // 地鼠出现的时间间隔为 200 毫秒到 1 秒之间
+    const time = getRandomTime(200, 1000);
     const hole = getRandomHole(holes);
     hole.classList.add('up');
     setTimeout(() => {
