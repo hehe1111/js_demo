@@ -54,7 +54,7 @@ function updateTimer(){
     intervalID = setInterval(function () {
     	if(left === 0){
     		endTime.textContent = 'End';
-            clearInterval(timer);
+            clearInterval(intervalID);
     	}else{
     		left -= 1;
     		leftTime.textContent = left;
