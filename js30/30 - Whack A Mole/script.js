@@ -45,6 +45,7 @@ function startGame() {
         timeUp = true;
         console.log('共执行了 ' + count + ' 次！');
         count = 0; // 重置为零，避免累加
+        alert('Game Over!');
     }, 10000); // 10 秒之后停止游戏
     console.clear(); // 清空控制台，便于输出本次执行的相关信息
 }
