@@ -50,3 +50,14 @@
 
 - [window.setInterval()](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setInterval)
 - [WindowTimers.clearInterval()](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/clearInterval)
+
+- 监听用户的自定义输入时，判断输入的值是否能转成数值。输入的值会转成两种结果：**数值**或是**NaN**，在这里可以用逻辑运算符**非（!）**来辅助判断。
+```javascript
+let value = Number(this.minutes.value);
+if (!value) {
+    alert('请输入数字。');
+} else {
+    updateTime(value * 60);
+    updateTimer();
+}
+```
