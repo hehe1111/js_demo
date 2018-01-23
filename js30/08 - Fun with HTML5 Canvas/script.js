@@ -57,9 +57,9 @@ function draw(e) {
 	// 控制绘制路径
     ctx.beginPath();
 
-    ctx.moveTo(lastX, lastY);
-    ctx.lineTo(x, y);
-    ctx.stroke();
+    ctx.moveTo(lastX, lastY); // 起点
+    ctx.lineTo(x, y); // 终点
+    ctx.stroke(); // 绘制起点到终点的路径
 	// lastX = x;
 	// lastY = y;
     [lastX, lastY] = [x, y];
@@ -75,6 +75,7 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
 
+// 监听触摸板的操作
 canvas.addEventListener('touchstart', (e) => {
     isDrawing = true;
     lastX = e.changedTouches[0].clientX;
