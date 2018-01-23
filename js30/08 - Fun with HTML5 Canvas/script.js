@@ -1,19 +1,16 @@
 const canvas = document.querySelector('#draw');
-const ctx = canvas.getContext('2d');
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
-let isDrawing = false;
-let lastX = 0;
-let lastY = 0;
-
+const ctx = canvas.getContext('2d');
 ctx.lineWidth = 90;
 ctx.lineCap = "round";
 ctx.lineJoin = "round";
 ctx.strokeStyle = "#f00";
 ctx.fillStyle = "#f00";
 
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
 let hue = 0;
 let direction = true;
 let x = 0;
@@ -67,11 +64,11 @@ function draw(e) {
 	// console.log(ctx.lineWidth);
 	// console.log(x +"-" + e.offsetX);
 }
+
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
 });
-
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
@@ -81,7 +78,6 @@ canvas.addEventListener('touchstart', (e) => {
     lastX = e.changedTouches[0].clientX;
     lastY = e.changedTouches[0].clientY;
 });
-
 canvas.addEventListener('touchmove', draw);
 canvas.addEventListener('touchend', () => isDrawing = false);
 canvas.addEventListener('touchcancel', () => isDrawing = false);
