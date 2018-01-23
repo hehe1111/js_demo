@@ -17,7 +17,7 @@
 - [linear-gradient()](https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient)
 > CSS linear-gradiend() 函数用于创建一个表示两种或多种颜色线性渐变的图片。
 
-    - [linear-gradient](http://mdn.beonex.com/en/CSS/linear-gradient.html)
+- [linear-gradient](http://mdn.beonex.com/en/CSS/linear-gradient.html)
 
 ---
 
