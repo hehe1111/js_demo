@@ -36,11 +36,13 @@ function draw(e) {
         hue = 0;
     }
     hue++;
+    console.log('色相值为：' + hue);
 
 	// 水墨效果
 	// ctx.strokeStyle = `rgba(0, 0, 0, ${ hue })`;
 	// if(hue >= 0.7) hue = 0;
 	// hue += 0.01;
+    // console.log('色相值为：' + hue);
 
 	// 控制笔触大小
     // if(ctx.lineWidth > 120 || ctx.lineWidth < 10) {
