@@ -46,14 +46,14 @@ function draw(e) {
 	// hue += 0.01;
 
 	// 控制笔触大小
-    if(ctx.lineWidth > 120 || ctx.lineWidth < 10) {
-        direction = !direction;
-    }
-    if (direction) {
-        ctx.lineWidth++;
-    } else {
-        ctx.lineWidth--;
-    }
+    // if(ctx.lineWidth > 120 || ctx.lineWidth < 10) {
+    //     direction = !direction;
+    // }
+    // if (direction) {
+    //     ctx.lineWidth++;
+    // } else {
+    //     ctx.lineWidth--;
+    // }
 
 	// 控制绘制路径
     ctx.beginPath();
