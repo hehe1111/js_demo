@@ -1,5 +1,7 @@
 创建时间：2018.01.24
 
+[预览链接](https://hehe1111.github.io/js_demo/ife/01/)
+
 ## 记录：
 
 - [ico 图片来源网站](http://www.iconninja.com/)
