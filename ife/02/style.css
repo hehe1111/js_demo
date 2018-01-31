@@ -60,20 +60,24 @@ article {
     border-right-style: ridge;
     border-bottom-style: ridge;
 }
+
 article p {
     text-indent: 2em;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
     margin: 0 auto;
 }
+
 th {
     background-color: rgb(51, 51, 51);
     color: white;
     border: 1px solid rgb(203, 203, 203);
     text-align: left;
 }
+
 td {
     border: 1px solid rgb(203, 203, 203);
 }
@@ -86,6 +90,7 @@ th:last-child,
 td:last-child {
     width: 20%;
 }
+
 tr:last-child {
     background-color: rgb(203, 203, 203);
 }
@@ -100,22 +105,27 @@ tr:last-child {
     padding-left: 128px;
     color: rgb(166, 167, 195);
 }
+
 .gender-options,
 .city-options,
 .hobby-options {
     padding-left: 80px;
 }
+
 #message {
     position: relative;
 }
+
 #description {
     position: absolute;
     left: 48px;
     top: 0;
 }
+
 #detail {
     margin-left: 130px;
 }
+
 #submit {
     width: 100%;
     height: 40px;
@@ -127,6 +137,7 @@ tr:last-child {
     font-size: 20px;
     line-height: 40px;
 }
+
 footer {
     height: 100px;
     background-color: black;
