@@ -12,7 +12,7 @@
 
 ## 数组操作方法学习记录二
 
-[demo 预览链接](http://hehe1111.github.io/js_demo/js30/07%20-%20Array%20Cardio%20Day%202/)
+[demo 预览链接](https://hehe1111.github.io/js_demo/js30/07%20-%20Array%20Cardio%20Day%202/)
 
 [参考链接](https://github.com/soyaine/JavaScript30/tree/master/07%20-%20Array%20Cardio%20Day%202)
 
