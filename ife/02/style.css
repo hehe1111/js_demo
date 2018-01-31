@@ -12,26 +12,26 @@ header {
     background-color: rgba(51, 51, 51, 1);
 }
 
-#top {
+header div.top-nav-bar {
     width: 100%;
     height: 100px;
 }
 
-#top a {
+header div.top-nav-bar a {
     text-decoration: none;
     color: white;
 }
 
-#top a:hover {
+header div.top-nav-bar a:hover {
     text-decoration: underline;
 }
 
-#top img {
+header div.top-nav-bar img {
     height: 80px;
     margin: 10px 0 0 100px;
 }
 
-#top-nav {
+header div.top-nav-bar ul.top-nav {
     height: 100px;
     padding: 0;
     margin: 0 100px 0 0;
@@ -41,7 +41,7 @@ header {
     line-height: 100px;
 }
 
-#top-nav li {
+header div.top-nav-bar ul.top-nav li {
     margin-left: 20px;
 
     list-style-type: none;
@@ -49,7 +49,8 @@ header {
     display: inline-block;
 }
 
-article {
+article,
+aside {
     width: 85%;
     border: thin solid rgb(203, 203, 203);
     padding: 30px;
@@ -65,68 +66,71 @@ article p {
     text-indent: 2em;
 }
 
-table {
+article table {
     border-collapse: collapse;
     width: 100%;
     margin: 0 auto;
 }
 
-th {
+article table tr th {
     background-color: rgb(51, 51, 51);
     color: white;
     border: 1px solid rgb(203, 203, 203);
     text-align: left;
 }
 
-td {
+article table tr td {
     border: 1px solid rgb(203, 203, 203);
 }
 
-th, td {
+article table tr th,
+article table tr td {
     width: 40%;
 }
 
-th:last-child,
-td:last-child {
+article table tr th:last-child,
+article table tr td:last-child {
     width: 20%;
 }
 
-tr:last-child {
+article table tr:last-child {
     background-color: rgb(203, 203, 203);
 }
 
-#register h2 {
+aside.registration h2 {
     height: 40px;
+    padding-left: 10px;
     border-left: 3px solid rgb(205, 205, 205);
+
     line-height: 40px;
 }
 
-.text {
-    padding-left: 128px;
+aside.registration > form div.a-table-row {
+    display: table-row;
+}
+
+aside.registration > form div.a-table-row div {
+    /*border: 1px solid red;*/
+    padding: 10px;
+
+    display: table-cell;
+    vertical-align: top; /* 使文字在 table-cell 内置顶 */
+}
+
+aside.registration > form div.a-table-row div:first-child {
+    text-align: right;
+}
+
+aside.registration > form div.a-table-row div > textarea {
+    width: 500px;
+    height: 120px;
+}
+
+aside.registration > form div.a-table-row div.notation {
     color: rgb(166, 167, 195);
 }
 
-.gender-options,
-.city-options,
-.hobby-options {
-    padding-left: 80px;
-}
-
-#message {
-    position: relative;
-}
-
-#description {
-    position: absolute;
-    left: 48px;
-    top: 0;
-}
-
-#detail {
-    margin-left: 130px;
-}
-
-#submit {
+aside.registration > form div.submit-button > input {
     width: 100%;
     height: 40px;
     border: none;
@@ -141,7 +145,7 @@ tr:last-child {
 footer {
     height: 100px;
     background-color: black;
-    color: white;
+    color: grey;
     line-height: 100px;
     text-align: center;
 }

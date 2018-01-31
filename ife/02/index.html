@@ -10,9 +10,9 @@
 </head>
 <body>
     <header>
-        <div id="top">
+        <div class="top-nav-bar">
     		<a href="#" target="_blank"><img src="../imgs/placeholder.png" title="logo" alt="logo"></a>
-    		<ul id="top-nav">
+    		<ul class="top-nav">
     			<li><a href="javascript:;">导航链接一</a></li>
     			<li><a href="javascript:;">导航链接二</a></li>
     			<li><a href="javascript:;">导航链接三</a></li>
@@ -112,60 +112,96 @@
         </table>
     </article>
 
-    <article id="register">
+    <aside class="registration">
         <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
         <h2>侧栏注册窗口标题</h2>
         <form method="post" action="javascript:;">
-        	<p>
-                <label for="email">请输入邮箱地址：</label>
-                <input id="email" type="email" placeholder="user@domain.com" name="email">
-            </p>
-            <p class="text">邮箱地址请按要求格式输入</p>
+            <div class="a-table-row">
+            	<div>
+                    <label for="email">请输入邮箱地址：</label>
+                </div>
+                <div>
+                    <input id="email" type="email" placeholder="user@domain.com" name="email">
+                </div>
+            </div>
 
-        	<p>
-                <label for="password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请输入密码：</label>
-                <input id="password" type="password" placeholder="请最少输入 6 个字符" name="password"><br>
-                <label for="repeat-password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请重复输入密码：</label>
-                <input id="repeat-password" type="password" placeholder="repeat password" name="repeat-password">
-            </p>
-            <p class="text">密码请为 6-16 位英文数字</p>
+            <div class="a-table-row">
+                <div></div>
+                <div class="notation">邮箱地址请按要求格式输入</div>
+            </div>
 
-            <p class="gender-options">
-            	<span>性别：</span>
-                <input id="man" value="男" type="radio" name="gender" checked>
-                <label for="man">男</label>
-                <input id="woman" value="女" type="radio" name="gender">
-                <label for="woman">女</label>
-            </p>
+            <div class="a-table-row">
+            	<div>
+                    <label for="password">请输入密码：</label>
+                </div>
+                <div>
+                    <input id="password" type="password" placeholder="请最少输入 6 个字符" name="password">
+                </div>
+            </div>
 
-            <p class="city-options">
-            	<label for="city">城市：</label>
-                <select id="city" name="city">
-                    <option value="1" label="北京" selected>北京</option>
-                    <option value="2" label="上海">上海</option>
-                    <option value="3" label="广州">广州</option>
-                    <option value="4" label="深圳">深圳</option>
-                    <option value="5" label="杭州">杭州</option>
-                </select>
-            </p>
+            <div class="a-table-row">
+                <div>
+                    <label for="repeat-password">请重复输入密码：</label>
+                </div>
+                <div>
+                    <input id="repeat-password" type="password" placeholder="repeat password" name="repeat-password">
+                </div>
+            </div>
 
-            <p class="hobby-options">
-            	<span>爱好：</span>
-                <input id="sport" type="checkbox" name="sport">
-            	<label for="sport">运动</label>
-                <input id="art" type="checkbox" name="art">
-            	<label for="art">艺术</label>
-                <input id="science" type="checkbox" name="science">
-            	<label for="science">科学</label>
-            </p>
+            <div class="a-table-row">
+                <div></div>
+                <div class="notation">密码请为 6-16 位英文数字</div>
+            </div>
 
-            <p id="message">
-            	<span id="description">个人描述：</span>
-            	<textarea id="detail" name="detail" wrap="hard" title="description" placeholder="这是一个多行输入框，输入您的个人描述" cols="40" rows="5" ></textarea>
-            </p>
-            <input id="submit" type="submit" value="确认提交">
+            <div class="a-table-row">
+            	<div>性别：</div>
+                <div>
+                    <input type="radio" value="男" name="gender" checked>
+                    <label for="man">男</label>
+                    <input type="radio" value="女" name="gender">
+                    <label for="woman">女</label>
+                </div>
+            </div>
+
+            <div class="a-table-row">
+                <div>
+                    <label for="city">城市：</label>
+                </div>
+                <div>
+                    <select id="city" name="city">
+                        <option value="Beijing" label="北京" selected>北京</option>
+                        <option value="Shanghai" label="上海">上海</option>
+                        <option value="Guangzhou" label="广州">广州</option>
+                        <option value="Shenzhen" label="深圳">深圳</option>
+                        <option value="Hangzhou" label="杭州">杭州</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="a-table-row">
+            	<div>爱好：</div>
+                <div>
+                    <input id="sport" type="checkbox" name="sport">
+                    <label for="sport">运动</label>
+                    <input id="art" type="checkbox" name="art">
+                    <label for="art">艺术</label>
+                    <input id="science" type="checkbox" name="science">
+                    <label for="science">科学</label>
+                </div>
+            </div>
+
+            <div class="a-table-row">
+            	<div>个人描述：</div>
+                <div>
+                    <textarea name="self-description" wrap="hard" title="self-description" placeholder="这是一个多行输入框，输入您的个人描述" cols="40" rows="5" ></textarea>
+                </div>
+            </div>
+
+            <div class="submit-button">
+                <input type="submit" value="确认提交">
+            </div>
         </form>
-    </article>
+    </aside>
 
     <footer>Copyright (c) 2018 Copyright Holder All Rights Reserved.</footer>
 </body>
