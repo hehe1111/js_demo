@@ -1,0 +1,165 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(222, 222, 222, 1);
+
+    font-family: "Microsoft YaHei UI", sans-serif;
+}
+
+header {
+    min-width: 1000px;
+    height: 100px;
+    background-color: rgba(51, 51, 51, 1);
+}
+
+header div.top-nav-bar {
+    width: 100%;
+    height: 100px;
+}
+
+header div.top-nav-bar a {
+    text-decoration: none;
+    color: white;
+}
+
+header div.top-nav-bar a:hover {
+    text-decoration: underline;
+}
+
+header div.top-nav-bar img {
+    height: 80px;
+    margin: 10px 0 0 100px;
+}
+
+header div.top-nav-bar ul.top-nav {
+    height: 100px;
+    padding: 0;
+    margin: 0 100px 0 0;
+
+    float: right;
+
+    line-height: 100px;
+}
+
+header div.top-nav-bar ul.top-nav li {
+    margin-left: 20px;
+
+    list-style-type: none;
+
+    display: inline-block;
+}
+
+article,
+aside {
+    border: thin solid rgb(203, 203, 203);
+    padding: 30px;
+    margin-top: 30px;
+    background-color: white;
+    line-height: 30px;
+    word-break: normal;
+    border-right-style: ridge;
+    border-bottom-style: ridge;
+}
+
+article {
+    margin-right: calc(30% + 100px);
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+article p {
+    text-indent: 2em;
+}
+
+article table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+}
+
+article table tr th {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border: 1px solid rgb(203, 203, 203);
+    text-align: left;
+}
+
+article table tr td {
+    border: 1px solid rgb(203, 203, 203);
+}
+
+article table tr th,
+article table tr td {
+    width: 40%;
+}
+
+article table tr th:last-child,
+article table tr td:last-child {
+    width: 20%;
+}
+
+article table tr:last-child {
+    background-color: rgb(203, 203, 203);
+}
+
+aside.registration {
+    width: 30%;
+    
+    position: absolute;
+    right: 30px;
+    top: 100px;
+}
+
+aside.registration h2 {
+    height: 40px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-left: 3px solid rgb(205, 205, 205);
+
+    line-height: 40px;
+}
+
+aside.registration > form div.a-table-row {
+    display: table-row;
+}
+
+aside.registration > form div.a-table-row div {
+    /*border: 1px solid red;*/
+    padding: 10px;
+
+    display: table-cell;
+    vertical-align: top; /* 使文字在 table-cell 内置顶 */
+}
+
+aside.registration > form div.a-table-row div:first-child {
+    text-align: right;
+}
+
+aside.registration > form div.a-table-row div > textarea {
+    width: 230px;
+    height: 120px;
+}
+
+aside.registration > form div.a-table-row div.notation {
+    color: rgb(166, 167, 195);
+}
+
+aside.registration > form div.submit-button > input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(51, 85, 208);
+
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+footer {
+    height: 100px;
+    background-color: black;
+    color: grey;
+    line-height: 100px;
+    text-align: center;
+}
