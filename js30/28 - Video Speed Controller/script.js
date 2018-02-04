@@ -17,4 +17,9 @@ function changeSpeed(e) {
     video.playbackRate = playbackRate;
 }
 
+function togglePlay() {
+    video.paused ? video.play() : video.pause();
+}
+
 speed.addEventListener('click', changeSpeed);
+video.addEventListener('click', togglePlay);
