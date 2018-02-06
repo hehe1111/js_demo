@@ -35,11 +35,11 @@
 
 - 鼠标悬浮或是获得焦点时，给背景加上一层灰色的遮罩，简单用`background-color`即可：
 ```css
-.timer-button:hover,
-.timer-button:focus {
-    background-color: rgba(0, 0, 0, 0.2);
-    /*其他样式*/
-}
+    .timer-button:hover,
+    .timer-button:focus {
+        background-color: rgba(0, 0, 0, 0.2);
+        /*其他样式*/
+    }
 ```
 
 ---
@@ -53,11 +53,11 @@
 
 - 监听用户的自定义输入时，判断输入的值是否能转成数值。输入的值会转成两种结果：**数值**或是**NaN**，在这里可以用逻辑运算符**非（!）**来辅助判断。
 ```javascript
-let value = Number(this.minutes.value);
-if (!value) {
-    alert('请输入数字。');
-} else {
-    updateTime(value * 60);
-    updateTimer();
-}
+    let value = Number(this.minutes.value);
+    if (!value) {
+        alert('请输入数字。');
+    } else {
+        updateTime(value * 60);
+        updateTimer();
+    }
 ```
