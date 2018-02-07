@@ -45,13 +45,13 @@
 
 - 更新播放/暂停按钮图标：
 ```javascript
-function updateButton() {
-    const icon = this.paused ? '►' : '❚ ❚';
-    // console.log(icon);
-    toggle.textContent = icon;
-}
+    function updateButton() {
+        const icon = this.paused ? '►' : '❚ ❚';
+        // console.log(icon);
+        toggle.textContent = icon;
+    }
 ```
-    图标是文本，所以可以用`Element.textContent`属性来更新
+图标是文本，所以可以用`Element.textContent`属性来更新
 - [Node.textContent](http://javascript.ruanyifeng.com/dom/node.html#toc7)
 - [Element.innerHTML](http://javascript.ruanyifeng.com/dom/element.html#toc3)
 > 为了安全考虑，如果插入的是文本，最好用textContent属性代替innerHTML。
@@ -59,33 +59,33 @@ function updateButton() {
 
 - 实现快进快退：
 ```javascript
-function skip() {
-    video.currentTime += parseFloat(this.dataset.skip);
-}
+    function skip() {
+        video.currentTime += parseFloat(this.dataset.skip);
+    }
 ```
 
 - 调节音量、播放速度：
 ```javascript
-function handleRangeUpdate() {
-    video[this.name] = this.value;
-}
+    function handleRangeUpdate() {
+        video[this.name] = this.value;
+    }
 ```
 
 - 实时更新播放进度条：
 ```javascript
-function handleProgress() {
-    const percent = (video.currentTime / video.duration) * 100;
-    progressBar.style.flexBasis = `${percent}%`;
-}
+    function handleProgress() {
+        const percent = (video.currentTime / video.duration) * 100;
+        progressBar.style.flexBasis = `${percent}%`;
+    }
 ```
 [flexBasis 属性](https://github.com/hehe1111/doc/blob/master/flex_tutorial.md#%E8%AF%AD%E6%B3%95%E7%AF%87%E9%87%8D%E7%82%B9%E8%AF%A6%E7%BB%86%E8%AF%B7%E7%82%B9%E5%87%BB%E4%BB%A5%E4%B8%8A%E8%AF%AD%E6%B3%95%E7%AF%87%E7%9A%84%E9%93%BE%E6%8E%A5)
 
 - 手动拖动进度条：
 ```javascript
-function scrub(e) {
-    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
-    video.currentTime = scrubTime;
-}
+    function scrub(e) {
+        const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+        video.currentTime = scrubTime;
+    }
 ```
 > Element.offsetWidth属性返回元素的水平宽度。  
 > screenX属性返回鼠标位置相对于屏幕左上角的水平坐标，单位为像素。
@@ -94,9 +94,9 @@ function scrub(e) {
 
 - 同时在视频和播放/暂停按钮上添加单击事件，使点击视频画面或按钮都能使视频播放或是暂停：
 ```javascript
-video.addEventListener('click', togglePlay);
-// 其他代码
-toggle.addEventListener('click', togglePlay);
+    video.addEventListener('click', togglePlay);
+    // 其他代码
+    toggle.addEventListener('click', togglePlay);
 ```
 
 - 全屏功能：
