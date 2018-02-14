@@ -24,8 +24,21 @@ while (index < keys.length) {
     while (index2 < row.length) {
         kbd = document.createElement('kbd');
         kbd.textContent = row[index2];
+        var button = document.createElement('button');
+        button.textContent = '编辑';
+        button.id = row[index2]; // 用于区别下面代码中输出的 button
+        kbd.appendChild(button);
         div.appendChild(kbd);
         index2 = index2 + 1;
+
+        // 点击按键的编辑功能
+        button.onclick = function (e) {
+            // console.log(button); // 输出 <button id="m">编辑</button>，id 值不变
+            console.log(e['target']); // id 值会变
+            var key = e['target']['id'];
+            var x = prompt('请输入一个网址：');
+            hash[key] = x;
+        }
     }
     index = index + 1;
 }
