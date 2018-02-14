@@ -17,12 +17,12 @@ var hash = {
 // 生成按键
 var index = 0;
 while (index < keys.length) {
-    div = document.createElement('div');
+    var div = document.createElement('div');
     main.appendChild(div); // ID 名可以直接用
-    row = keys[index];
+    var row = keys[index];
     var index2 = 0;
     while (index2 < row.length) {
-        kbd = document.createElement('kbd');
+        var kbd = document.createElement('kbd');
         kbd.textContent = row[index2];
         var button = document.createElement('button');
         button.textContent = '编辑';
