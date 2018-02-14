@@ -14,7 +14,14 @@ var hash = {
     'q': 'qq.com', 'w': '163.com', 'e': 'ele.me', 'r': 'renren.com', 't': 'taobao.com', 'y': 'youku.com', 'u': 'cn.ubuntu.com' , 'i': 'iqiyi.com', 'o': 'opera.com', 'p': 'pptv.com', 'a': 'acfun.tv', 's': 'sohu.com', 'z': 'zhihu.com', 'm': 'www.mcdonalds.com.cn'
 }
 
-// 生成按键
+// 取出 localStorage 里备份过的 hash
+var hashInLocalStorage = JSON.parse(localStorage.getItem('hashInLocalStorage')
+                                    || 'null'); // 不能是空字符串，空字符串会在第一次覆盖时出错
+if (hashInLocalStorage) { // 避免 hashInLocalStorage 有可能为空的情况
+    hash = hashInLocalStorage;
+}
+
+// 生成按键，按键里有编辑按钮
 var index = 0;
 while (index < keys.length) {
     var div = document.createElement('div');
@@ -38,6 +45,10 @@ while (index < keys.length) {
             var key = e['target']['id'];
             var x = prompt('请输入一个网址：');
             hash[key] = x;
+
+            // 将变更后的 hash 备份到 localStorage 里面
+            localStorage.setItem('hashInLocalStorage', JSON.stringify(hash));
+            console.log(hash);
         }
     }
     index = index + 1;
