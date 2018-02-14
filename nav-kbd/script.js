@@ -25,12 +25,14 @@ if (hashInLocalStorage) { // 避免 hashInLocalStorage 有可能为空的情况
 var index = 0;
 while (index < keys.length) {
     var div = document.createElement('div');
+    div.className = 'row';
     main.appendChild(div); // ID 名可以直接用
     var row = keys[index];
     var index2 = 0;
     while (index2 < row.length) {
         var kbd = document.createElement('kbd');
         kbd.textContent = row[index2];
+        kbd.className = 'key';
         var button = document.createElement('button');
         button.textContent = '编辑';
         button.id = row[index2]; // 用于区别下面代码中输出的 button
