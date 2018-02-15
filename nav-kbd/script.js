@@ -31,13 +31,26 @@ while (index < keys.length) {
     var index2 = 0;
     while (index2 < row.length) {
         var kbd = document.createElement('kbd');
-        kbd.textContent = row[index2];
         kbd.className = 'key';
+        var span = document.createElement('span');
+        span.className = 'text';
+        span.textContent = row[index2];
         var button = document.createElement('button');
         button.textContent = '编辑';
         button.id = row[index2]; // 用于区别下面代码中输出的 button
         var img = document.createElement('img');
-        img.src = 'http://' + hash[row[index2]] + '/favicon.ico';
+        if (hash[row[index2]]) {
+            img.src = 'http://' + hash[row[index2]] + '/favicon.ico';
+        } else {
+            img.src = './imgs/placeholder.png';
+        }
+
+        // 图片加载出错时：
+        img.onerror = function (e) {
+            e.target.src = './imgs/placeholder.png';
+        }
+
+        kbd.appendChild(span);
         kbd.appendChild(img);
         kbd.appendChild(button);
         div.appendChild(kbd);
@@ -47,9 +60,15 @@ while (index < keys.length) {
         button.onclick = function (e) {
             // console.log(button); // 输出 <button id="m">编辑</button>，id 值不变
             console.log(e['target']); // id 值会变
-            var key = e['target']['id'];
+            var button2 = e['target'];
+            var img2 = button2.previousSibling;
+            var key = button2['id'];
             var x = prompt('请输入一个网址：');
             hash[key] = x;
+            img2.src = 'http://' + x + '/favicon.ico';
+            img2.onerror = function (e) {
+                e.target.src = './imgs/placeholder.png';
+            }
 
             // 将变更后的 hash 备份到 localStorage 里面
             localStorage.setItem('hashInLocalStorage', JSON.stringify(hash));

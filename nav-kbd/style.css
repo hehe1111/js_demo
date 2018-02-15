@@ -42,11 +42,11 @@ main {
     margin: 20px;
 }
 
-.row .key {
+.row kbd.key {
     margin: 0 10px;
 }
 
-.key {
+kbd.key {
     width: 50px;
     height: 40px;
     border: 1px solid #373737;
@@ -54,19 +54,17 @@ main {
     background: linear-gradient(to bottom, #292929 0%,#111111 100%);
     box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 1px #1F2020, 0 3px 0 2px #080808;
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
     text-transform: uppercase;
     color: #C5C5C5;
     font-size: 16px;
     font-family: Helvetica;
 
     position: relative;
+
+    display: inline-block;
 }
 
-kbd > button {
+kbd.key > button {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -74,6 +72,21 @@ kbd > button {
     display: none;
 }
 
-kbd:hover > button {
+kbd.key:hover > button {
     display: inline-block;
+}
+
+kbd.key > .text {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+kbd.key > img {
+    width: 16px;
+    height: 16px;
+
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
 }
