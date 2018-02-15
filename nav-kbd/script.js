@@ -24,7 +24,7 @@ function init() {
         'length': 3
     }
     var hash = {
-        'q': 'mail.qq.com', 'w': 'music.163.com', 'e': 'ele.me', 'r': 'zimuzu.tv', 't': 'taobao.com', 'y': 'yxdm.tv', 'u': 'cn.udacity.com' , 'i': 'ife.baidu.com', 'o': 'outlook.live.com', 'p': 'panduoduo.top', 'a': 'acfun.cn', 's': 'bbs.saraba1st.com', 'd': 'dilidili.wang', 'f': 'facebook.com', 'g': 'github.com', 'h': 'alpha.wallhaven.cc', 'j': 'javascript.ruanyifeng.com', 'k': 'khanacademy.org', 'l': 'cn.linkedin.com', 'z': 'zhihu.com', 'x': 'ctrip.com', 'c': 'coursera.org', 'v': 'v2ex.com', 'b': 'bilibili.com', 'n': 'nba.com', 'm': 'developer.mozilla.org'
+        'q': 'mail.qq.com', 'w': 'music.163.com', 'e': 'ele.me', 'r': 'zimuzu.tv', 't': 'taobao.com', 'y': 'yxdm.tv', 'u': 'cn.udacity.com' , 'i': 'ife.baidu.com', 'o': 'outlook.live.com', 'p': 'panduoduo.top', 'a': 'acfun.cn', 's': 'bbs.saraba1st.com', 'd': 'dilidili.wang', 'f': 'facebook.com', 'g': 'github.com', 'h': 'alpha.wallhaven.cc', 'j': 'javascript.ruanyifeng.com', 'k': 'kuwo.cn', 'l': 'cn.linkedin.com', 'z': 'zhihu.com', 'x': 'ctrip.com', 'c': 'coursera.org', 'v': 'v2ex.com', 'b': 'bilibili.com', 'n': 'nba.com', 'm': 'developer.mozilla.org'
     }
 
     // 取出 localStorage 里备份过的 hash
