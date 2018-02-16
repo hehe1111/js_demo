@@ -21,7 +21,7 @@
     - [CanvasRenderingContext2D.lineWidth](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/lineWidth)：线的宽度
     - [CanvasRenderingContext2D.lineCap](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/lineCap)：线的末尾
     - [CanvasRenderingContext2D.lineJoin](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/lineJoin)：线的拐点
-    - [CanvasRenderingContext2D.strokeStyle](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/strokeStyle)：画笔的颜色
+    - [CanvasRenderingContext2D.strokeStyle](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/strokeStyle)：边框的颜色
     - [CanvasRenderingContext2D.fillStyle](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/fillStyle)：图形填充颜色
     - [CanvasRenderingContext2D.beginPath()](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/beginPath)：通过清空子路径列表开始一个新路径的方法。
     - [CanvasRenderingContext2D.moveTo()](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/moveTo)：将一个新的子路径的起始点移动到`(x，y)`坐标的方法。
