@@ -16,6 +16,7 @@
 ## 记录：
 - [`<color>`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value#%E7%AA%9C%E6%94%B9)
 - [Canvas](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)
+- [CanvasRenderingContext2D](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D)
 - [HTMLCanvasElement.getContext()](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/getContext#%E8%AF%AD%E6%B3%95)：返回canvas 的上下文或者返回 null 如果上下文没有定义。[参考例子](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/getContext#%E4%BE%8B%E5%AD%90)
     - [CanvasRenderingContext2D.lineWidth](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/lineWidth)：线的宽度
     - [CanvasRenderingContext2D.lineCap](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/lineCap)：线的末尾
