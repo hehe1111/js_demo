@@ -1,12 +1,12 @@
 const canvas = document.querySelector('#draw');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-const ctx = canvas.getContext('2d');
-ctx.lineWidth = 90;
-ctx.lineCap = "round";
-ctx.lineJoin = "round";
-ctx.strokeStyle = "#f00";
-ctx.fillStyle = "#f00";
+const context = canvas.getContext('2d');
+context.lineWidth = 90;
+context.lineCap = "round";
+context.lineJoin = "round";
+context.strokeStyle = "#f00";
+context.fillStyle = "#f00";
 
 let isDrawing = false;
 let lastX = 0;
@@ -31,7 +31,7 @@ function draw(e) {
     }
 
 	// 彩虹效果
-    ctx.strokeStyle = `hsl(${ hue }, 90%, 50%)`;
+    context.strokeStyle = `hsl(${ hue }, 90%, 50%)`;
     if (hue >= 360) {
         hue = 0;
     }
@@ -39,31 +39,31 @@ function draw(e) {
     console.log('色相值为：' + hue);
 
 	// 水墨效果
-	// ctx.strokeStyle = `rgba(0, 0, 0, ${ hue })`;
+	// context.strokeStyle = `rgba(0, 0, 0, ${ hue })`;
 	// if(hue >= 0.7) hue = 0;
 	// hue += 0.01;
     // console.log('色相值为：' + hue);
 
 	// 控制笔触大小
-    // if(ctx.lineWidth > 120 || ctx.lineWidth < 10) {
+    // if(context.lineWidth > 120 || context.lineWidth < 10) {
     //     direction = !direction;
     // }
     // if (direction) {
-    //     ctx.lineWidth++;
+    //     context.lineWidth++;
     // } else {
-    //     ctx.lineWidth--;
+    //     context.lineWidth--;
     // }
 
 	// 控制绘制路径
-    ctx.beginPath();
+    context.beginPath();
 
-    ctx.moveTo(lastX, lastY); // 起点
-    ctx.lineTo(x, y); // 终点
-    ctx.stroke(); // 绘制起点到终点的路径
+    context.moveTo(lastX, lastY); // 起点
+    context.lineTo(x, y); // 终点
+    context.stroke(); // 绘制起点到终点的路径
 	// lastX = x;
 	// lastY = y;
     [lastX, lastY] = [x, y];
-	// console.log(ctx.lineWidth);
+	// console.log(context.lineWidth);
 	// console.log(x +"-" + e.offsetX);
 }
 
