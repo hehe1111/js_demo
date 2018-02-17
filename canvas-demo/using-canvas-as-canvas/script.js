@@ -1,21 +1,29 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-function fullScreenCanvas() {
-    var pageWidth = document.documentElement.clientWidth;
-    var pageHeight = document.documentElement.clientHeight;
-    canvas.width = pageWidth;
-    canvas.height = pageHeight;
+var eraserEnabled = false;
+var eraserButton = document.getElementById('eraser');
+eraserButton.onclick = function () {
+    eraserEnabled = !eraserEnabled;
 }
 
-fullScreenCanvas();
-window.onresize = function () {
+autoFullScreenCanvas(canvas);
+
+listenToMouse(canvas);
+
+function autoFullScreenCanvas(canvas) {
+    function fullScreenCanvas() {
+        var pageWidth = document.documentElement.clientWidth;
+        var pageHeight = document.documentElement.clientHeight;
+        canvas.width = pageWidth;
+        canvas.height = pageHeight;
+    }
+    
     fullScreenCanvas();
+    window.onresize = function () {
+        fullScreenCanvas();
+    }
 }
-
-var using = false; // using 由于判断是否按下鼠标
-var lastPoint = { 'x': undefined, 'y': undefined }
-var newPoint = { 'x': undefined, 'y': undefined }
 
 function drawCircle(x, y, radius=2, color='pink') {
     context.beginPath();
@@ -45,29 +53,33 @@ function drawLine(startX, startY, endX, endY, lineWidth=4, color='pink') {
     context.stroke();
 }
 
-canvas.onmousedown = function (e) {
-    var x = e.clientX;
-    var y = e.clientY;
-    if (usingEraser) {
-        using = true;
-        context.clearRect(x-5, y-5, 10, 10);
-    } else {
-        using = true;
-        lastPoint = { 'x': x, 'y': y }
-    
-        drawCircle(x, y);
-    }
-}
+function listenToMouse(canvas) {
+    var using = false; // using 由于判断是否按下鼠标
+    var lastPoint = { 'x': undefined, 'y': undefined }
+    var newPoint = { 'x': undefined, 'y': undefined }
 
-canvas.onmousemove = function (e) {
-    var x = e.clientX;
-    var y = e.clientY;
-    if (usingEraser) {
-        if (using) {
+    canvas.onmousedown = function (e) {
+        using = true; // 按下鼠标，所以为 true
+        var x = e.clientX;
+        var y = e.clientY;
+        if (eraserEnabled) {
             context.clearRect(x-5, y-5, 10, 10);
+        } else {
+            lastPoint = { 'x': x, 'y': y }
+        
+            drawCircle(x, y);
         }
-    } else {
-        if (using) {
+    }
+    
+    canvas.onmousemove = function (e) {
+        var x = e.clientX;
+        var y = e.clientY;
+
+        if (!using) { return }
+
+        if (eraserEnabled) {
+            context.clearRect(x-5, y-5, 10, 10);
+        } else {
             newPoint = { 'x': x, 'y': y }
     
             drawCircle(x, y); // 加上这一句能够减少画线时线的细微断层
@@ -76,15 +88,8 @@ canvas.onmousemove = function (e) {
             lastPoint = newPoint; // 最重要的是这一句
         }
     }
-
-}
-
-canvas.onmouseup = function (e) {
-    using = false;
-}
-
-var usingEraser = false;
-var eraserButton = document.getElementById('eraser');
-eraserButton.onclick = function () {
-    usingEraser = !usingEraser;
+    
+    canvas.onmouseup = function (e) {
+        using = false;
+    }
 }
