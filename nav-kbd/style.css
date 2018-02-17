@@ -47,8 +47,8 @@ main {
 }
 
 kbd.key {
-    width: 50px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     border: 1px solid #373737;
     border-radius: 6px;
     background: linear-gradient(to bottom, #292929 0%,#111111 100%);
@@ -77,9 +77,13 @@ kbd.key:hover > button {
 }
 
 kbd.key > .text {
+    font-size: 24px;
+    line-height: 1.2;
+
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 kbd.key > img {
