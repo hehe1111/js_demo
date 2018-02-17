@@ -30,32 +30,23 @@ var pageHeight = document.documentElement.clientHeight;
 只要按下鼠标，则 `using = true`；否则，`using = false`。
 ```javascript
 canvas.onmousedown = function (e) {
+    clicked = true; // 用于 onmousemove 事件中的 clicked
     // x y
     if (eraserEnabled) {
-        using = true; // 用于 onmousemove 事件中的 using
         // 擦除
     } else {
-        using = true; // 用于 onmousemove 事件中的 using
         // 画
     }
 }
 
 canvas.onmousemove = function (e) {
     // x y
-    if (eraserEnabled) {
-        if (using) {
-            // 擦除。只有当 eraserEnabled 和按下鼠标同时满足时。
-        }
-    } else {
-        if (using) {
-            // 画
-        }
-    }
-
+    if (!clicked) { return }
+    //
 }
 
 canvas.onmouseup = function (e) {
-    using = false;
+    clicked = false;
 }
 ```
 
