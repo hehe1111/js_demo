@@ -27,7 +27,7 @@ var pageHeight = document.documentElement.clientHeight;
 
 ---
 
-只要按下鼠标，则 `using = true`；否则，`using = false`。
+只要按下鼠标，则 `clicked = true`；否则，`clicked = false`。
 ```javascript
 canvas.onmousedown = function (e) {
     clicked = true; // 用于 onmousemove 事件中的 clicked
