@@ -61,12 +61,12 @@ function drawLine(startX, startY, endX, endY, lineWidth=4, color='pink') {
 }
 
 function listenToMouse(canvas) {
-    var using = false; // using 由于判断是否按下鼠标
+    var clicked = false; // clicked 由于判断是否按下鼠标
     var lastPoint = { 'x': undefined, 'y': undefined }
     var newPoint = { 'x': undefined, 'y': undefined }
 
     canvas.onmousedown = function (e) {
-        using = true; // 按下鼠标，所以为 true
+        clicked = true; // 按下鼠标，所以为 true
         var x = e.clientX;
         var y = e.clientY;
         if (eraserEnabled) {
@@ -82,7 +82,7 @@ function listenToMouse(canvas) {
         var x = e.clientX;
         var y = e.clientY;
 
-        if (!using) { return }
+        if (!clicked) { return }
 
         if (eraserEnabled) {
             context.clearRect(x-5, y-5, 10, 10);
@@ -97,6 +97,6 @@ function listenToMouse(canvas) {
     }
     
     canvas.onmouseup = function (e) {
-        using = false;
+        clicked = false;
     }
 }
