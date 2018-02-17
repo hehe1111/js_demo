@@ -14,16 +14,31 @@
             background-color: grey;
         }
 
-        #eraser {
+        .actions {
             position: fixed;
             top: 0;
             left: 0;
+        }
+
+        .actions > #brush {
+            display: none;
+        }
+
+        .actions.eraser-enabled > #brush {
+            display: inline-block;
+        }
+
+        .actions.eraser-enabled > #eraser {
+            display: none;
         }
     </style>
 </head>
 <body>
     <canvas id="canvas" width=300 height=300></canvas>
-    <button id="eraser">橡皮檫</button>
+    <div class="actions" id="actions">
+        <button id="eraser">橡皮檫</button>
+        <button id="brush">画笔</button>
+    </div>
 
     <script src="./script.js" charset="utf-8"></script>
 </body>

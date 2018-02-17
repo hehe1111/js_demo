@@ -2,9 +2,16 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
 var eraserEnabled = false;
+var actions = document.getElementById('actions');
 var eraserButton = document.getElementById('eraser');
+var brushButton = document.getElementById('brush');
 eraserButton.onclick = function () {
-    eraserEnabled = !eraserEnabled;
+    eraserEnabled = true;
+    actions.className = 'actions eraser-enabled'
+}
+brushButton.onclick = function () {
+    eraserEnabled = false;
+    actions.className = 'actions'
 }
 
 autoFullScreenCanvas(canvas);
