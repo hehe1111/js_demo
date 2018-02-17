@@ -1,5 +1,18 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
+
+function fullScreenCanvas() {
+    var pageWidth = document.documentElement.clientWidth;
+    var pageHeight = document.documentElement.clientHeight;
+    canvas.width = pageWidth;
+    canvas.height = pageHeight;
+}
+
+fullScreenCanvas();
+window.onresize = function () {
+    fullScreenCanvas();
+}
+
 var painting = false;
 var lastPoint = { 'x': undefined, 'y': undefined }
 var newPoint = { 'x': undefined, 'y': undefined }
