@@ -13,7 +13,7 @@ window.onresize = function () {
     fullScreenCanvas();
 }
 
-var painting = false;
+var using = false; // using 由于判断是否按下鼠标
 var lastPoint = { 'x': undefined, 'y': undefined }
 var newPoint = { 'x': undefined, 'y': undefined }
 
@@ -46,27 +46,45 @@ function drawLine(startX, startY, endX, endY, lineWidth=4, color='pink') {
 }
 
 canvas.onmousedown = function (e) {
-    painting = true;
     var x = e.clientX;
     var y = e.clientY;
-    lastPoint = { 'x': x, 'y': y }
-
-    drawCircle(x, y);
-}
-
-canvas.onmousemove = function (e) {
-    if (painting) {
-        var x = e.clientX;
-        var y = e.clientY;
-        newPoint = { 'x': x, 'y': y }
-
-        drawCircle(x, y); // 加上这一句能够减少画线时线的细微断层
-        drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
-
-        lastPoint = newPoint; // 最重要的是这一句
+    if (usingEraser) {
+        using = true;
+        context.clearRect(x-5, y-5, 10, 10);
+    } else {
+        using = true;
+        lastPoint = { 'x': x, 'y': y }
+    
+        drawCircle(x, y);
     }
 }
 
+canvas.onmousemove = function (e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    if (usingEraser) {
+        if (using) {
+            context.clearRect(x-5, y-5, 10, 10);
+        }
+    } else {
+        if (using) {
+            newPoint = { 'x': x, 'y': y }
+    
+            drawCircle(x, y); // 加上这一句能够减少画线时线的细微断层
+            drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
+    
+            lastPoint = newPoint; // 最重要的是这一句
+        }
+    }
+
+}
+
 canvas.onmouseup = function (e) {
-    painting = false;
+    using = false;
+}
+
+var usingEraser = false;
+var eraserButton = document.getElementById('eraser');
+eraserButton.onclick = function () {
+    usingEraser = !usingEraser;
 }
