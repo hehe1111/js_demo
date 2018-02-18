@@ -102,6 +102,18 @@ function listenToUser(canvas) {
     clearIcon.onclick = function () {
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
+
+    // 保存下载
+    var downloadIcon = document.getElementById('download');
+    downloadIcon.onclick = function () {
+        var url = canvas.toDataURL('image/png');
+        console.log(url);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = '我的画儿'; // 保存时图片的名称
+        a.target = '_blank';
+        a.click();
+    }
     
     // 特性检测
     if (document.documentElement.ontouchstart !== undefined) {
