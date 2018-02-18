@@ -16,7 +16,7 @@ brushButton.onclick = function () {
 
 autoFullScreenCanvas(canvas);
 
-listenToMouse(canvas);
+listenToUser(canvas);
 
 function autoFullScreenCanvas(canvas) {
     function fullScreenCanvas() {
@@ -25,7 +25,7 @@ function autoFullScreenCanvas(canvas) {
         canvas.width = pageWidth;
         canvas.height = pageHeight;
     }
-    
+
     fullScreenCanvas();
     window.onresize = function () {
         fullScreenCanvas();
@@ -60,43 +60,86 @@ function drawLine(startX, startY, endX, endY, lineWidth=4, color='pink') {
     context.stroke();
 }
 
-function listenToMouse(canvas) {
-    var clicked = false; // clicked 由于判断是否按下鼠标
+function listenToUser(canvas) {
     var lastPoint = { 'x': undefined, 'y': undefined }
     var newPoint = { 'x': undefined, 'y': undefined }
 
-    canvas.onmousedown = function (e) {
-        clicked = true; // 按下鼠标，所以为 true
-        var x = e.clientX;
-        var y = e.clientY;
-        if (eraserEnabled) {
-            context.clearRect(x-5, y-5, 10, 10);
-        } else {
-            lastPoint = { 'x': x, 'y': y }
-        
-            drawCircle(x, y);
-        }
-    }
-    
-    canvas.onmousemove = function (e) {
-        var x = e.clientX;
-        var y = e.clientY;
+    // 特性检测
+    if (document.documentElement.ontouchstart !== undefined) {
+        // 触屏设备
+        canvas.ontouchstart = function (e) {
+            var x = e.touches[0].clientX;
+            var y = e.touches[0].clientY;
+            if (eraserEnabled) {
+                context.clearRect(x - 5, y - 5, 10, 10);
+            } else {
+                lastPoint = { 'x': x, 'y': y }
 
-        if (!clicked) { return }
-
-        if (eraserEnabled) {
-            context.clearRect(x-5, y-5, 10, 10);
-        } else {
-            newPoint = { 'x': x, 'y': y }
-    
-            drawCircle(x, y); // 加上这一句能够减少画线时线的细微断层
-            drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
-    
-            lastPoint = newPoint; // 最重要的是这一句
+                drawCircle(x, y);
+            }
         }
-    }
-    
-    canvas.onmouseup = function (e) {
-        clicked = false;
+
+        canvas.ontouchmove = function (e) {
+            var x = e.touches[0].clientX;
+            var y = e.touches[0].clientY;
+
+            // if (!clicked) { return }
+
+            if (eraserEnabled) {
+                context.clearRect(x - 5, y - 5, 10, 10);
+            } else {
+                newPoint = { 'x': x, 'y': y }
+
+                drawCircle(x, y); // 加上这一句能够减少画线时线的细微断层
+                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
+
+                lastPoint = newPoint; // 最重要的是这一句
+            }
+
+        }
+
+        canvas.ontouchend = function (e) {
+            console.log('touch end');
+            // console.log(e);
+            
+        }
+    } else {
+        var clicked = false; // clicked 由于判断是否按下鼠标
+
+        // 非触屏设备
+        canvas.onmousedown = function (e) {
+            clicked = true; // 按下鼠标，所以为 true
+            var x = e.clientX;
+            var y = e.clientY;
+            if (eraserEnabled) {
+                context.clearRect(x-5, y-5, 10, 10);
+            } else {
+                lastPoint = { 'x': x, 'y': y }
+
+                drawCircle(x, y);
+            }
+        }
+
+        canvas.onmousemove = function (e) {
+            var x = e.clientX;
+            var y = e.clientY;
+
+            if (!clicked) { return }
+
+            if (eraserEnabled) {
+                context.clearRect(x-5, y-5, 10, 10);
+            } else {
+                newPoint = { 'x': x, 'y': y }
+
+                drawCircle(x, y); // 加上这一句能够减少画线时线的细微断层
+                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
+
+                lastPoint = newPoint; // 最重要的是这一句
+            }
+        }
+
+        canvas.onmouseup = function (e) {
+            clicked = false;
+        }
     }
 }
