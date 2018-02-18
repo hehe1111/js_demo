@@ -8,38 +8,54 @@
     <style>
         body{
             margin: 0; /* 有助于使 canvas 覆盖整个视口 */
+            font-size: 16px;
         }
 
         #canvas {
-            background-color: grey;
+            background-color: white;
         }
 
         .actions {
+            padding: 20px;
+
             position: fixed;
             top: 0;
             left: 0;
         }
 
-        .actions > #brush {
-            display: none;
+        .actions svg {
+            width: 1.5em;
+            height: 1.5em;
+            margin: 0 10px;
+
+            transition: all 0.3s;
         }
 
-        .actions.eraser-enabled > #brush {
-            display: inline-block;
+        .actions svg.active{
+            fill: red;
+            transform: scale(1.2);
         }
 
-        .actions.eraser-enabled > #eraser {
-            display: none;
+        .icon {
+            width: 1em; height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
     <canvas id="canvas" width=300 height=300></canvas>
     <div class="actions" id="actions">
-        <button id="eraser">橡皮檫</button>
-        <button id="brush">画笔</button>
+        <svg class="icon active" id="pen">
+            <use xlink:href="#icon-pen"></use>
+        </svg>
+        <svg class="icon" id="eraser">
+            <use xlink:href="#icon-eraser"></use>
+        </svg>
     </div>
 
     <script src="./script.js" charset="utf-8"></script>
+    <script src="//at.alicdn.com/t/font_570775_wazabphu40zr529.js"></script>
 </body>
 </html>

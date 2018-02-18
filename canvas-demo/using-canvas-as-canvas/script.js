@@ -3,15 +3,17 @@ var context = canvas.getContext('2d');
 
 var eraserEnabled = false;
 var actions = document.getElementById('actions');
-var eraserButton = document.getElementById('eraser');
-var brushButton = document.getElementById('brush');
-eraserButton.onclick = function () {
+var eraserIcon = document.getElementById('eraser');
+var penIcon = document.getElementById('pen');
+eraserIcon.onclick = function () {
     eraserEnabled = true;
-    actions.className = 'actions eraser-enabled'
+    eraserIcon.classList.add('active');
+    penIcon.classList.remove('active');
 }
-brushButton.onclick = function () {
+penIcon.onclick = function () {
     eraserEnabled = false;
-    actions.className = 'actions'
+    penIcon.classList.add('active');
+    eraserIcon.classList.remove('active');
 }
 
 autoFullScreenCanvas(canvas);
