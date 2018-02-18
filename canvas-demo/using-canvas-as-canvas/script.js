@@ -22,6 +22,7 @@ function autoFullScreenCanvas(canvas) {
 function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
     context.lineWidth = lineWidth;
     context.strokeStyle = color;
+    context.lineCap = 'round';
 
     context.beginPath();
     context.moveTo(startX, startY);
