@@ -13,9 +13,21 @@ function autoFullScreenCanvas(canvas) {
         canvas.height = pageHeight;
     }
 
+    function generateWhiteCanvas() {
+        context.fillStyle = 'white';
+        context.beginPath();
+        context.moveTo(0, 0);
+        context.lineTo(canvas.width, 0);
+        context.lineTo(canvas.width, canvas.height);
+        context.lineTo(0, canvas.height);
+        context.fill();
+    }
+
     fullScreenCanvas();
+    generateWhiteCanvas();
     window.onresize = function () {
         fullScreenCanvas();
+        generateWhiteCanvas();
     }
 }
 
