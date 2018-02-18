@@ -121,6 +121,7 @@ function listenToUser(canvas) {
         var url = canvas.toDataURL('image/png');
         console.log(url);
         var a = document.createElement('a');
+        document.body.appendChild(a);
         a.href = url;
         a.download = '我的画儿'; // 保存时图片的名称
         a.target = '_blank';
