@@ -1,6 +1,6 @@
 [demo 预览链接](https://hehe1111.github.io/js_demo/nav-kbd/index.html)
 
-[参考链接](http://www.36start.com/)
+[参考链接：http://www.36start.com/](http://www.36start.com/)
 
 [键盘样式参考](http://mcdlr.com/key-sheet/)
 
@@ -13,7 +13,7 @@
     - [Location](https://developer.mozilla.org/zh-CN/docs/Web/API/Location)
 
 - [window.open](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/open)
-- [参考链接1](https://github.com/hehe1111/js_demo/blob/master/js30/12%20-%20Key%20Sequence%20Detection/README.md)
+- [参考链接：JS30 - 12 - Key Sequence Detection](https://github.com/hehe1111/js_demo/blob/master/js30/12%20-%20Key%20Sequence%20Detection/README.md)
 - [Event.target](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/target)
 ```javascript
     button.onclick = function (e) {
@@ -27,7 +27,7 @@
 
 ---
 
-- [参考链接2](https://github.com/hehe1111/js_demo/blob/master/js30/15%20-%20LocalStorage/README.md)
+- [参考链接：JS30 -15 - LocalStorage](https://github.com/hehe1111/js_demo/blob/master/js30/15%20-%20LocalStorage/README.md)
 
 - [Window.localStorage](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage)
 > localStorage 类似于sessionStorage，区别在于，数据存储在 localStorage 是**无期限**的，而数据存储在sessionStorage 会被清除， 当页面会话结束时——也就是说当页面被关闭。
