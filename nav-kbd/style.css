@@ -120,8 +120,9 @@ kbd.key > img {
 }
 
 #search-input {
-    width: 646px;
+    width: 640px;
     height: 46px;
+    padding-left: 6px;
     margin-top: 3px;
     border-style: none;
     border-radius: 6px;
