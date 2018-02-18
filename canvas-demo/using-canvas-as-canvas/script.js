@@ -104,7 +104,7 @@ function listenToUser(canvas) {
 
         }
     } else {
-        var clicked = false; // clicked 由于判断是否按下鼠标
+        var clicked = false; // clicked 用于判断是否按下鼠标
 
         // 非触屏设备
         canvas.onmousedown = function (e) {
