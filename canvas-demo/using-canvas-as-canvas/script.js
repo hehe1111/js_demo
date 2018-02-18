@@ -32,9 +32,9 @@ function autoFullScreenCanvas(canvas) {
     }
 }
 
-function drawCircle(x, y, radius=2, color='pink') {
+function drawCircle(x, y, radius = 2, color = 'pink') {
     context.beginPath();
-    context.arc(x, y, radius, 0, Math.PI*2);
+    context.arc(x, y, radius, 0, Math.PI * 2);
 
     // 点
     context.fillStyle = color;
@@ -50,13 +50,13 @@ function drawCircle(x, y, radius=2, color='pink') {
 // drawLine() 的 lineWidth 参数的一半
 // color 参数默认一致
 
-function drawLine(startX, startY, endX, endY, lineWidth=4, color='pink') {
+function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
     context.lineWidth = lineWidth;
     context.strokeStyle = color;
 
     context.beginPath();
     context.moveTo(startX, startY);
-    context.lineTo(endX,endY);
+    context.lineTo(endX, endY);
     context.stroke();
 }
 
@@ -101,7 +101,7 @@ function listenToUser(canvas) {
         canvas.ontouchend = function (e) {
             console.log('touch end');
             // console.log(e);
-            
+
         }
     } else {
         var clicked = false; // clicked 由于判断是否按下鼠标
@@ -112,7 +112,7 @@ function listenToUser(canvas) {
             var x = e.clientX;
             var y = e.clientY;
             if (eraserEnabled) {
-                context.clearRect(x-5, y-5, 10, 10);
+                context.clearRect(x - 5, y - 5, 10, 10);
             } else {
                 lastPoint = { 'x': x, 'y': y }
 
@@ -127,7 +127,7 @@ function listenToUser(canvas) {
             if (!clicked) { return }
 
             if (eraserEnabled) {
-                context.clearRect(x-5, y-5, 10, 10);
+                context.clearRect(x - 5, y - 5, 10, 10);
             } else {
                 newPoint = { 'x': x, 'y': y }
 
