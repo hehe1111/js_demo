@@ -27,6 +27,30 @@ var pageHeight = document.documentElement.clientHeight;
 
 ---
 
+```javascript
+// 画圈函数
+// 参数:：圆心坐标（x，y）  半径  填充、描边颜色
+function drawCircle(x, y, radius = 2, color = 'pink') {
+    context.beginPath();
+    context.arc(x, y, radius, 0, Math.PI * 2);
+
+    // 点
+    context.fillStyle = color;
+    context.fill();
+
+    // 圈
+    // radius 太小会使圈看起来像点
+    // context.strokeStyle = color;
+    // context.stroke();
+}
+
+// drawCircle() 的 radius 参数必须是
+// drawLine() 的 lineWidth 参数的一半
+// color 参数默认一致
+```
+
+---
+
 ### PC 端鼠标事件
 只要按下鼠标，则 `clicked = true`；否则，`clicked = false`。
 ```javascript
@@ -108,3 +132,7 @@ context.clearRect(x-5, y-5, 10, 10);
     - [TouchEvent.targetTouches](https://developer.mozilla.org/zh-CN/docs/Web/API/TouchEvent/targetTouches)
     - [TouchEvent.touches](https://developer.mozilla.org/zh-CN/docs/Web/API/TouchEvent/touches)
     - 以上三个属性均有`clientX`、`clientY`、`pageX`、`pageY`、`radiusX`、`radiusY`、`screenX`、`screenY`属性
+
+---
+
+- `onclick`事件兼容触屏设备。
