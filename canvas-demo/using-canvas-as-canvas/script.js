@@ -104,6 +104,17 @@ function listenToUser(canvas) {
         blue.classList.add('active');
     }
 
+    // 切换画笔粗细
+    var thin = document.getElementById('thin');
+    var thick = document.getElementById('thick');
+    thin.onclick = function () {
+        context.lineWidth = 5;
+    }
+    thick.onclick = function () {
+        context.lineWidth = 10;
+    }
+    
+
     // 特性检测
     if (document.documentElement.ontouchstart !== undefined) {
         // 触屏设备
@@ -131,7 +142,7 @@ function listenToUser(canvas) {
                 newPoint = { 'x': x, 'y': y }
 
                 drawCircle(x, y, 2, context.fillStyle); // 加上这一句能够减少画线时线的细微断层
-                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, 4, context.strokeStyle);
+                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, context.lineWidth, context.strokeStyle);
 
                 lastPoint = newPoint; // 最重要的是这一句
             }
@@ -172,7 +183,7 @@ function listenToUser(canvas) {
                 newPoint = { 'x': x, 'y': y }
 
                 drawCircle(x, y, 2, context.fillStyle); // 加上这一句能够减少画线时线的细微断层
-                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, 4, context.strokeStyle);
+                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, context.lineWidth, context.strokeStyle);
 
                 lastPoint = newPoint; // 最重要的是这一句
             }
