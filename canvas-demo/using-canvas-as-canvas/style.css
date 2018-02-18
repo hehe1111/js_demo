@@ -1,0 +1,36 @@
+body{
+    margin: 0; /* 有助于使 canvas 覆盖整个视口 */
+    font-size: 16px;
+}
+
+#canvas {
+    background-color: white;
+}
+
+.actions {
+    padding: 20px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.actions svg {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 10px;
+
+    transition: all 0.3s;
+}
+
+.actions svg.active{
+    fill: red;
+    transform: scale(1.2);
+}
+
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
