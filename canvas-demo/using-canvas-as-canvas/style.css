@@ -6,6 +6,7 @@
 body{
     margin: 0; /* 有助于使 canvas 覆盖整个视口 */
     font-size: 16px;
+    overflow: hidden;
 }
 
 ul, ol {
