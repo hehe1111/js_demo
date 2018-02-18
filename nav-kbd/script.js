@@ -118,11 +118,37 @@ function generateKeyboard(keys, hash) {
 }
 
 function listenToUser(hash) {
+    var bingSearchButton = document.getElementById('bing');
+    var googleSearchButton = document.getElementById('google');
+    var inputElement = document.getElementById('search-input');
+
+    var keyWord = '';
+    inputElement.onchange = function () {
+        keyWord = inputElement.value;
+    };
+
+    bingSearchButton.onclick = function () {
+        window.open('https://cn.bing.com/search?q=' + keyWord, '_blank');
+    };
+
+    googleSearchButton.onclick = function () {
+        window.open('https://www.google.com/search?q=' + keyWord, '_blank');
+    };
+
     document.onkeypress = function (e) {
-        console.log(e);
-        var key = e['key']; // 或 e.key，是按键的键名
-        var website = hash[key];
-        // location.href = 'http://' + website; // 在当前窗口打开 website 对应的网址
-        window.open('http://' + website, '_blank');
-    }
+        // console.log(document.activeElement === searchKeyWord);
+        if (document.activeElement === inputElement) {
+            if (e.key === 'Enter') {
+                window.open('https://cn.bing.com/search?q=' + keyWord, '_blank');
+            } else {
+                return
+            }
+        } else {
+            console.log(e);
+            var key = e['key']; // 或 e.key，是按键的键名
+            var website = hash[key];
+            // location.href = 'http://' + website; // 在当前窗口打开 website 对应的网址
+            window.open('http://' + website, '_blank');
+        }
+    };
 }
