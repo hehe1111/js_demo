@@ -1,6 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body{
     margin: 0; /* 有助于使 canvas 覆盖整个视口 */
     font-size: 16px;
+}
+
+ul, ol {
+    list-style: none;
 }
 
 #canvas {
@@ -33,4 +42,41 @@ body{
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
+}
+
+.colors {
+    position: fixed;
+    top: 60px;
+    left: 28px;
+}
+
+.colors > li {
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.3s;
+}
+
+.colors > li.black {
+    background-color: black;
+}
+
+.colors > li.red {
+    background-color: red;
+}
+
+.colors > li.green {
+    background-color: green;
+}
+
+.colors > li.blue {
+    background-color: blue;
+}
+
+.colors > li.active {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
+    transform: scale(1.2);
 }

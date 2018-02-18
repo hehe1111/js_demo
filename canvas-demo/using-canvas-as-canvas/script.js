@@ -1,8 +1,8 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
+// 切换画笔、橡皮擦
 var eraserEnabled = false;
-var actions = document.getElementById('actions');
 var eraserIcon = document.getElementById('eraser');
 var penIcon = document.getElementById('pen');
 eraserIcon.onclick = function () {
@@ -66,6 +66,44 @@ function listenToUser(canvas) {
     var lastPoint = { 'x': undefined, 'y': undefined }
     var newPoint = { 'x': undefined, 'y': undefined }
 
+    // 切换画笔颜色
+    var black = document.getElementById('black');
+    var red = document.getElementById('red');
+    var green = document.getElementById('green');
+    var blue = document.getElementById('blue');
+    black.onclick = function () {
+        context.fillStyle = 'black';
+        context.strokeStyle = 'black';
+        black.classList.add('active');
+        red.classList.remove('active');
+        green.classList.remove('active');
+        blue.classList.remove('active');
+    }
+    red.onclick = function () {
+        context.fillStyle = 'red';
+        context.strokeStyle = 'red';
+        black.classList.remove('active');
+        red.classList.add('active');
+        green.classList.remove('active');
+        blue.classList.remove('active');
+    }
+    green.onclick = function () {
+        context.fillStyle = 'green';
+        context.strokeStyle = 'green';
+        black.classList.remove('active');
+        red.classList.remove('active');
+        green.classList.add('active');
+        blue.classList.remove('active');
+    }
+    blue.onclick = function () {
+        context.fillStyle = 'blue';
+        context.strokeStyle = 'blue';
+        black.classList.remove('active');
+        red.classList.remove('active');
+        green.classList.remove('active');
+        blue.classList.add('active');
+    }
+
     // 特性检测
     if (document.documentElement.ontouchstart !== undefined) {
         // 触屏设备
@@ -77,7 +115,7 @@ function listenToUser(canvas) {
             } else {
                 lastPoint = { 'x': x, 'y': y }
 
-                drawCircle(x, y);
+                drawCircle(x, y, 2, context.fillStyle);
             }
         }
 
@@ -92,8 +130,8 @@ function listenToUser(canvas) {
             } else {
                 newPoint = { 'x': x, 'y': y }
 
-                drawCircle(x, y); // 加上这一句能够减少画线时线的细微断层
-                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
+                drawCircle(x, y, 2, context.fillStyle); // 加上这一句能够减少画线时线的细微断层
+                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, 4, context.strokeStyle);
 
                 lastPoint = newPoint; // 最重要的是这一句
             }
@@ -118,7 +156,7 @@ function listenToUser(canvas) {
             } else {
                 lastPoint = { 'x': x, 'y': y }
 
-                drawCircle(x, y);
+                drawCircle(x, y, 2, context.fillStyle);
             }
         }
 
@@ -133,8 +171,8 @@ function listenToUser(canvas) {
             } else {
                 newPoint = { 'x': x, 'y': y }
 
-                drawCircle(x, y); // 加上这一句能够减少画线时线的细微断层
-                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
+                drawCircle(x, y, 2, context.fillStyle); // 加上这一句能够减少画线时线的细微断层
+                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, 4, context.strokeStyle);
 
                 lastPoint = newPoint; // 最重要的是这一句
             }
