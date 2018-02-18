@@ -38,7 +38,6 @@ function listenToUser(canvas) {
     var eraserEnabled = false;
     var eraserIcon = document.getElementById('eraser');
     var penIcon = document.getElementById('pen');
-    var clearIcon = document.getElementById('clear');
     eraserIcon.onclick = function () {
         eraserEnabled = true;
         eraserIcon.classList.add('active');
@@ -49,10 +48,6 @@ function listenToUser(canvas) {
         penIcon.classList.add('active');
         eraserIcon.classList.remove('active');
     }
-    clearIcon.onclick = function () {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-    }
-
 
     // 切换画笔颜色
     var black = document.getElementById('black');
@@ -101,8 +96,13 @@ function listenToUser(canvas) {
     thick.onclick = function () {
         context.lineWidth = 10;
     }
-    
 
+    // 清屏
+    var clearIcon = document.getElementById('clear');
+    clearIcon.onclick = function () {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    
     // 特性检测
     if (document.documentElement.ontouchstart !== undefined) {
         // 触屏设备
