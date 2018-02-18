@@ -1,21 +1,6 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-// 切换画笔、橡皮擦
-var eraserEnabled = false;
-var eraserIcon = document.getElementById('eraser');
-var penIcon = document.getElementById('pen');
-eraserIcon.onclick = function () {
-    eraserEnabled = true;
-    eraserIcon.classList.add('active');
-    penIcon.classList.remove('active');
-}
-penIcon.onclick = function () {
-    eraserEnabled = false;
-    penIcon.classList.add('active');
-    eraserIcon.classList.remove('active');
-}
-
 autoFullScreenCanvas(canvas);
 
 listenToUser(canvas);
@@ -65,6 +50,21 @@ function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
 function listenToUser(canvas) {
     var lastPoint = { 'x': undefined, 'y': undefined }
     var newPoint = { 'x': undefined, 'y': undefined }
+
+    // 切换画笔、橡皮擦
+    var eraserEnabled = false;
+    var eraserIcon = document.getElementById('eraser');
+    var penIcon = document.getElementById('pen');
+    eraserIcon.onclick = function () {
+        eraserEnabled = true;
+        eraserIcon.classList.add('active');
+        penIcon.classList.remove('active');
+    }
+    penIcon.onclick = function () {
+        eraserEnabled = false;
+        penIcon.classList.add('active');
+        eraserIcon.classList.remove('active');
+    }
 
     // 切换画笔颜色
     var black = document.getElementById('black');
