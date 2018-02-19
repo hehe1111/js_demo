@@ -143,3 +143,16 @@ context.clearRect(x-5, y-5, 10, 10);
 保存下载图片时，新创建的`a`元素可以不需要作为子元素添加到文档中。
 
 ---
+
+### 为画板初始化一个白底
+```javascript
+function generateWhiteCanvas(context) {
+    context.fillStyle = 'white';
+    context.beginPath();
+    context.moveTo(0, 0); // 画板左上角
+    context.lineTo(canvas.width, 0); // 右上角
+    context.lineTo(canvas.width, canvas.height); // 右下角
+    context.lineTo(0, canvas.height); // 左下角
+    context.fill(); // fill() 能够自动闭合，所以不需要 lineTo(0, 0)
+    }
+```
