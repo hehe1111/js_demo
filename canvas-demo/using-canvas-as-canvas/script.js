@@ -113,6 +113,8 @@ function listenToUser(canvas) {
     var clearIcon = document.getElementById('clear');
     clearIcon.onclick = function () {
         context.clearRect(0, 0, canvas.width, canvas.height);
+        
+        autoFullScreenCanvas(canvas, context);
     }
 
     // 保存下载

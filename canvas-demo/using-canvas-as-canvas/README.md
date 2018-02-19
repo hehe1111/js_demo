@@ -156,3 +156,16 @@ function generateWhiteCanvas(context) {
     context.fill(); // fill() 能够自动闭合，所以不需要 lineTo(0, 0)
     }
 ```
+
+---
+
+```javascript
+// 清屏
+var clearIcon = document.getElementById('clear');
+clearIcon.onclick = function () {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    // 清屏之后，要重新生成白底
+    autoFullScreenCanvas(canvas, context);
+}
+```
