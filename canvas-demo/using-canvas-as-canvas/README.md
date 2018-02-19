@@ -1,5 +1,5 @@
 
-画板 - [预览链接](http://hehe1111.github.io/js_demo/canvas-demo/using-canvas-as-canvas/index.html)
+画板 - [预览链接](https://hehe1111.github.io/js_demo/canvas-demo/using-canvas-as-canvas/index.html)
 
 - 支持移动端操作
 - 使用 Canvas API
