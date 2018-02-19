@@ -1,4 +1,13 @@
-- [预览链接](http://hehe1111.github.io/js_demo/canvas-demo/using-canvas-as-canvas/index.html)
+
+画板 - [预览链接](http://hehe1111.github.io/js_demo/canvas-demo/using-canvas-as-canvas/index.html)
+
+- 支持移动端操作
+- 使用 Canvas API
+- 包含橡皮、换颜色、保存等功能
+- 使用原生 JS 开发
+- HTML 5 & CSS 3
+
+---
 
 - [Canvas-参考链接](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes)
 > 画布栅格（canvas grid）以及坐标空间  
