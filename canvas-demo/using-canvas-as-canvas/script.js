@@ -1,19 +1,19 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-autoFullScreenCanvas(canvas);
+autoFullScreenCanvas(canvas, context);
 
 listenToUser(canvas);
 
-function autoFullScreenCanvas(canvas) {
-    function fullScreenCanvas() {
+function autoFullScreenCanvas(canvas, context) {
+    function fullScreenCanvas(canvas) {
         var pageWidth = document.documentElement.clientWidth;
         var pageHeight = document.documentElement.clientHeight;
         canvas.width = pageWidth;
         canvas.height = pageHeight;
     }
 
-    function generateWhiteCanvas() {
+    function generateWhiteCanvas(context) {
         context.fillStyle = 'white';
         context.beginPath();
         context.moveTo(0, 0);
@@ -23,11 +23,11 @@ function autoFullScreenCanvas(canvas) {
         context.fill();
     }
 
-    fullScreenCanvas();
-    generateWhiteCanvas();
+    fullScreenCanvas(canvas);
+    generateWhiteCanvas(context);
     window.onresize = function () {
-        fullScreenCanvas();
-        generateWhiteCanvas();
+        fullScreenCanvas(canvas);
+        generateWhiteCanvas(context);
     }
 }
 
