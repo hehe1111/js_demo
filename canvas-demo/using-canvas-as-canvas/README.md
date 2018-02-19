@@ -169,3 +169,10 @@ clearIcon.onclick = function () {
     autoFullScreenCanvas(canvas, context);
 }
 ```
+
+---
+
+Bug：  
+由于白底的存在，使用橡皮擦时，也会擦去白底。在线使用时看不出来，但是在下载的图片上能看到，使用橡皮擦擦除的地方都会变成黑色的。
+
+---
