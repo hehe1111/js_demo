@@ -3,7 +3,7 @@ var context = canvas.getContext('2d');
 
 autoFullScreenCanvas(canvas, context);
 
-listenToUser(canvas);
+listenToUser(canvas, context);
 
 function autoFullScreenCanvas(canvas, context) {
     function fullScreenCanvas(canvas) {
@@ -42,7 +42,7 @@ function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
     context.stroke();
 }
 
-function listenToUser(canvas) {
+function listenToUser(canvas, context) {
     var lastPoint = { 'x': undefined, 'y': undefined }
     var newPoint = { 'x': undefined, 'y': undefined }
 
@@ -113,7 +113,7 @@ function listenToUser(canvas) {
     var clearIcon = document.getElementById('clear');
     clearIcon.onclick = function () {
         context.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         autoFullScreenCanvas(canvas, context);
     }
 
