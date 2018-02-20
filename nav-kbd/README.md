@@ -59,3 +59,9 @@
         transform: translateX(-50%) translateY(-50%); /* 以元素自身的宽高为基准 */
     }
 ```
+
+---
+
+监听搜索输入框时，使用 [oninput](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/oninput) 事件比 [onchange](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/onchange) 更合适于监听用户输入的关键词，前者会实时获取用户输入，不会有延迟，后者会记录用户上一次的输入，而非当前输入。
+
+---

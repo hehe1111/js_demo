@@ -123,7 +123,7 @@ function listenToUser(hash) {
     var inputElement = document.getElementById('search-input');
 
     var keyWord = '';
-    inputElement.onchange = function () {
+    inputElement.oninput = function () {
         keyWord = inputElement.value;
     };
 
@@ -136,7 +136,7 @@ function listenToUser(hash) {
     };
 
     document.onkeypress = function (e) {
-        // console.log(document.activeElement === searchKeyWord);
+        // console.log(document.activeElement === inputElement);
         if (document.activeElement === inputElement) {
             if (e.key === 'Enter') {
                 window.open('https://cn.bing.com/search?q=' + keyWord, '_blank');
