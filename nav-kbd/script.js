@@ -146,9 +146,17 @@ function listenToUser(hash) {
         } else {
             console.log(e);
             var key = e['key']; // 或 e.key，是按键的键名
-            var website = hash[key];
-            // location.href = 'http://' + website; // 在当前窗口打开 website 对应的网址
-            window.open('http://' + website, '_blank');
+
+            if (!(key in hash)) {
+                // 如果用户按下的不是字母键，就提示用户，并阻止网页默认的跳转行为
+                alert('亲，请按字母键。\n\n回车返回页面。');
+                e.preventDefault();
+            } else {
+                // 用户按的是字母键
+                var website = hash[key];
+                // location.href = 'http://' + website; // 在当前窗口打开 website 对应的网址
+                window.open('http://' + website, '_blank');
+            }
         }
     };
 }
