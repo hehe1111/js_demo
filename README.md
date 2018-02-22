@@ -7,3 +7,30 @@
 > 完整指南在 [GitHub](https://github.com/soyaine/JavaScript30)  
 > 中文参考指南：[GitHub](https://github.com/soyaine/JavaScript30)  
 > 作者：[缉熙Soyaine](https://github.com/soyaine)
+
+
+```css
+.js-30>.inner-wrapper>ol>li>a {
+    padding: 1.25rem; /* 将 padding 加在 a 标签上，而不是 li 标签上，这样在点击空白处的时候就等同于点击链接文字，也能达到打开链接的效果；同时，用 a 撑开 li，等同于将 padding 直接加在 li 上。 */
+    display: block; /* 加上这一句，text-overflow: ellipsis; 才能起作用 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: black;
+}
+```
+
+- `rem`的使用
+- `line-height`以`font-size`为基准计算
+- `text-shadow`、`box-shadow`
+- `flex`布局
+- `text-overflow: ellipsis;`
+- 媒体查询
+```css
+@media screen and (max-width: 980px) {
+    .js-30>.inner-wrapper>ol>li {
+        width: 100%;
+    }
+}
+```
