@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #eee;
+}
+
+a {
+    text-decoration: none;
+}
+
+ol {
+    list-style: none;
+}
+
+h1 {
+    font-size: 2.6rem;
+    line-height: 1.5;
+    font-weight: 300;
+    text-shadow: 2px 2px 3px #333;
+}
+
+header, footer {
+    padding: 10px 50px;
+    background-color: #52a6e7;
+
+    font-size: 3rem;
+    line-height: 1.6;
+    color: white;
+    
+    position: relative;
+}
+
+header>span {
+    text-shadow: 2px 2px 3px #333;
+    transition: all 0.6s ease-in-out;
+}
+
+header>span:hover {
+    color: #54b0f7;
+    text-shadow: 20px 16px 3px #333;
+}
+
+header>a {
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+header>a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.js-30>.inner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.js-30>.inner-wrapper>ol {
+    width: 80%;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 1px 1px #bbb;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.js-30>.inner-wrapper>ol>li {
+    width: 25%;
+    border-radius: 10px;
+    
+    text-align: center;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.js-30>.inner-wrapper>ol>li>a {
+    padding: 1.25rem;
+
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #000;
+
+    transition: all 0.4s ease-in-out;
+}
+
+.js-30>.inner-wrapper>ol>li:hover {
+    background-color: #52a6e7;
+}
+
+.js-30>.inner-wrapper>ol>li:hover>a {
+    color: #fff;
+}
+
+footer {
+    font-size: 1.2rem;
+    line-height: 4;
+    text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+    .js-30>.inner-wrapper>ol>li {
+        width: 100%;
+    }
+}
