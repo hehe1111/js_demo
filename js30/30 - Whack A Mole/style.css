@@ -48,8 +48,8 @@ h1 {
     font-family: inherit;
 
     position: absolute;
-    top: 261px;
-    left: 70px;
+    top: 465px;
+    left: 120px;
 
     transition: all 0.3s;
 }
@@ -114,10 +114,11 @@ h1 {
 
 .highest-score {
     position: absolute;
-    top: -35px;
-    left: 30px;
+    top: -50px;
+    left: 110px;
     
     font-size: 4.5rem;
+    text-align: center;
 }
 
 .highest-score > span {
