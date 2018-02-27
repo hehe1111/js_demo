@@ -98,4 +98,6 @@ function peep() {
 ```
 
 ---
-- 2018.02.27 更新：利用 `localStorage` 记录最高分数
+- 2018.02.27 更新：
+    - 利用 `localStorage` 记录最高分数
+    - 修改 start 按钮的样式
