@@ -145,7 +145,7 @@ function listenToUser(hash) {
             }
         } else {
             console.log(e);
-            var key = e['key']; // 或 e.key，是按键的键名
+            var key = e['key'].toLocaleLowerCase(); // 或 e.key，是按键的键名
 
             if (!(key in hash)) {
                 // 如果用户按下的不是字母键，就提示用户，并阻止网页默认的跳转行为
