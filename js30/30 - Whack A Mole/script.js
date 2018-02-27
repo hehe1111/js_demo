@@ -7,6 +7,7 @@ let timeUp = false;
 let score = 0;
 let count = 0; // 用于记录函数 peep 的执行次数
 let timeoutID; // 用于避免同时多次点击 start 按钮导致的多次游戏同时进行
+let highestRecord = document.querySelector('.highest-score > span');
 
 function getRandomTime(min, max) {
     return Math.round((Math.random() * Math.abs(max - min)) + min);
@@ -62,7 +63,43 @@ function bonk(e) {
     score += 1;
     this.parentNode.classList.remove('up');
     scoreBoard.textContent = score;
+
+    recordHighestScore('highestScoreInLocalStoage', score);
 }
+
+function getFromLocalStorage(name) {
+    return JSON.parse(localStorage.getItem(name) || '0');
+}
+
+// 记录最高分数
+function recordHighestScore(name, score) {
+    var highestScore = getFromLocalStorage(name);
+
+    if (highestScore === 0) {
+        // 第一次加载
+        // 在 localStorage 生成 highestScoreInLocalStoage
+        highestScore = {'highestScore': score};
+        localStorage.setItem(name, JSON.stringify(highestScore));
+    }
+
+    if (typeof (highestScore) === 'object') {
+        // highestScoreInLocalStoage 已经存在于 localStorage 的情况
+        highestScore = highestScore['highestScore'];
+
+        // 显示最高分
+        highestRecord.textContent = highestScore;
+    }
+
+    if (highestScore < score) {
+        var newHighestScore = {'highestScore': score};
+        localStorage.setItem(name, JSON.stringify(newHighestScore));
+
+        // 实时显示最高分
+        highestRecord.textContent = score;
+    }
+}
+
+recordHighestScore('highestScoreInLocalStoage', score);
 
 moles.forEach((mole) => {
     mole.addEventListener('click', bonk);

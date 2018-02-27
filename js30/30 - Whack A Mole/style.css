@@ -86,3 +86,15 @@ h1 {
 .hole.up .mole {
     top: 0;
 }
+
+.highest-score {
+    position: absolute;
+    top: -35px;
+    left: 30px;
+    
+    font-size: 4.5rem;
+}
+
+.highest-score > span {
+    color: red;
+}

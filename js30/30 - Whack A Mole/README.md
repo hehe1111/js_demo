@@ -96,3 +96,6 @@ function peep() {
         }
     }
 ```
+
+---
+- 2018.02.27 更新：利用 `localStorage` 记录最高分数
