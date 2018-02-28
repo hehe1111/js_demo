@@ -139,7 +139,7 @@ function listenToUser(hash) {
         // console.log(document.activeElement === inputElement);
         if (document.activeElement === inputElement) {
             if (e.key === 'Enter') {
-                window.open('https://cn.bing.com/search?q=' + keyWord, '_blank');
+                window.open('https://www.google.com/search?q=' + keyWord, '_blank');
             } else {
                 return
             }
