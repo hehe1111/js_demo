@@ -33,10 +33,7 @@ body {
 
     user-select: none;
 
-    cursor: pointer;
-
-    transition: all 0.2s;
-    transform: scale(0.98);
+    cursor: -webkit-grab;
 
     position: relative;
 
@@ -50,8 +47,6 @@ body {
 
     cursor: grabbing; /* MDN 上暂时不推荐在公开网页上使用这些指针 */
     cursor: -webkit-grabbing;
-
-    transform: scale(1);
 }
 
 .item {
