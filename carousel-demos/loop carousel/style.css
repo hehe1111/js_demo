@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.window {
+    width: 400px;
+    height: 300px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.images {
+    display: flex; /* 会使所有图片排在一行内，所有图片的总宽度为 400px */
+}
+
+.images > img {
+    width: 100%; /* 使每张图片都占父宽；父宽等于父宽的父宽，即 400px */
+}
