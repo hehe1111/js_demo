@@ -12,9 +12,34 @@
 }
 
 .images {
-    display: flex; /* 会使所有图片排在一行内，所有图片的总宽度为 400px */
+    position: relative;
 }
 
 .images > img {
     width: 100%; /* 使每张图片都占父宽；父宽等于父宽的父宽，即 400px */
+    transition: all 0.5s;
+}
+
+.images > img:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.images > img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.images > img:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.images > img.right {
+    position: absolute;
+    top: 0;
+    left: 100%;
 }
