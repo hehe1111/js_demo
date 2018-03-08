@@ -16,8 +16,7 @@ setInterval(() => {
 
 function init() {
     n = 1
-    $('.images > img:nth-child(n)').addClass('current')
-        .siblings.addClass('enter')
+    getImage(n).addClass('current').siblings().addClass('enter')
 }
 
 function makeCurrent($node) {
