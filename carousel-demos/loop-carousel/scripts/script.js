@@ -1,4 +1,5 @@
 let n
+let imageNumber
 init()
 
 setInterval(() => {
@@ -7,7 +8,7 @@ setInterval(() => {
             makeEnter($(e.currentTarget))
         })
 
-    if (n === 3) {n = 0}
+    if (n === imageNumber) {n = 0}
 
     makeCurrent(getImage(n + 1))
 
@@ -16,6 +17,7 @@ setInterval(() => {
 
 function init() {
     n = 1
+    imageNumber = $('.images > img').length
     getImage(n).addClass('current').siblings().addClass('enter')
 }
 
