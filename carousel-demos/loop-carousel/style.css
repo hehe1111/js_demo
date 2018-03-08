@@ -24,14 +24,15 @@
 
 .images > img.current {
     left: 0;
+    transform: translateX(0);
     z-index: 1;
 }
 
 .images > img.leave {
-    left: -100%;
+    transform: translateX(-100%);
     z-index: 1; /* 注意这一句 */
 }
 
 .images > img.enter {
-    left: 100%;
+    transform: translateX(100%);
 }
