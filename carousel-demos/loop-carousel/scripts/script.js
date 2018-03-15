@@ -2,18 +2,14 @@ let n
 let imageNumber
 init()
 
-setInterval(() => {
-    makeLeave(getImage(n))
-        .one('transitionend', (e) => {
-            makeEnter($(e.currentTarget))
-        })
-
-    if (n === imageNumber) {n = 0}
-
-    makeCurrent(getImage(n + 1))
-
-    n += 1
-}, 3000);
+let timer = setTimer()
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        clearInterval(timer)
+    } else {
+        timer = setTimer()
+    }
+})
 
 function init() {
     n = 1
@@ -35,4 +31,19 @@ function makeEnter($node) {
 
 function getImage(n) {
     return $(`.images > img:nth-child(${n})`)
+}
+
+function setTimer() {
+    return setInterval(() => {
+        makeLeave(getImage(n))
+            .one('transitionend', (e) => {
+                makeEnter($(e.currentTarget))
+            })
+    
+        if (n === imageNumber) {n = 0}
+    
+        makeCurrent(getImage(n + 1))
+    
+        n += 1
+    }, 3000)
 }
