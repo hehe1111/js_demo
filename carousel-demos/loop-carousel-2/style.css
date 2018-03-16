@@ -12,13 +12,14 @@
     width: 100%;
 }
 
-.button-wrapper {
-    border: 1px solid red;
+.button-wrapper,
+.control {
     text-align: center;
 }
 
-.button-wrapper > button {
-    padding: 40px;
+.button-wrapper > button,
+.control > button {
+    padding: 10px;
     border: none;
     border-radius: 50%;
 }
