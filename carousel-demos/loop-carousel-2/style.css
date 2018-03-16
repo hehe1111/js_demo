@@ -1,0 +1,25 @@
+* { padding: 0; margin: 0; box-sizing: border-box; }
+
+.window { width: 400px; height: 300px; margin: 20px auto; overflow: hidden; }
+
+.images {
+    display: flex;
+    transition: all 0.2s;
+}
+
+
+.images > img {
+    width: 100%;
+}
+
+.button-wrapper {
+    border: 1px solid red;
+    text-align: center;
+}
+
+.button-wrapper > button {
+    padding: 40px;
+    border: none;
+    border-radius: 50%;
+}
+
