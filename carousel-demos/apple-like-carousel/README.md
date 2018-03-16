@@ -1,4 +1,4 @@
-- [预览链接]()
+- [预览链接](https://hehe1111.github.io/js_demo/carousel-demos/apple-like-carousel/)
 
 ## 记录
 
