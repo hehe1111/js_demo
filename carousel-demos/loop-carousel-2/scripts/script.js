@@ -8,37 +8,29 @@ $slides.css({'transform':'translateX(-400px)'})
 bindEvents()
 
 function bindEvents() {
-    $buttons.eq(0).on('click', function () {
-        if (current === 2) {
-            $slides.css({'transform':'translateX(-1600px)'})
+    $('.button-wrapper').on('click', 'button', function (e) {
+        let $button = $(e.currentTarget)
+        let index = $button.index() // index 从零开始
+        if (current === $buttons.length - 1 && index === 0) {
+            // 最后到第一
+            $slides.css({'transform':`translateX(${- ($buttons.length + 1) * 400}px)`})
                .one('transitionend', function () {
                     $slides.hide().offset()
-                    $slides.css({'transform':'translateX(-400px)'})
+                    $slides.css({'transform':`translateX(${- (index + 1) * 400}px)`})
                         .show()
                 })
-        } else {
-            $slides.css({'transform':'translateX(-400px)'})
-        }
-        current = 0
-    })
-    
-    $buttons.eq(1).on('click', function () {
-        $slides.css({'transform':'translateX(-800px)'})
-        current = 1
-    })
-    
-    $buttons.eq(2).on('click', function () {
-        if (current === 0) {
-            $slides.css({'transform':'translateX(0px)'})
+        } else if (current === 0 && index === $buttons.length - 1) {
+            // 第一到最后
+            $slides.css({'transform':`translateX(0px)`})
                 .one('transitionend', function () {
                     $slides.hide().offset()
-                    $slides.css({'transform':'translateX(-1200px)'})
+                    $slides.css({'transform':`translateX(${- (index + 1) * 400}px)`})
                         .show()
                 })
         } else {
-            $slides.css({'transform':'translateX(-1200px)'})
+            $slides.css({'transform':`translateX(${- (index + 1) * 400}px)`})
         }
-        current = 2
+        current = index
     })
 }
 
