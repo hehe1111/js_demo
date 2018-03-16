@@ -9,7 +9,7 @@ $slides.css({'transform':'translateX(-400px)'})
 timer = setInterval(function () {
     goToSlide(current + 1)
 }, 2000)
-bindEvents()
+lisentToUser()
 
 function makeFakeSlides() {
     let $firstCopy = $images.eq(0).clone(true)
@@ -55,7 +55,7 @@ function resetTimer() {
 }
 
 // 监听用户的点击
-function bindEvents() {
+function lisentToUser() {
     $('.button-wrapper').on('click', 'button', function (e) {
         let $button = $(e.currentTarget)
         let index = $button.index() // index 从零开始
@@ -63,17 +63,29 @@ function bindEvents() {
         goToSlide(index)
         timer = resetTimer()
     })
+
     $('.previous').on('click', function () {
         goToSlide(current - 1)
         timer = resetTimer()
     })
+
     $('.next').on('click', function () {
         goToSlide(current + 1)
         timer = resetTimer()
     })
+    
     $('.window').on('mouseenter', function () {
         clearInterval(timer)
     }).on('mouseleave', function () {
         timer = resetTimer()
+    })
+
+    // 当用户切换去其他页面时，停止轮播；用户回来再继续轮播
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            clearInterval(timer)
+        } else {
+            timer = resetTimer()
+        }
     })
 }
