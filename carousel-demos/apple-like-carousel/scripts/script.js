@@ -16,8 +16,8 @@ for (var i = 0; i < $buttons.length; i++) {
 }
 
 $(document).on('visibilitychange', function () {
-        if (document.hidden) { clearInterval(timer) }
-        else { timer = setTimer() }
+    if (document.hidden) { clearInterval(timer) }
+    else { timer = setTimer() }
 })
 
 function goToSlide(index) {    
