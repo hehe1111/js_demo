@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>点击开启/关闭浮层</title>
-    <style>
-        body { font-size: 30px; }
-        input { width: 30px; height: 30px; }
-        span { color: red; }
-        .clickMe, .popover { padding: 50px 100px; }
-        .clickMe { font-size: inherit; }
-        .popover { display: none; border: 1px solid red; }
-        .active { display: block; }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="wrapper">
         <button class="clickMe">点我开/关浮层</button>
         <div class="popover">
-            <input type="checkbox">点击浮层，<span>不会</span>关闭浮层
+            <input type="checkbox">点我
+            <span>不会</span> 关闭浮层
+            <br>
+            点击浮层<span>以外</span>就会关闭浮层
         </div>
     </div>
-    
+
     <script src="./jquery-3.3.1.min.js"></script>
     <script>
         $('.clickMe').on('click', function (e) {
@@ -39,4 +36,5 @@
         })
     </script>
 </body>
+
 </html>
