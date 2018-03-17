@@ -29,6 +29,13 @@ function goToSlide(index) {
 }
 ```
 
+- 去掉 点击按钮 时，按钮外出现的默认蓝色 `outline`
+```css
+.button-wrapper>button:focus {
+    outline: none;
+}
+```
+
 
 
 ## 参考链接
