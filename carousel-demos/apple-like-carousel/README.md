@@ -36,7 +36,13 @@ function goToSlide(index) {
 }
 ```
 
-
+- 用户切换去其他页面时，停止轮播；用户回来后继续轮播
+```javascript
+$(document).on('visibilitychange', function () {
+    if (document.hidden) { clearInterval(timer) }
+    else { timer = setTimer() }
+})
+```
 
 ## 参考链接
 
