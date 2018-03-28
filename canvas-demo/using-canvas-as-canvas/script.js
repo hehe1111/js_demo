@@ -109,7 +109,7 @@ function listenToUser(canvas, context) {
 
     // 切换画笔粗细
     var $sizes = $('#sizes')
-    $sizes.on('change', function (e) {
+    $sizes.on('change click', function (e) {
         context.lineWidth = e.currentTarget.value
     })
 
