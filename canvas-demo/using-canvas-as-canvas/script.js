@@ -44,7 +44,7 @@ function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
 
 function erase(x, y) {
     context.beginPath();
-    context.arc(x, y, 6, 0, Math.PI * 2);
+    context.arc(x, y, 10, 0, Math.PI * 2);
 
     // 点
     context.fillStyle = 'white';
