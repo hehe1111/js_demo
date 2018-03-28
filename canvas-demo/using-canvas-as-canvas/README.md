@@ -203,3 +203,27 @@ function erase(x, y) {
 ```
 
 ---
+
+- 2018.03.28 更新
+
+### 添加 `<input type="color">` 元素
+
+- 引入 jQuery 
+
+```javascript
+// 不用 jQuery
+pallet.onchange = function (e) {
+    context.fillStyle = e.srcElement.value;
+    context.strokeStyle = e.srcElement.value;
+    //
+}
+
+// 用 jQuery
+$pallet.on('change', function (e) {
+    context.fillStyle = e.srcElement.value;
+    context.strokeStyle = e.srcElement.value;
+    //
+})
+```
+
+---

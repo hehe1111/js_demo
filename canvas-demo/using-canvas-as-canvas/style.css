@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -84,6 +85,22 @@ ul, ol {
 .colors > li.active {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
     transform: scale(1.2);
+}
+
+.colors > input#pallet {
+    width: 24px;
+    height: 28px;
+    position: absolute;
+    top: 126px;
+    left: -2px;
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+}
+
+.colors > input#pallet:focus {
+    outline: none;
 }
 
 .sizes {
