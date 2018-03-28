@@ -226,4 +226,9 @@ $pallet.on('change', function (e) {
 })
 ```
 
+- 参考链接
+    - [.change(changeColor) vs .on("input change", changeColor)](https://teamtreehouse.com/community/changechangecolor-vs-oninput-change-changecolor)
+    - [JQuery: detect change in input field [duplicate]
+](https://stackoverflow.com/questions/12797700/jquery-detect-change-in-input-field)
+
 ---
