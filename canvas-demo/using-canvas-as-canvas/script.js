@@ -135,7 +135,7 @@ function listenToUser(canvas, context) {
         document.body.appendChild(a);
         a.href = url;
         a.download = '我的画儿'; // 保存时图片的名称
-        a.target = '_blank';
+        // a.target = '_blank';
         a.click();
     }
     
