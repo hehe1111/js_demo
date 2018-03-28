@@ -232,3 +232,7 @@ $pallet.on('change', function (e) {
 ](https://stackoverflow.com/questions/12797700/jquery-detect-change-in-input-field)
 
 ---
+
+### 添加 `select` 元素，用于改变线的宽度
+
+---
