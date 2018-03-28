@@ -125,12 +125,10 @@ function listenToUser(canvas, context) {
     var downloadIcon = document.getElementById('download');
     downloadIcon.onclick = function () {
         var url = canvas.toDataURL('image/png');
-        // console.log(url);
         var a = document.createElement('a');
         document.body.appendChild(a);
         a.href = url;
         a.download = '我的画儿'; // 保存时图片的名称
-        // a.target = '_blank';
         a.click();
     }
     
@@ -141,7 +139,6 @@ function listenToUser(canvas, context) {
             var x = e.touches[0].clientX;
             var y = e.touches[0].clientY;
             if (eraserEnabled) {
-                // context.clearRect(x - 5, y - 5, 10, 10);
                 erase(x, y)
             } else {
                 lastPoint = { 'x': x, 'y': y }
@@ -154,7 +151,6 @@ function listenToUser(canvas, context) {
             var y = e.touches[0].clientY;
             
             if (eraserEnabled) {
-                // context.clearRect(x - 5, y - 5, 10, 10);
                 erase(x, y)
             } else {
                 newPoint = { 'x': x, 'y': y }
@@ -167,7 +163,6 @@ function listenToUser(canvas, context) {
 
         canvas.ontouchend = function (e) {
             console.log('touch end');
-            // console.log(e);
         }
     } else {
         // 非触屏设备
@@ -177,7 +172,6 @@ function listenToUser(canvas, context) {
             var x = e.clientX;
             var y = e.clientY;
             if (eraserEnabled) {
-                // context.clearRect(x - 5, y - 5, 10, 10);
                 erase(x, y)
             } else {
                 lastPoint = { 'x': x, 'y': y }
@@ -191,7 +185,6 @@ function listenToUser(canvas, context) {
             if (!clicked) { return }
 
             if (eraserEnabled) {
-                // context.clearRect(x - 5, y - 5, 10, 10);
                 erase(x, y)
             } else {
                 newPoint = { 'x': x, 'y': y }
