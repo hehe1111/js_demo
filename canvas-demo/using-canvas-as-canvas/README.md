@@ -236,3 +236,17 @@ $pallet.on('change', function (e) {
 ### 添加 `select` 元素，用于改变线的宽度
 
 ---
+
+### 禁止移动端页面下拉刷新
+
+```javascript
+canvas.ontouchmove = function (e) {
+    e.preventDefault()
+    //
+```
+
+- 参考链接
+   - [移动web页面如何禁用客户端的自带的下拉刷新](https://segmentfault.com/q/1010000006859971/a-1020000006867152)
+   - [javascript 禁止下拉页面 “橡皮筋“效果](https://blog.csdn.net/qq_33072593/article/details/77567133)
+
+---
