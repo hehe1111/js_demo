@@ -42,6 +42,15 @@ function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
     context.stroke();
 }
 
+function erase(x, y) {
+    context.beginPath();
+    context.arc(x, y, 6, 0, Math.PI * 2);
+
+    // 点
+    context.fillStyle = 'white';
+    context.fill();
+}
+
 function listenToUser(canvas, context) {
     var lastPoint = { 'x': undefined, 'y': undefined }
     var newPoint = { 'x': undefined, 'y': undefined }
@@ -137,7 +146,8 @@ function listenToUser(canvas, context) {
             var x = e.touches[0].clientX;
             var y = e.touches[0].clientY;
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10);
+                // context.clearRect(x - 5, y - 5, 10, 10);
+                erase(x, y)
             } else {
                 lastPoint = { 'x': x, 'y': y }
             }
@@ -146,14 +156,15 @@ function listenToUser(canvas, context) {
         canvas.ontouchmove = function (e) {
             var x = e.touches[0].clientX;
             var y = e.touches[0].clientY;
-
+            
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10);
+                // context.clearRect(x - 5, y - 5, 10, 10);
+                erase(x, y)
             } else {
                 newPoint = { 'x': x, 'y': y }
-
+                
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, context.lineWidth, context.strokeStyle);
-
+                
                 lastPoint = newPoint; // 最重要的是这一句
             }
 
@@ -171,7 +182,8 @@ function listenToUser(canvas, context) {
             var x = e.clientX;
             var y = e.clientY;
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10);
+                // context.clearRect(x - 5, y - 5, 10, 10);
+                erase(x, y)
             } else {
                 lastPoint = { 'x': x, 'y': y }
             }
@@ -184,7 +196,8 @@ function listenToUser(canvas, context) {
             if (!clicked) { return }
 
             if (eraserEnabled) {
-                context.clearRect(x - 5, y - 5, 10, 10);
+                // context.clearRect(x - 5, y - 5, 10, 10);
+                erase(x, y)
             } else {
                 newPoint = { 'x': x, 'y': y }
 

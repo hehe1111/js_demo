@@ -182,6 +182,24 @@ clearIcon.onclick = function () {
 ---
 
 Bug：  
-由于白底的存在，使用橡皮擦时，也会擦去白底。在线使用时看不出来，但是在下载的图片上能看到，使用橡皮擦擦除的地方都会变成黑色的。
+由于白底的存在，使用橡皮擦时，也会擦去白底。在线使用时看不出来，但是在下载的图片上能看到，使用橡皮擦擦除的地方都会变成透明的。
+
+- 2018.03.28 解决 Bug
+
+```javascript
+// 用 erase 函数代替  context.clearRect(x - 5, y - 5, 10, 10)
+function erase(x, y) {
+    context.beginPath();
+    context.arc(x, y, 6, 0, Math.PI * 2);
+
+    // 点
+    context.fillStyle = 'white';
+    context.fill();
+}
+
+// 使用
+// 把 context.clearRect(x - 5, y - 5, 10, 10) 替换为
+// erase(x, y)
+```
 
 ---
