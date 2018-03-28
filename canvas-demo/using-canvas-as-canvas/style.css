@@ -103,24 +103,11 @@ ul, ol {
     outline: none;
 }
 
-.sizes {
-    position: fixed;
-    top: 10px;
-    right: 20px;
-}
-
-.sizes > li {
-    margin: 20px 0;
-}
-
-.sizes > .thin {
-    width: 20px;
-    height: 0;
-    border-top: 3px solid black;
-}
-
-.sizes > .thick {
-    width: 20px;
-    height: 0;
-    border-top: 6px solid black;
+#sizes {
+    width: 62px;
+    padding: 4px;
+    background-color: #fff;
+    position: absolute;
+    top: 220px;
+    left: 6px;
 }

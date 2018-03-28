@@ -108,14 +108,10 @@ function listenToUser(canvas, context) {
     })
 
     // 切换画笔粗细
-    var thin = document.getElementById('thin');
-    var thick = document.getElementById('thick');
-    thin.onclick = function () {
-        context.lineWidth = 5;
-    }
-    thick.onclick = function () {
-        context.lineWidth = 10;
-    }
+    var $sizes = $('#sizes')
+    $sizes.on('change', function (e) {
+        context.lineWidth = e.currentTarget.value
+    })
 
     // 清屏
     var clearIcon = document.getElementById('clear');
