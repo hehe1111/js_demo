@@ -1,0 +1,2 @@
+- [冒泡模型](https://hehe1111.github.io/js_demo/visual-dom-event-model/bubble.html)
+- [捕获与冒泡模型](https://hehe1111.github.io/js_demo/visual-dom-event-model/capture-bubble.html)
