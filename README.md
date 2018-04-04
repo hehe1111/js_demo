@@ -1,5 +1,7 @@
 ## js30
 
+- [记录及预览](https://github.com/hehe1111/js_demo/tree/master/js30#javascript30%E4%BB%BF%E5%86%99)
+
 开坑于：2017.11.22
 
 是 JavaScript30 的仿写项目：
