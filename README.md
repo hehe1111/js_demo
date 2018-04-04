@@ -29,8 +29,9 @@
 - 媒体查询
 ```css
 @media screen and (max-width: 980px) {
-    .js-30>.inner-wrapper>ol>li {
-        width: 100%;
+    section>.inner-wrapper>ol>li {
+        width: 100% !important; 
+        /* 不加 !important, 则在移动端时，canvas-demo、visual-dom-event-model 下的两个预览链接仍是并排，原因暂不明，猜测是优先级？哪个更具体用哪个？ */
     }
 }
 ```
