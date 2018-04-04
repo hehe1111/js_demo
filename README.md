@@ -1,4 +1,4 @@
-# js30
+## js30
 
 开坑于：2017.11.22
 
@@ -38,6 +38,34 @@
 
 ---
 
+## canvas-demo 
+- 用 `canvas` 写画板 - [预览链接](https://hehe1111.github.io/js_demo/canvas-demo/using-canvas-as-canvas/index.html)
+
+---
+
+## carousel-demos
+- 无限轮播 - [预览链接](https://hehe1111.github.io/js_demo/carousel-demos/loop-carousel/)
+- 无缝轮播 - [预览链接](https://hehe1111.github.io/js_demo/carousel-demos/loop-carousel-2/)
+- 苹果风格的轮播 - [预览链接](https://hehe1111.github.io/js_demo/carousel-demos/apple-like-carousel/)
+
+---
+
+## nav-kbd
+- 键盘导航 - [预览链接](https://hehe1111.github.io/js_demo/nav-kbd/index.html)
+
+---
+
+## popover-demo
+- 点击别处关闭浮层 - [预览链接](https://hehe1111.github.io/js_demo/popover-demo/index.html)
+
+---
+
+## visual-dom-event-model
+- 冒泡模型可视化 - [预览链接](https://hehe1111.github.io/js_demo/visual-dom-event-model/bubble.html)
+- 捕获与冒泡模型可视化 - [预览链接](https://hehe1111.github.io/js_demo/visual-dom-event-model/capture-bubble.html)
+
+---
+
 ### 提交记录
 - 代码
     - 【新增】
@@ -53,4 +81,5 @@
     - 【新增图片】
     - 【修改图片】
     - 【删除图片】
+
 ---
