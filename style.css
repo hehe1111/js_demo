@@ -125,12 +125,18 @@ footer {
     text-align: center;
 }
 
-section.nav-kbd>.inner-wrapper>ol>li {
+section.nav-kbd>.inner-wrapper>ol>li,
+section.popover-demo>.inner-wrapper>ol>li {
     width: 100%;
+}
+
+section.canvas-demo>.inner-wrapper>ol>li,
+section.visual-dom-event-model>.inner-wrapper>ol>li {
+    width: 50%;
 }
 
 @media screen and (max-width: 980px) {
     section>.inner-wrapper>ol>li {
-        width: 100%;
+        width: 100% !important;
     }
 }
