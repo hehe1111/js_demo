@@ -107,7 +107,7 @@ function generateKeyboard(keys, hash) {
 
             var img = createImage(hash[row[index2]]);
 
-            var kbd = tag('kbd', {'className': 'key'});
+            var kbd = tag('kbd', {'className': 'key', 'title': `${hash[row[index2]]}`});
             kbd.appendChild(span);
             kbd.appendChild(img);
             kbd.appendChild(button);
