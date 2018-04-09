@@ -63,10 +63,11 @@ function createButton(id) {
     // 点击按键的编辑功能
     button.onclick = function (e) {
         // console.log(button); // 输出 <button id="m">编辑</button>，id 值不变
-        console.log(e['target']); // id 值会变
+        // console.log(e['target']); // id 值会变
         var button2 = e['target'];
         var key = button2['id'];
-        var x = prompt('请输入一个网址：');
+        var x = prompt('请输入一个网址：').trim();
+        if (x.length === 0) { return }
         hash[key] = x;
         var img2 = button2.previousSibling;
         img2.src = 'http://' + x + '/favicon.ico';
@@ -76,7 +77,6 @@ function createButton(id) {
 
         // 将变更后的 hash 备份到 localStorage 里面
         localStorage.setItem('hashInLocalStorage', JSON.stringify(hash));
-        console.log(hash);
     }
     return button;
 }
@@ -136,7 +136,6 @@ function listenToUser(hash) {
     };
 
     document.onkeypress = function (e) {
-        // console.log(document.activeElement === inputElement);
         if (document.activeElement === inputElement) {
             if (e.key === 'Enter') {
                 window.open('https://www.google.com/search?q=' + keyWord, '_blank');
@@ -144,7 +143,7 @@ function listenToUser(hash) {
                 return
             }
         } else {
-            console.log(e);
+            // console.log(e);
             var key = e['key'].toLocaleLowerCase(); // 或 e.key，是按键的键名
 
             if (!(key in hash)) {
