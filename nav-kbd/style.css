@@ -20,30 +20,26 @@ body {
     position: relative;
 }
 
-header {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    top: 18%;
-    left: 4px;
-
-}
-
 main {
     width: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+}
+
+main > .search-wrapper {
+    width: 960px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .wrapper {
@@ -65,8 +61,7 @@ main {
     margin: 20px;
 }
 
-.row kbd.key,
-.search-button {
+.row kbd.key { 
     margin: 0 10px;
 }
 
@@ -135,4 +130,8 @@ kbd.key > img {
 .search-button {
     width: 140px;
     height: 40px;
+}
+
+button#bing {
+    margin-right: 3px;
 }
