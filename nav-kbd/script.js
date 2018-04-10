@@ -121,6 +121,7 @@ function listenToUser(hash) {
     var bingSearchButton = document.getElementById('bing');
     var googleSearchButton = document.getElementById('google');
     var inputElement = document.getElementById('search-input');
+    inputElement.focus() // 自动聚焦到搜索输入框
 
     var keyWord = '';
     inputElement.oninput = function () {

@@ -75,3 +75,15 @@
 ```javascript
 var key = e['key'].toLocaleLowerCase();
 ```
+
+---
+
+2018-04-10
+- 自动聚焦到搜索输入框
+- 不需要等到页面加载完成后再自动聚焦
+
+```
+inputElement.focus()
+```
+
+---
