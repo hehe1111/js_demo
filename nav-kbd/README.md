@@ -87,3 +87,62 @@ inputElement.focus()
 ```
 
 ---
+
+2018-05-03
+- 兼容移动端
+
+```css
+/* CSS */
+@media (max-width: 960px) {
+    main > .search-wrapper {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    main > .search-wrapper > #search-input {
+        width: 100%;
+        margin: 10px;
+    }
+
+    main > .search-wrapper > .search-button {
+        width: 100px;
+        margin: 0 10px; 
+    }
+
+    main > .wrapper {
+        width: 96%;
+    }
+
+    main > .wrapper > div.row {
+        margin: 10px 6px;
+    }
+
+    main > .wrapper > div.row kbd.key {
+        width: 7%;
+        height: 50px;
+        margin: 0 1%;
+    }
+
+    main > .wrapper > div.row kbd.key:hover > button,
+    main > .wrapper > div.row kbd.key > img {
+        display: none;
+    }
+
+    main > .wrapper > div.row kbd.key > .text {
+        font-size: 20px;
+    }
+}
+```
+
+```javascript
+// JS
+// 移动端监听按键
+document.querySelectorAll('.key').forEach(key => key.onclick = function (e) {
+    var key = e['target']['textContent'].toLowerCase(); // e['target']['textContent'] 按键的键名
+    window.open('http://' + hash[key], '_blank');
+});
+```
