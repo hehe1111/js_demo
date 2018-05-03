@@ -1,14 +1,14 @@
 body { font-size: 30px; }
 input { width: 30px; height: 30px; }
 span { color: red; }
-.clickMe, .popover { padding: 50px 100px; }
+.clickMe { padding: 50px 50px; }
 .clickMe { font-size: inherit; }
 .wrapper {
     border: 1px solid red;
     position: relative;
     display: inline-block; /* 必须是 inline-*，否则无法显示 popover */
 }
-.popover { padding: 10px 15px; margin-top: 10px; border: 1px solid red; position: absolute; left: 0; top: 100%; white-space: nowrap; display: none; }
+.popover { padding: 10px 15px; margin-top: 10px; border: 1px solid red; position: absolute; left: 0; top: 100%; display: none; }
 .popover::before { content: ''; border: 10px solid transparent; border-bottom-color: red; position: absolute; left: 50%; top: -20px; transform: translateX(-50%); }
 .popover::after { content: ''; border: 10px solid transparent; border-bottom-color: white; margin-bottom: -1px; position: absolute; left: 50%; top: -19px; transform: translateX(-50%); }
 .active { display: block; }
