@@ -162,7 +162,7 @@ function listenToUser(hash) {
 
     // 移动端监听按键
     document.querySelectorAll('.key').forEach(key => key.onclick = function (e) {
-        var key = e['target']['textContent'].toLowerCase(); // 或 e.key，是按键的键名
+        var key = e['target']['textContent'].toLowerCase(); // e['target']['textContent'] 按键的键名
         window.open('http://' + hash[key], '_blank');
     });
 }
