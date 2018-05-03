@@ -174,4 +174,8 @@ button#bing {
     main > .wrapper > div.row kbd.key > img {
         display: none;
     }
+
+    main > .wrapper > div.row kbd.key > .text {
+        font-size: 20px;
+    }
 }
