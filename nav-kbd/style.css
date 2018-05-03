@@ -136,36 +136,42 @@ button#bing {
     margin-right: 3px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 960px) {
     main > .search-wrapper {
         width: 100%;
+
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
     }
-    .search-button {
-        width: 72px;
+
+    main > .search-wrapper > #search-input {
+        width: 100%;
+        margin: 10px;
+    }
+
+    main > .search-wrapper > .search-button {
+        width: 100px;
         margin: 0 10px; 
     }
 
-    .wrapper > div.row {
+    main > .wrapper {
+        width: 96%;
+    }
+
+    main > .wrapper > div.row {
         margin: 10px 6px;
     }
-    
-    #search-input {
-        width: 320px;
-        margin: 10px 10px;
-    }
 
-    .row kbd.key {
-        width: 22px;
+    main > .wrapper > div.row kbd.key {
+        width: 6%;
         height: 50px;
-        margin: 0 3px;
+        margin: 0 1%;
     }
 
-    kbd.key:hover > button,
-    kbd.key > img {
+    main > .wrapper > div.row kbd.key:hover > button,
+    main > .wrapper > div.row kbd.key > img {
         display: none;
     }
 }
