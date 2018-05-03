@@ -4,7 +4,6 @@ span { color: red; }
 .clickMe { padding: 50px 50px; }
 .clickMe { font-size: inherit; }
 .wrapper {
-    border: 1px solid red;
     position: relative;
     display: inline-block; /* 必须是 inline-*，否则无法显示 popover */
 }
