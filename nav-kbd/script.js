@@ -145,7 +145,7 @@ function listenToUser(hash) {
             }
         } else {
             // console.log(e);
-            var key = e['key'].toLocaleLowerCase(); // 或 e.key，是按键的键名
+            var key = e['key'].toLowerCase(); // 或 e.key，是按键的键名
 
             if (!(key in hash)) {
                 // 如果用户按下的不是字母键，就提示用户，并阻止网页默认的跳转行为
@@ -159,4 +159,10 @@ function listenToUser(hash) {
             }
         }
     };
+
+    // 移动端监听按键
+    document.querySelectorAll('.key').forEach(key => key.onclick = function (e) {
+        var key = e['target']['textContent'].toLowerCase(); // 或 e.key，是按键的键名
+        window.open('http://' + hash[key], '_blank');
+    });
 }
