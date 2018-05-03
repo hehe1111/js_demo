@@ -135,3 +135,37 @@ kbd.key > img {
 button#bing {
     margin-right: 3px;
 }
+
+@media (max-width: 320px) {
+    main > .search-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .search-button {
+        width: 72px;
+        margin: 0 10px; 
+    }
+
+    .wrapper > div.row {
+        margin: 10px 6px;
+    }
+    
+    #search-input {
+        width: 320px;
+        margin: 10px 10px;
+    }
+
+    .row kbd.key {
+        width: 22px;
+        height: 50px;
+        margin: 0 3px;
+    }
+
+    kbd.key:hover > button,
+    kbd.key > img {
+        display: none;
+    }
+}
