@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>画一只皮卡丘</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    *::before, *::after {
+      box-sizing: border-box;
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      height: 100%;
+      border: 1px solid red;
+      background-color: #fff600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .face {
+      width: 320px;
+      height: 200px;
+      position: relative;
+    }
+    
+    .nose {
+      display: inline-block;
+      border-width: 12px 16px;
+      border-style: solid;
+      border-color: transparent;
+      border-top-color: black;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50px;
+      transform: translateX(-50%);
+    }
+    
+    .eyes {
+      width: 46px;
+      height: 46px;
+      background-color: #444;
+      border: 2px solid black;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+    }
+    .eyes.left {
+      right: 50%;
+      margin-right: 80px;
+    }
+    .eyes.right {
+      left: 50%;
+      margin-left: 80px;
+    }
+    .eyes::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-color: #fff;
+      border: 2px solid black;
+      border-radius: 50%;
+      position: absolute;
+      left: 4px;
+      top: 2px;
+    }
+    
+    .dimples {
+      width: 62px;
+      height: 62px;
+      background-color: red;
+      border: 2px solid black;
+      border-radius: 50%;
+      position: absolute;
+      top: 98px;
+    }
+    .dimples.left {
+      right: 50%;
+      margin-right: 98px;
+    }
+    .dimples.right {
+      left: 50%;
+      margin-left: 98px;
+    }
+    
+    .upper-lip {
+      width: 70px;
+      height: 20px;
+      background-color: #fff600;
+      border-bottom: 2px solid black;
+      position: absolute;
+      top: 70px;
+    }
+    .upper-lip.left {
+      border-left: 2px solid black;
+      border-bottom-left-radius: 40px 20px;
+      transform: rotate(-20deg);
+      right: 50%;
+    }
+    .upper-lip.right {
+      border-right: 2px solid black;
+      border-bottom-right-radius: 40px 20px;
+      transform: rotate(20deg);
+      left: 50%;
+    }
+    
+    .lower-lip-wrapper {
+        width: 160px;
+        height: 122px;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        overflow: hidden;
+        z-index: -1;
+    }
+    .lower-lip {
+        width: 180px;
+        height: 2000px;
+        background-color: #9f000a;
+        border: 2px solid black;
+        border-radius: 100px/600px;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        overflow: hidden;
+    }
+    .lower-lip::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 110px;
+        border-radius: 100px/80px;
+        background-color: #ff444f;
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="face">
+    <div class="nose"></div>
+    <div class="eyes left"></div>
+    <div class="eyes right"></div>
+    <div class="dimples left"></div>
+    <div class="dimples right"></div>
+    <div class="upper-lip left"></div>
+    <div class="upper-lip right"></div>
+    <div class="lower-lip-wrapper">
+      <div class="lower-lip"></div>
+    </div>
+  </div>
+
+  <script>
+    console.log('静止版')
+  </script>
+</body>
+</html>
