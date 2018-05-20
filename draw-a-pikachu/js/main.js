@@ -1,24 +1,8 @@
 !function () {
+    let codeContainer = document.querySelector('.code')
+    let style = document.querySelector('.style')
     let duration = 20
-    function writeCode(prefix, code, fn) {
-        let codeContainer = document.querySelector('.code')
-        let style = document.querySelector('.style')
-        let n = 0
-        let id = setTimeout(function write() {
-            n += 1
-            codeContainer.textContent = code.slice(0, n)
-            style.textContent = code.slice(0, n)
-            codeContainer.innerHTML = Prism.highlight(codeContainer.textContent, Prism.languages.css, 'css')
-            codeContainer.scrollTop = codeContainer.scrollHeight
-
-            if (n < code.length) {
-                id = setTimeout(write, duration)
-            } else {
-                fn && fn.call()
-            }
-        }, duration)
-    }
-
+    let id
     let code = `
         /* 首先，画脸部皮肤 */
         .preview {
@@ -171,8 +155,33 @@
              display: none;
         }
     `
+    
+    function writeCode(prefix, code, fn) {
+        let n = 0
+        id = setTimeout(function write() {
+            n += 1
+            codeContainer.textContent = code.slice(0, n)
+            style.textContent = code.slice(0, n)
+            highlightAndAutoScroll()
 
-    writeCode('', code)
+            if (n < code.length) {
+                id = setTimeout(write, duration)
+            } else {
+                fn && fn.call()
+            } 
+        }, duration)
+    }
+
+    function highlightAndAutoScroll() {
+        codeContainer.innerHTML = Prism.highlight(codeContainer.textContent, Prism.languages.css, 'css')
+            codeContainer.scrollTop = codeContainer.scrollHeight
+    }
+
+    function skip() {
+        codeContainer.textContent = code.slice()
+        style.textContent = code.slice()
+        highlightAndAutoScroll()
+    }
 
     $('.speed-control').on('click', 'button', (e) => {
         let $button = $(e.currentTarget) // button
@@ -188,6 +197,13 @@
             case 'fast':
                 duration = 5
                 break
+            case 'skip':
+                window.clearTimeout(id)
+                skip()
+                break
         }
     })
+
+    writeCode('', code)
+
 }.call()
