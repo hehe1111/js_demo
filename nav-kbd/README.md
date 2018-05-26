@@ -146,3 +146,25 @@ document.querySelectorAll('.key').forEach(key => key.onclick = function (e) {
     window.open('http://' + hash[key], '_blank');
 });
 ```
+
+---
+
+2018-05-26
+- 修改点击**编辑**按钮后会跳转到 undefined/ 新页面的 bug
+
+```javascript
+button.onclick = function (e) {
+    e.stopPropagation() // 阻止事件传播到 .key
+    // 其它代码
+}
+
+// bug 原因
+function listenToUser(hash) {
+    // 其它代码
+    // 移动端监听按键
+    document.querySelectorAll('.key').forEach(key => key.onclick = function (e) {
+        var key = e['target']['textContent'].toLowerCase(); // e['target']['textContent'] 按键的键名
+        window.open('http://' + hash[key], '_blank');
+    });
+}
+```

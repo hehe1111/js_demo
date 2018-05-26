@@ -62,6 +62,7 @@ function createButton(id) {
     button.id = id; // 用于区别下面代码中输出的 button
     // 点击按键的编辑功能
     button.onclick = function (e) {
+        e.stopPropagation()
         // console.log(button); // 输出 <button id="m">编辑</button>，id 值不变
         // console.log(e['target']); // id 值会变
         var button2 = e['target'];
