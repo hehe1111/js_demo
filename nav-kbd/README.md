@@ -168,3 +168,42 @@ function listenToUser(hash) {
     });
 }
 ```
+
+- 修复移动端点击按键右下角时，会跳转到 undefined/ 新页面的 bug
+
+```javascript
+function listenToUser(hash) {
+    // ...
+    // 移动端监听按键
+    // ...
+        var key = e['target']['innerText'].toLowerCase()
+    // 其它代码
+}
+
+// bug 原因
+function listenToUser(hash) {
+    // ...
+        var key = e['target']['textContent'].toLowerCase()
+        console.log(key) // q编辑
+    // 其它代码
+}
+```
+
+1. 原因解释：`textContent` 属性会将所有子节点的 `textContent` 合并后返回，除了注释、ProcessingInstruction节点。如果该节点没有子节点的话，返回一个空字符串。 `textContent` 会获取所有元素的内容，包括 `<script>` 和 `<style>` 元素，然而 `innerText` 不会。
+`innerText` 受 CSS 样式的影响，并且**不会返回隐藏元素**的文本，而 `textContent` 会。
+由于 `innerText` 受 CSS 样式的影响，它会触发重排（reflow），但 `textContent` 不会。- [参考 Node.textContent - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Node/textContent#Notes)
+2. 在移动端，编辑按钮被隐藏
+3. 代码结构
+
+```
+<kbd class="key" title="xxx">
+    <span class="text">q</span>
+    <img src="yyy">
+    <button id="q">编辑</button>
+</kbd>
+```
+
+4. 因此 `textContent` 属性会返回 **q编辑**，而 `innerText` 属性只会返回 **q**
+
+---
+

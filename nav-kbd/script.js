@@ -154,7 +154,7 @@ function listenToUser(hash) {
                 e.preventDefault();
             } else {
                 // 用户按的是字母键
-                var website = hash[key];
+                var website = hash[key];                
                 // location.href = 'http://' + website; // 在当前窗口打开 website 对应的网址
                 window.open('http://' + website, '_blank');
             }
@@ -163,7 +163,7 @@ function listenToUser(hash) {
 
     // 移动端监听按键
     document.querySelectorAll('.key').forEach(key => key.onclick = function (e) {
-        var key = e['target']['textContent'].toLowerCase(); // e['target']['textContent'] 按键的键名
+        var key = e['target']['innerText'].toLowerCase(); // e['target']['innerText'] 按键的键名
         window.open('http://' + hash[key], '_blank');
     });
 }
