@@ -175,12 +175,14 @@ button#bing {
         margin: 0 1%;
     }
 
+    main > .wrapper > div.row kbd.key > .text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 760px) {
     main > .wrapper > div.row kbd.key:hover > button,
     main > .wrapper > div.row kbd.key > img {
         display: none;
-    }
-
-    main > .wrapper > div.row kbd.key > .text {
-        font-size: 20px;
     }
 }
