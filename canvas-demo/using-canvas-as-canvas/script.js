@@ -8,10 +8,8 @@
 
     function autoFullScreenCanvas(canvas, context) {
         function fullScreenCanvas(canvas) {
-            var pageWidth = document.documentElement.clientWidth;
-            var pageHeight = document.documentElement.clientHeight;
-            canvas.width = pageWidth;
-            canvas.height = pageHeight;
+            canvas.width = document.documentElement.clientWidth;
+            canvas.height = document.documentElement.clientHeight;
         }
 
         function generateWhiteCanvas(context) {
@@ -26,16 +24,13 @@
 
         fullScreenCanvas(canvas);
         generateWhiteCanvas(context);
-        // window.onresize = function () {
-        //     fullScreenCanvas(canvas);
-        //     generateWhiteCanvas(context);
-        // }
     }
 
     function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
         context.lineWidth = lineWidth;
         context.strokeStyle = color;
         context.lineCap = 'round';
+        context.lineJoin = 'round';
 
         context.beginPath();
         context.moveTo(startX, startY);
@@ -79,31 +74,26 @@
         var $pallet = $('#pallet')
 
         $black.on('click', function () {
-            context.fillStyle = 'black'
             context.strokeStyle = 'black'
             $black.addClass('active')
                 .siblings().removeClass('active')
         })
         $red.on('click', function () {
-            context.fillStyle = 'red'
             context.strokeStyle = 'red'
             $red.addClass('active')
                 .siblings().removeClass('active')
         })
         $green.on('click', function () {
-            context.fillStyle = 'green'
             context.strokeStyle = 'green'
             $green.addClass('active')
                 .siblings().removeClass('active')
         })
         $blue.on('click', function () {
-            context.fillStyle = 'blue'
             context.strokeStyle = 'blue'
             $blue.addClass('active')
                 .siblings().removeClass('active')
         })
         $pallet.on('change click', function (e) {
-            context.fillStyle = e.currentTarget.value
             context.strokeStyle = e.currentTarget.value
             $pallet.siblings().removeClass('active')
         })
@@ -118,7 +108,7 @@
         var clearIcon = document.getElementById('clear');
         clearIcon.onclick = function () {
             context.clearRect(0, 0, canvas.width, canvas.height);
-
+            
             autoFullScreenCanvas(canvas, context);
         }
 
