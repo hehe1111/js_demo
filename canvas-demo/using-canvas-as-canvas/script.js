@@ -4,16 +4,16 @@
     var lineWidth
     var strokeStyle
     var eraserEnabled
-
+    
     autoFullScreenCanvas(canvas, context);
     listenToUser(canvas, context);
-
+    
     function autoFullScreenCanvas(canvas, context) {
         function fullScreenCanvas(canvas) {
             canvas.width = document.documentElement.clientWidth;
             canvas.height = document.documentElement.clientHeight;
         }
-
+        
         function generateWhiteCanvas(context) {
             context.fillStyle = 'white';
             context.beginPath();
@@ -23,17 +23,18 @@
             context.lineTo(0, canvas.height);
             context.fill();
         }
-
+        
         fullScreenCanvas(canvas);
         generateWhiteCanvas(context);
     }
-
+    
     function listenToUser(canvas, context) {
         var lastPoint = { 'x': undefined, 'y': undefined }
         var newPoint = { 'x': undefined, 'y': undefined }
-
+        
         switchPenOrEraser() // 切换画笔、橡皮擦
         changeColor(context) // 切换画笔颜色
+        context.lineWidth = $('#slide')[0].value // 初始画笔粗细
         changeLineWidth(context) // 切换画笔粗细
         clearCanvas(canvas, context) // 清屏
         save(canvas) // 保存图片
@@ -47,7 +48,7 @@
         }
     }
 
-    function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
+    function drawLine(startX, startY, endX, endY, lineWidth, color = 'pink') {
         context.lineWidth = lineWidth;
         context.strokeStyle = color;
         context.lineCap = 'round';
@@ -115,8 +116,9 @@
     }
 
     function changeLineWidth(context) {
-        $('#sizes').on('change click', function (e) {
-            context.lineWidth = e.currentTarget.value
+        $('#slide')[0].addEventListener('change', () => {
+            context.lineWidth = $('#slide')[0].value
+            $('#slide-value')[0].textContent = $('#slide')[0].value + 'px'
         })
     }
 
@@ -144,7 +146,7 @@
     function touchMotion(canvas, context, lastPoint, newPoint) {
         var x
         var y
-        
+
         canvas.ontouchstart = function (e) {
             x = e.touches[0].clientX;
             y = e.touches[0].clientY;

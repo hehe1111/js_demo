@@ -33,19 +33,12 @@
         <input  id="pallet" type="color" value="#ffc600">
     </ol>
 
-    <select name="sizes" id="sizes">
-        <option value="1" selected>1px</option>
-        <option value="2">2px</option>
-        <option value="3">3px</option>
-        <option value="4">4px</option>
-        <option value="5">5px</option>
-        <option value="6">6px</option>
-        <option value="7">7px</option>
-        <option value="8">8px</option>
-        <option value="9">9px</option>
-        <option value="10">10px</option>
-    </select>
-
+    <div class="slide-wrapper">
+        <div id="slide-value-wrapper">
+            <span id="slide-value">6px</span>
+        </div>
+        <input type="range"  id="slide" min="1" max="40" value="6" step="1">
+    </div>
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="./script.js" charset="utf-8"></script>
     <script src="//at.alicdn.com/t/font_570775_kahp3nwvx6klc8fr.js"></script>

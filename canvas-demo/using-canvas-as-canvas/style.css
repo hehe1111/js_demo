@@ -1,113 +1,20 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body{
-    margin: 0; /* 有助于使 canvas 覆盖整个视口 */
-    font-size: 16px;
-    overflow: hidden;
-}
-
-ul, ol {
-    list-style: none;
-}
-
-#canvas {
-    background-color: white;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.actions {
-    padding: 20px;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.actions svg {
-    width: 1.5em;
-    height: 1.5em;
-    margin: 0 10px;
-
-    transition: all 0.3s;
-}
-
-.actions svg.active{
-    fill: red;
-    transform: scale(1.2);
-}
-
-.icon {
-    width: 1em; height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-}
-
-.colors {
-    position: fixed;
-    top: 60px;
-    left: 28px;
-}
-
-.colors > li {
-    width: 20px;
-    height: 20px;
-    margin: 10px 0;
-    border-radius: 50%;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-
-    transition: all 0.3s;
-}
-
-.colors > li.black {
-    background-color: black;
-}
-
-.colors > li.red {
-    background-color: red;
-}
-
-.colors > li.green {
-    background-color: green;
-}
-
-.colors > li.blue {
-    background-color: blue;
-}
-
-.colors > li.active {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
-    transform: scale(1.2);
-}
-
-.colors > input#pallet {
-    width: 24px;
-    height: 28px;
-    position: absolute;
-    top: 126px;
-    left: -2px;
-    background: none;
-    outline: none;
-    border: none;
-    border-radius: 50%;
-}
-
-.colors > input#pallet:focus {
-    outline: none;
-}
-
-#sizes {
-    width: 62px;
-    padding: 4px;
-    background-color: #fff;
-    position: absolute;
-    top: 18px;
-    left: 230px;
-}
+* { padding: 0; margin: 0; box-sizing: border-box; }
+body{ margin: 0; /* 有助于使 canvas 覆盖整个视口 */ font-size: 16px; overflow: hidden; }
+ul, ol { list-style: none; }
+#canvas { background-color: white; position: fixed; top: 0; left: 0; }
+.actions { padding: 20px; position: fixed; top: 0; left: 0; }
+.actions svg { width: 1.5em; height: 1.5em; margin: 0 10px; transition: all 0.3s; }
+.actions svg.active{ fill: red; transform: scale(1.2); }
+.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+.colors { position: fixed; top: 60px; left: 28px; }
+.colors > li { width: 20px; height: 20px; margin: 10px 0; border-radius: 50%; box-shadow: 0 0 3px rgba(0, 0, 0, 0.25); transition: all 0.3s; }
+.colors > li.black { background-color: black; }
+.colors > li.red { background-color: red; }
+.colors > li.green { background-color: green; }
+.colors > li.blue { background-color: blue; }
+.colors > li.active { box-shadow: 0 0 3px rgba(0, 0, 0, 0.95); transform: scale(1.2); }
+.colors > input#pallet { width: 24px; height: 28px; position: absolute; top: 126px; left: -2px; background: none; outline: none; border: none; border-radius: 50%; }
+.colors > input#pallet:focus { outline: none; }
+.slide-wrapper { border: 1px solid #ccc; border-radius: 12px; padding-right: 12px; position: fixed; left: -56px; top: 300px; display:flex; justify-content: center; align-items: center; transform: rotate(-90deg); }
+.slide-wrapper > #slide-value-wrapper { width: 3em; padding-top: 6px; border-top: 1px solid #ccc; transform: rotate(90deg); text-align: center; }
+.slide-wrapper > #slide { padding-top: 14px; padding-bottom: 16px; margin: 0; outline: none; }

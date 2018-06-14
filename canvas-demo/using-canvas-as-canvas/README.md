@@ -250,3 +250,12 @@ canvas.ontouchmove = function (e) {
    - [javascript 禁止下拉页面 “橡皮筋“效果](https://blog.csdn.net/qq_33072593/article/details/77567133)
 
 ---
+
+- 2018.06.14更新
+
+### 用 `<input type="range">` 切换画笔线条的粗细
+
+- 参考链接
+    - [`<input type="range">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+    - [`<input>`：输入（表单输入）元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input)
+---
