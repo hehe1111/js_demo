@@ -1,6 +1,8 @@
 !function () {
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
+    var lineWidth,
+        strokeStyle
 
     autoFullScreenCanvas(canvas, context);
 
@@ -108,8 +110,11 @@
         var clearIcon = document.getElementById('clear');
         clearIcon.onclick = function () {
             context.clearRect(0, 0, canvas.width, canvas.height);
-            
+            lineWidth = context.lineWidth
+            strokeStyle = context.strokeStyle
             autoFullScreenCanvas(canvas, context);
+            context.lineWidth = lineWidth
+            context.strokeStyle = strokeStyle
         }
 
         // 保存下载
