@@ -258,4 +258,16 @@ canvas.ontouchmove = function (e) {
 - 参考链接
     - [`<input type="range">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
     - [`<input>`：输入（表单输入）元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input)
+
+### 更改鼠标显示
+
+url 里不能写相对路径，不能用引号括起来，只能直接写图片文件的名称。
+```css
+body, #pen {
+    cursor: url(brush.png) 6 28, pointer;
+}
+```
+
+- 参考链接
+    - [The image file must be 32x32 or smaller. Internet explorer only supports .cur files](https://stackoverflow.com/questions/1144836/css-cursor-customization)
 ---
