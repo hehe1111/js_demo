@@ -107,11 +107,13 @@
             eraserEnabled = true;
             $(eraserIcon).addClass('active');
             $(penIcon).removeClass('active');
+            $('body').css("cursor", 'url(eraser.png), pointer')
         }
         penIcon.onclick = function () {
             eraserEnabled = false;
             $(penIcon).addClass('active');
             $(eraserIcon).removeClass('active');
+            $('body').css("cursor", 'url(brush.png) 6 28, pointer')
         }
     }
 
