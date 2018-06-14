@@ -42,7 +42,7 @@
 
     function erase(x, y) {
         context.beginPath();
-        context.arc(x, y, 10, 0, Math.PI * 2);
+        context.arc(x, y, 50, 0, Math.PI * 2);
 
         // 点
         context.fillStyle = 'white';
