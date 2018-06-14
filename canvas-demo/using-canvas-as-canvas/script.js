@@ -1,11 +1,11 @@
 !function () {
-    var canvas = document.getElementById('canvas');
+    var canvas = $('#canvas')[0];
     var context = canvas.getContext('2d');
-    var lineWidth,
-        strokeStyle
+    var lineWidth
+    var strokeStyle
+    var eraserEnabled
 
     autoFullScreenCanvas(canvas, context);
-
     listenToUser(canvas, context);
 
     function autoFullScreenCanvas(canvas, context) {
@@ -28,6 +28,25 @@
         generateWhiteCanvas(context);
     }
 
+    function listenToUser(canvas, context) {
+        var lastPoint = { 'x': undefined, 'y': undefined }
+        var newPoint = { 'x': undefined, 'y': undefined }
+
+        switchPenOrEraser() // 切换画笔、橡皮擦
+        changeColor(context) // 切换画笔颜色
+        changeLineWidth(context) // 切换画笔粗细
+        clearCanvas(canvas, context) // 清屏
+        save(canvas) // 保存图片
+
+        if (document.documentElement.ontouchstart !== undefined) {
+            // 触屏设备
+            touchMotion(canvas, context, lastPoint, newPoint)
+        } else {
+            // 非触屏设备
+            mouseMotion(canvas, context, lastPoint, newPoint)
+        }
+    }
+
     function drawLine(startX, startY, endX, endY, lineWidth = 4, color = 'pink') {
         context.lineWidth = lineWidth;
         context.strokeStyle = color;
@@ -42,33 +61,12 @@
 
     function erase(x, y) {
         context.beginPath();
-        context.arc(x, y, 50, 0, Math.PI * 2);
-
-        // 点
+        context.arc(x, y, 50, 0, Math.PI * 2); // 点
         context.fillStyle = 'white';
         context.fill();
     }
 
-    function listenToUser(canvas, context) {
-        var lastPoint = { 'x': undefined, 'y': undefined }
-        var newPoint = { 'x': undefined, 'y': undefined }
-
-        // 切换画笔、橡皮擦
-        var eraserEnabled = false;
-        var eraserIcon = document.getElementById('eraser');
-        var penIcon = document.getElementById('pen');
-        eraserIcon.onclick = function () {
-            eraserEnabled = true;
-            eraserIcon.classList.add('active');
-            penIcon.classList.remove('active');
-        }
-        penIcon.onclick = function () {
-            eraserEnabled = false;
-            penIcon.classList.add('active');
-            eraserIcon.classList.remove('active');
-        }
-
-        // 切换画笔颜色
+    function changeColor(context) {
         var $black = $('#black')
         var $red = $('#red')
         var $green = $('#green')
@@ -99,16 +97,31 @@
             context.strokeStyle = e.currentTarget.value
             $pallet.siblings().removeClass('active')
         })
+    }
 
-        // 切换画笔粗细
-        var $sizes = $('#sizes')
-        $sizes.on('change click', function (e) {
+    function switchPenOrEraser() {
+        var eraserIcon = $('#eraser')[0];
+        var penIcon = $('#pen')[0];
+        eraserIcon.onclick = function () {
+            eraserEnabled = true;
+            $(eraserIcon).addClass('active');
+            $(penIcon).removeClass('active');
+        }
+        penIcon.onclick = function () {
+            eraserEnabled = false;
+            $(penIcon).addClass('active');
+            $(eraserIcon).removeClass('active');
+        }
+    }
+
+    function changeLineWidth(context) {
+        $('#sizes').on('change click', function (e) {
             context.lineWidth = e.currentTarget.value
         })
+    }
 
-        // 清屏
-        var clearIcon = document.getElementById('clear');
-        clearIcon.onclick = function () {
+    function clearCanvas(canvas, context) {
+        $('#clear')[0].onclick = function () {
             context.clearRect(0, 0, canvas.width, canvas.height);
             lineWidth = context.lineWidth
             strokeStyle = context.strokeStyle
@@ -116,84 +129,72 @@
             context.lineWidth = lineWidth
             context.strokeStyle = strokeStyle
         }
+    }
 
-        // 保存下载
-        var downloadIcon = document.getElementById('download');
-        downloadIcon.onclick = function () {
-            var url = canvas.toDataURL('image/png');
+    function save(canvas) {
+        $('#download')[0].onclick = function () {
             var a = document.createElement('a');
             document.body.appendChild(a);
-            a.href = url;
+            a.href = canvas.toDataURL('image/png');
             a.download = '我的画儿'; // 保存时图片的名称
             a.click();
         }
+    }
 
-        // 特性检测
-        if (document.documentElement.ontouchstart !== undefined) {
-            // 触屏设备
-            canvas.ontouchstart = function (e) {
-                var x = e.touches[0].clientX;
-                var y = e.touches[0].clientY;
-                if (eraserEnabled) {
-                    erase(x, y)
-                } else {
-                    lastPoint = { 'x': x, 'y': y }
-                }
-            }
+    function touchMotion(canvas, context, lastPoint, newPoint) {
+        var x
+        var y
+        
+        canvas.ontouchstart = function (e) {
+            x = e.touches[0].clientX;
+            y = e.touches[0].clientY;
+            if (eraserEnabled) { erase(x, y) }
+            else { lastPoint = { 'x': x, 'y': y } }
+        }
 
-            canvas.ontouchmove = function (e) {
-                e.preventDefault()
-                var x = e.touches[0].clientX;
-                var y = e.touches[0].clientY;
+        canvas.ontouchmove = function (e) {
+            e.preventDefault()
+            x = e.touches[0].clientX;
+            y = e.touches[0].clientY;
 
-                if (eraserEnabled) {
-                    erase(x, y)
-                } else {
-                    newPoint = { 'x': x, 'y': y }
-
-                    drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, context.lineWidth, context.strokeStyle);
-
-                    lastPoint = newPoint; // 最重要的是这一句
-                }
-            }
-
-            canvas.ontouchend = function (e) {
-                console.log('touch end');
-            }
-        } else {
-            // 非触屏设备
-            var clicked = false; // clicked 用于判断是否按下鼠标
-            canvas.onmousedown = function (e) {
-                clicked = true; // 按下鼠标，所以为 true
-                var x = e.clientX;
-                var y = e.clientY;
-                if (eraserEnabled) {
-                    erase(x, y)
-                } else {
-                    lastPoint = { 'x': x, 'y': y }
-                }
-            }
-
-            canvas.onmousemove = function (e) {
-                var x = e.clientX;
-                var y = e.clientY;
-
-                if (!clicked) { return }
-
-                if (eraserEnabled) {
-                    erase(x, y)
-                } else {
-                    newPoint = { 'x': x, 'y': y }
-
-                    drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, context.lineWidth, context.strokeStyle);
-
-                    lastPoint = newPoint; // 最重要的是这一句
-                }
-            }
-
-            canvas.onmouseup = function (e) {
-                clicked = false;
+            if (eraserEnabled) { erase(x, y) }
+            else {
+                newPoint = { 'x': x, 'y': y }
+                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, 
+                    context.lineWidth, context.strokeStyle);
+                lastPoint = newPoint; // 最重要的是这一句
             }
         }
+
+        canvas.ontouchend = function (e) { console.log('touch end'); }
+    }
+
+    function mouseMotion(canvas, context, lastPoint, newPoint) {
+        var clicked = false; // clicked 用于判断是否按下鼠标
+        var x
+        var y
+
+        canvas.onmousedown = function (e) {
+            clicked = true; // 按下鼠标，所以为 true
+            x = e.clientX;
+            y = e.clientY;
+            if (eraserEnabled) { erase(x, y) }
+            else { lastPoint = { 'x': x, 'y': y } }
+        }
+
+        canvas.onmousemove = function (e) {
+            x = e.clientX;
+            y = e.clientY;
+            if (!clicked) { return }
+            if (eraserEnabled) { erase(x, y) }
+            else {
+                newPoint = { 'x': x, 'y': y }
+                drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y,
+                    context.lineWidth, context.strokeStyle);
+                lastPoint = newPoint; // 最重要的是这一句
+            }
+        }
+
+        canvas.onmouseup = function (e) { clicked = false; }
     }
 }.call()
