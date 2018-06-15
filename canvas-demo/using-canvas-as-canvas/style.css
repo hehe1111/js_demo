@@ -6,7 +6,7 @@ body, #brush { cursor: url(brush-min.png) 0 32, pointer; }
 #eraser { cursor: url(eraser-min.png) 16 32, pointer; }
 #canvas { background-color: white; position: fixed; top: 0; left: 0; }
 .actions { padding: 20px; position: fixed; top: 0; left: 0; }
-.actions svg { width: 2.2em; height: 2.2em; margin: 0 10px; transition: all 0.3s; }
+.actions svg { width: 2.2em; height: 2.2em; margin: 0 10px; transition: all 0.3s; fill: rgba(0, 0, 0, 0.7); }
 .actions svg.active { fill: red; transform: scale(1.2); }
 .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
 .colors { position: fixed; top: 60px; left: 28px; }
