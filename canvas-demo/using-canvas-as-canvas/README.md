@@ -278,9 +278,15 @@ $('#slide').val()
 ### 更改鼠标显示
 
 url 里不能写相对路径，不能用引号括起来，只能直接写图片文件的名称。
+
+url 后面的位置很重要，尽量与鼠标尖端位置重合 
 ```css
 body, #pen {
-    cursor: url(brush.png) 6 28, pointer;
+    cursor: url(brush.png) 0 32, pointer;
+}
+
+#eraser 
+    cursor: url(eraser-min.png) 16 32, pointer;
 }
 ```
 
