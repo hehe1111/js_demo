@@ -292,4 +292,18 @@ body, #pen {
 
 - 参考链接
     - [The image file must be 32x32 or smaller. Internet explorer only supports .cur files](https://stackoverflow.com/questions/1144836/css-cursor-customization)
+    - [Custom Cursor - Jquery Small Circle](https://codepen.io/patrickjane/pen/xYMGJw)
+
+---
+
+2018.06.15
+
+### 下载完成后自动移除 a 标签
+```javascript
+a.remove()
+```
+
+- 参考链接
+    - [ChildNode.remove()](https://developer.mozilla.org/zh-CN/docs/Web/API/ChildNode/remove)
+
 ---
