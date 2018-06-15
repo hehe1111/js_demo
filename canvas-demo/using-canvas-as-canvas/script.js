@@ -94,12 +94,12 @@
                 .siblings().removeClass('active')
         })
         $green.on('click', function () {
-            context.strokeStyle = 'green'
+            context.strokeStyle = '#00ff00'
             $green.addClass('active')
                 .siblings().removeClass('active')
         })
         $blue.on('click', function () {
-            context.strokeStyle = 'blue'
+            context.strokeStyle = '#8a2be2'
             $blue.addClass('active')
                 .siblings().removeClass('active')
         })

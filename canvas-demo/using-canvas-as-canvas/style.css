@@ -13,8 +13,8 @@ body, #brush { cursor: url(brush-min.png) 0 32, pointer; }
 .colors > li { width: 20px; height: 20px; margin: 10px 0; border-radius: 50%; box-shadow: 0 0 3px rgba(0, 0, 0, 0.25); transition: all 0.3s; }
 .colors > li.black { background-color: black; }
 .colors > li.red { background-color: red; }
-.colors > li.green { background-color: green; }
-.colors > li.blue { background-color: blue; }
+.colors > li.green { background-color: #00ff00; }
+.colors > li.blue { background-color: #8a2be2; }
 .colors > li.active { box-shadow: 0 0 3px rgba(0, 0, 0, 0.95); transform: scale(1.2); }
 .colors > li > #pallet { width: 24px; height: 28px; position: absolute; top: 126px; left: -2px; background: none; outline: none; border: none; border-radius: 50%; }
 .colors > #pallet:focus { outline: none; }
