@@ -32,7 +32,7 @@
         var lastPoint = { 'x': undefined, 'y': undefined }
         var newPoint = { 'x': undefined, 'y': undefined }
         
-        switchPenOrEraser() // 切换画笔、橡皮擦
+        switchBrushOrEraser() // 切换画笔、橡皮擦
         changeColor(context) // 切换画笔颜色
         context.lineWidth = $("#slide").val() // 初始画笔粗细
         changeLineWidth(context) // 切换画笔粗细
@@ -100,18 +100,18 @@
         })
     }
 
-    function switchPenOrEraser() {
+    function switchBrushOrEraser() {
         var eraserIcon = $('#eraser');
-        var penIcon = $('#pen');
+        var brushIcon = $('#brush');
         eraserIcon.on('click', function () {
             eraserEnabled = true;
             eraserIcon.addClass('active');
-            penIcon.removeClass('active');
+            brushIcon.removeClass('active');
             $('body').css("cursor", 'url(eraser-min.png)16 16, pointer')
         })
-        penIcon.on('click', function () {
+        brushIcon.on('click', function () {
             eraserEnabled = false;
-            penIcon.addClass('active');
+            brushIcon.addClass('active');
             eraserIcon.removeClass('active');
             $('body').css("cursor", 'url(brush-min.png) 0 32, pointer')
         })
