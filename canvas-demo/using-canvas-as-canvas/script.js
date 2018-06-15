@@ -139,8 +139,8 @@
         $('#download').on('click', function () {
             var a = document.createElement('a');
             $('body').append(a);
-            a.href = canvas.toDataURL('image/png');
-            a.download = '我的画儿'; // 保存时图片的名称
+            a.href = canvas.toDataURL();
+            a.download = '我的画儿.png'; // 保存时图片的名称
             a.click();
         })
     }
