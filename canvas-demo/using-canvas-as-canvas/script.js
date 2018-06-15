@@ -118,9 +118,11 @@
     }
 
     function changeLineWidth(context) {
+        var value
         $('#slide').on('change', function () {
-            context.lineWidth = $('#slide')[0].value
-            $('#slide-value').text($('#slide').val() + 'px')
+            value = $('#slide').val()
+            context.lineWidth = value
+            $('#slide-value').text(value + 'px')
         })
     }
 
