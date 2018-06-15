@@ -306,4 +306,36 @@ a.remove()
 - 参考链接
     - [ChildNode.remove()](https://developer.mozilla.org/zh-CN/docs/Web/API/ChildNode/remove)
 
+### 彩虹画笔与按钮
+
+```javascript
+function rainbow() {
+    if (hue >= 360) { hue = 0 }
+    context.strokeStyle = `hsl(${ hue }, 100%, 50%)`
+    hue += 1
+}
+```
+
+[HSL](https://www.wikiwand.com/zh/HSL%E5%92%8CHSV%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4) 配色
+> HSL即色相、饱和度、亮度（英语：Hue, Saturation, Lightness）。HSV即色相、饱和度、明度（英语：Hue, Saturation, Value），又称HSB，其中B即英语：Brightness。
+>
+> 色相（H）是色彩的基本属性，就是平常所说的**颜色**名称，如红色、黄色等。  
+> 饱和度（S）是指色彩的纯度，越高色彩越纯，低则逐渐变灰，取0-100%的数值。  
+> 明度（V），亮度（L），取0-100%。0 为黑色，100% 为白色。
+
+```css
+.colors > #rainbow.active {
+    background: linear-gradient(to right, #ff0000 0%, #ffff00 33%, #00ff00 66%, #ff00ff 100%);
+}
+```
+
+红 - #ff0000  
+黄 - #ffff00  
+绿黄 - #00ff00  
+紫红 - #ff00ff  
+
+- 参考链接
+    - [`<color>`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value)
+    - [Ultimate CSS Gradient Generator](http://www.colorzilla.com/gradient-editor/)
+
 ---

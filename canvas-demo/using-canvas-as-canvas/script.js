@@ -4,6 +4,8 @@
     var lineWidth
     var strokeStyle
     var eraserEnabled
+    var rainbowEnabled = false
+    var hue = 0
     
     autoFullScreenCanvas(canvas, context);
     listenToUser(canvas, context);
@@ -46,6 +48,13 @@
             // 非触屏设备
             mouseMotion(canvas, context, lastPoint, newPoint)
         }
+
+        $('#rainbow').on('click', () => { 
+            rainbowEnabled = true
+            $('#rainbow').addClass('active')
+                .siblings().removeClass('active')
+         })
+        $('.colors').on('click', 'li', () => { rainbowEnabled = false })
     }
 
     function drawLine(startX, startY, endX, endY, lineWidth, color = 'pink') {
@@ -98,6 +107,12 @@
             context.strokeStyle = e.currentTarget.value
             $pallet.siblings().removeClass('active')
         })
+    }
+
+    function rainbow() {
+        if (hue >= 360) { hue = 0 }
+        context.strokeStyle = `hsl(${ hue }, 90%, 50%)`
+        hue += 1
     }
 
     function switchBrushOrEraser() {
@@ -167,6 +182,7 @@
             if (eraserEnabled) { erase(x, y) }
             else {
                 newPoint = { 'x': x, 'y': y }
+                if (rainbowEnabled) { rainbow() }
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y, 
                     context.lineWidth, context.strokeStyle);
                 lastPoint = newPoint; // 最重要的是这一句
@@ -196,6 +212,7 @@
             if (eraserEnabled) { erase(x, y) }
             else {
                 newPoint = { 'x': x, 'y': y }
+                if (rainbowEnabled) { rainbow() }
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y,
                     context.lineWidth, context.strokeStyle);
                 lastPoint = newPoint; // 最重要的是这一句
