@@ -255,9 +255,25 @@ canvas.ontouchmove = function (e) {
 
 ### 用 `<input type="range">` 切换画笔线条的粗细
 
+> jQuery 获取元素内容、值
+>
+> `.text()` 方法**不能**使用在 `input` 元素或 `scripts` 元素上。 `input` 或 `textarea` 需要使用 `.val()` 方法获取或设置文本值。得到 `scripts` 元素的值，使用 `.html()` 方法
+
+```javascript
+// jQuery 获取 span#slide-value 的内容
+$('#slide-value').text()
+// 设置 span#slide-value 的内容
+$('#slide-value').text($('#slide').val() + 'px')
+
+
+// jQuery 获取 input#slide 的值
+$('#slide').val()
+```
+
 - 参考链接
     - [`<input type="range">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
     - [`<input>`：输入（表单输入）元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input)
+    - [`.text()`](https://www.jquery123.com/text/)
 
 ### 更改鼠标显示
 

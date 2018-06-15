@@ -34,7 +34,7 @@
         
         switchPenOrEraser() // 切换画笔、橡皮擦
         changeColor(context) // 切换画笔颜色
-        context.lineWidth = $('#slide')[0].value // 初始画笔粗细
+        context.lineWidth = $("#slide").val() // 初始画笔粗细
         changeLineWidth(context) // 切换画笔粗细
         clearCanvas(canvas, context) // 清屏
         save(canvas) // 保存图片
@@ -101,48 +101,48 @@
     }
 
     function switchPenOrEraser() {
-        var eraserIcon = $('#eraser')[0];
-        var penIcon = $('#pen')[0];
-        eraserIcon.onclick = function () {
+        var eraserIcon = $('#eraser');
+        var penIcon = $('#pen');
+        eraserIcon.on('click', function () {
             eraserEnabled = true;
-            $(eraserIcon).addClass('active');
-            $(penIcon).removeClass('active');
+            eraserIcon.addClass('active');
+            penIcon.removeClass('active');
             $('body').css("cursor", 'url(eraser.png), pointer')
-        }
-        penIcon.onclick = function () {
+        })
+        penIcon.on('click', function () {
             eraserEnabled = false;
-            $(penIcon).addClass('active');
-            $(eraserIcon).removeClass('active');
+            penIcon.addClass('active');
+            eraserIcon.removeClass('active');
             $('body').css("cursor", 'url(brush.png) 6 28, pointer')
-        }
+        })
     }
 
     function changeLineWidth(context) {
-        $('#slide')[0].addEventListener('change', () => {
+        $('#slide').on('change', function () {
             context.lineWidth = $('#slide')[0].value
-            $('#slide-value')[0].textContent = $('#slide')[0].value + 'px'
+            $('#slide-value').text($('#slide').val() + 'px')
         })
     }
 
     function clearCanvas(canvas, context) {
-        $('#clear')[0].onclick = function () {
+        $('#clear').on('click', function () {
             context.clearRect(0, 0, canvas.width, canvas.height);
             lineWidth = context.lineWidth
             strokeStyle = context.strokeStyle
             autoFullScreenCanvas(canvas, context);
             context.lineWidth = lineWidth
             context.strokeStyle = strokeStyle
-        }
+        })
     }
 
     function save(canvas) {
-        $('#download')[0].onclick = function () {
+        $('#download').on('click', function () {
             var a = document.createElement('a');
-            document.body.appendChild(a);
+            $('body').append(a);
             a.href = canvas.toDataURL('image/png');
             a.download = '我的画儿'; // 保存时图片的名称
             a.click();
-        }
+        })
     }
 
     function touchMotion(canvas, context, lastPoint, newPoint) {
