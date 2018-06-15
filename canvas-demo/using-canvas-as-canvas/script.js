@@ -105,7 +105,7 @@
         })
         $pallet.on('change click', function (e) {
             context.strokeStyle = e.currentTarget.value
-            $pallet.siblings().removeClass('active')
+            $('#pallet-wrapper').siblings().removeClass('active')
         })
     }
 
