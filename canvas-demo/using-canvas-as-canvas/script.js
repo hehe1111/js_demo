@@ -141,7 +141,7 @@
         $('#download').on('click', function () {
             var a = document.createElement('a');
             $('body').append(a);
-            a.href = canvas.toDataURL('image/png').replace('data:image/png', 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=image.png')
+            a.href = canvas.toDataURL('image/png')
             a.download = '我的画儿.png'; // 保存时图片的名称
             a.click();
             a.remove();
