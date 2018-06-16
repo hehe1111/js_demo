@@ -4,6 +4,10 @@
     let duration = 5
     let id
     let code = `
+        /* 你好，接下来要画一只皮卡丘 */
+        /* 动画大约需要 50 秒*/
+        /* 温馨提示：右侧有跳过按钮 */
+
         /* 首先，画脸部皮肤 */
         .preview {
             height: 100%;
@@ -148,7 +152,7 @@
             bottom: -10px;
             transform: translateX(-50%);
         }
-
+        
         /* 画完收工 */
 
         .code-wrapper, .speed-control {
