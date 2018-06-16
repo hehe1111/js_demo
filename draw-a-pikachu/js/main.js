@@ -1,7 +1,7 @@
 !function () {
     let codeContainer = document.querySelector('.code')
     let style = document.querySelector('.style')
-    let duration = 20
+    let duration = 5
     let id
     let code = `
         /* 首先，画脸部皮肤 */
