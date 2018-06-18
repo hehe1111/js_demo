@@ -164,6 +164,7 @@ function listenToUser(hash) {
     // 移动端监听按键
     document.querySelectorAll('.key').forEach(key => key.onclick = function (e) {
         var key = e['target']['innerText'].toLowerCase(); // e['target']['innerText'] 按键的键名
+        key = key.replace(/编辑/g, '')
         window.open('http://' + hash[key], '_blank');
     });
 }
