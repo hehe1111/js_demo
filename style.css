@@ -126,7 +126,8 @@ footer {
 }
 
 section.nav-kbd>.inner-wrapper>ol>li,
-section.popover-demo>.inner-wrapper>ol>li {
+section.popover-demo>.inner-wrapper>ol>li,
+section.animation-resume>.inner-wrapper>ol>li {
     width: 100%;
 }
 
