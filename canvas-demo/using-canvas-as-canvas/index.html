@@ -10,41 +10,53 @@
 </head>
 <body>
     <canvas id="canvas" width=300 height=300></canvas>
-    <div class="actions" id="actions">
-        <svg class="icon active" id="brush">
-            <use xlink:href="#icon-brush"></use>
-        </svg>
-        <svg class="icon" id="eraser">
-            <use xlink:href="#icon-eraser"></use>
-        </svg>
-        <svg class="icon" id="clear">
-            <use xlink:href="#icon-delete"></use>
-        </svg>
-        <svg class="icon" id="download">
-            <use xlink:href="#icon-download"></use>
-        </svg>
+    <div id="menu">
+        <button id="menu-button">
+            <svg class="icon" id="menu-icon">
+                <use xlink:href="#icon-menu"></use>
+            </svg>
+            <svg class="icon" id="cross">
+                <use xlink:href="#icon-cross"></use>
+            </svg>
+        </button>
     </div>
-    
-    <ol class="colors">
-        <li class="black active" id="black"></li>
-        <li class="red" id="red"></li>
-        <li class="green" id="green"></li>
-        <li class="blue" id="blue"></li>
-        <li id="pallet-wrapper">
-            <input  id="pallet" type="color" value="#05fad6">
-        </li>
-        <button id="rainbow">七彩</button>
-    </ol>
-
-    <div class="slide-wrapper">
-        <div id="slide-value-wrapper">
-            <span id="slide-value">6px</span>
+    <div class="tools">
+        <div class="actions" id="actions">
+            <svg class="icon active" id="brush">
+                <use xlink:href="#icon-brush"></use>
+            </svg>
+            <svg class="icon" id="eraser">
+                <use xlink:href="#icon-eraser"></use>
+            </svg>
+            <svg class="icon" id="clear">
+                <use xlink:href="#icon-delete"></use>
+            </svg>
+            <svg class="icon" id="download">
+                <use xlink:href="#icon-download"></use>
+            </svg>
         </div>
-        <input type="range"  id="slide" min="1" max="40" value="6" step="1">
+        
+        <ol class="colors">
+            <li class="black active" id="black"></li>
+            <li class="red" id="red"></li>
+            <li class="green" id="green"></li>
+            <li class="blue" id="blue"></li>
+            <li id="pallet-wrapper">
+                <input  id="pallet" type="color" value="#05fad6">
+            </li>
+            <button id="rainbow">七彩</button>
+        </ol>
+    
+        <div class="slide-wrapper">
+            <div id="slide-value-wrapper">
+                <span id="slide-value">6px</span>
+            </div>
+            <input type="range"  id="slide" min="1" max="40" value="6" step="1">
+        </div>
     </div>
     
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="./script.js" charset="utf-8"></script>
-    <script src="//at.alicdn.com/t/font_570775_y70xmkbdsz.js"></script>
+    <script src="//at.alicdn.com/t/font_570775_ga0qp5pfd2i.js"></script>
 </body>
 </html>

@@ -5,21 +5,30 @@ body, #brush { cursor: url(brush-min.png) 0 32, pointer; }
 #clear, #download { cursor: pointer; }
 #eraser { cursor: url(eraser-min.png) 16 32, pointer; }
 #canvas { background-color: white; position: fixed; top: 0; left: 0; }
-.actions { padding: 20px; position: fixed; top: 0; left: 0; }
-.actions svg { width: 2.2em; height: 2.2em; margin: 0 10px; transition: all 0.3s; fill: rgba(0, 0, 0, 0.7); }
-.actions svg.active { fill: red; transform: scale(1.2); }
+#menu { position: absolute; top: 18px; right: 18px; }
+#menu #menu-button { font-size: 35px; font-weight: 400; border: none; border-radius: 4px; background-color: #fff; box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25); }
+#menu #menu-button:focus { outline: none; }
+#menu #menu-button svg.active { fill: red; }
+#menu #menu-button #menu-icon.hide { display: none; }
+#menu #menu-button #cross { display: none; }
+#menu #menu-button #cross.active { display: block; }
+.tools { display: none; }
+.tools.active { display: block; }
+.tools .actions { padding: 20px; position: fixed; top: 0; left: 0; }
+.tools .actions svg { width: 2.2em; height: 2.2em; margin: 0 10px; transition: all 0.3s; fill: rgba(0, 0, 0, 0.7); }
+.tools .actions svg.active { fill: red; transform: scale(1.2); }
 .icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
-.colors { position: fixed; top: 60px; left: 28px; }
-.colors > li { width: 20px; height: 20px; margin: 10px 0; border-radius: 50%; box-shadow: 0 0 3px rgba(0, 0, 0, 0.25); transition: all 0.3s; }
-.colors > li.black { background-color: black; }
-.colors > li.red { background-color: red; }
-.colors > li.green { background-color: #00ff00; }
-.colors > li.blue { background-color: #8a2be2; }
-.colors > li.active { box-shadow: 0 0 3px rgba(0, 0, 0, 0.95); transform: scale(1.2); }
-.colors > li > #pallet { width: 24px; height: 28px; position: absolute; top: 126px; left: -2px; background: none; outline: none; border: none; border-radius: 50%; }
-.colors > #pallet:focus { outline: none; }
-.colors > #rainbow { padding: 4px 6px; border: 1px solid #ccc; border-radius: 6px; background-color: #fff; position: fixed; top: 220px; left: 20px; outline: none; }
-.colors > #rainbow.active { background: linear-gradient(to right, #ff0000 0%,#ffff00 33%,#00ff00 66%,#ff00ff 100%); }
-.slide-wrapper { border: 1px solid #ccc; border-radius: 12px; padding-right: 12px; position: fixed; left: -56px; top: 328px; display:flex; justify-content: center; align-items: center; transform: rotate(-90deg); }
-.slide-wrapper > #slide-value-wrapper { width: 3em; padding-top: 6px; border-top: 1px solid #ccc; transform: rotate(90deg); text-align: center; }
-.slide-wrapper > #slide { padding-top: 14px; padding-bottom: 16px; margin: 0; outline: none; }
+.tools .colors { position: fixed; top: 60px; left: 28px; }
+.tools .colors > li { width: 20px; height: 20px; margin: 10px 0; border-radius: 50%; box-shadow: 0 0 3px rgba(0, 0, 0, 0.25); transition: all 0.3s; }
+.tools .colors > li.black { background-color: black; }
+.tools .colors > li.red { background-color: red; }
+.tools .colors > li.green { background-color: #00ff00; }
+.tools .colors > li.blue { background-color: #8a2be2; }
+.tools .colors > li.active { box-shadow: 0 0 3px rgba(0, 0, 0, 0.95); transform: scale(1.2); }
+.tools .colors > li > #pallet { width: 24px; height: 28px; position: absolute; top: 126px; left: -2px; background: none; outline: none; border: none; border-radius: 50%; }
+.tools .colors > #pallet:focus { outline: none; }
+.tools .colors > #rainbow { padding: 4px 6px; border: 1px solid #ccc; border-radius: 6px; background-color: #fff; position: fixed; top: 220px; left: 20px; outline: none; }
+.tools .colors > #rainbow.active { background: linear-gradient(to right, #ff0000 0%,#ffff00 33%,#00ff00 66%,#ff00ff 100%); }
+.tools .slide-wrapper { border: 1px solid #ccc; border-radius: 12px; padding-right: 12px; position: fixed; left: -56px; top: 328px; display:flex; justify-content: center; align-items: center; transform: rotate(-90deg); }
+.tools .slide-wrapper > #slide-value-wrapper { width: 3em; padding-top: 6px; border-top: 1px solid #ccc; transform: rotate(90deg); text-align: center; }
+.tools .slide-wrapper > #slide { padding-top: 14px; padding-bottom: 16px; margin: 0; outline: none; }

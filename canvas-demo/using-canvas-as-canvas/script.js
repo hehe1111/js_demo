@@ -55,6 +55,11 @@
                 .siblings().removeClass('active')
          })
         $('.colors').on('click', 'li', () => { rainbowEnabled = false })
+
+        $('#menu-button').on('click', () => {
+            $('#cross').toggleClass('active').siblings().toggleClass('hide')
+            $('.tools').toggleClass('active')
+        })
     }
 
     function drawLine(startX, startY, endX, endY, lineWidth, color = 'pink') {
