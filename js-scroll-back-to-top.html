@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS 跳转到页面顶部</title>
+</head>
+<body>
+    <p style="height: 300vh; border: 1px solid red;"></p>
+
+    <div class="back-to-top">
+        <a href="">回到顶部-空字符串</a>
+        <a href="#">回到顶部-#</a>
+        <button class="button0">回到顶部 0</button>
+        <button class="button1">回到顶部 1</button>
+        <button class="button2">回到顶部 2</button>
+    </div>
+
+    <script>
+        let button0 = document.querySelector('.back-to-top > .button0')
+        button0.addEventListener('click', () => { window.scroll(0, 0) })
+
+        let button1 = document.querySelector('.back-to-top > .button1')
+        button1.addEventListener('click', () => {
+            window.scrollTo({ 
+                top: 0,
+                behavior: "smooth"
+            })
+        })
+
+        let button2 = document.querySelector('.back-to-top > .button2')
+        button2.addEventListener('click', () => {
+            window.scrollBy({
+                top: -innerHeight * 10000,
+                behavior: 'smooth'
+            })
+        })
+    </script>
+    
+</body>
+</html>
