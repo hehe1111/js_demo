@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>路由</title>
+  <style>
+    h3 { color: red; }
+    x-tab { display: block }
+    .nav > li.active { background-color: red; }
+    .content > li { display: none; }
+    .content > li.active { display: block; }
+  </style>
+</head>
+
+<body>
+  <x-tab>
+    <ol class="nav">
+      <li class="active">Nav 1</li>
+      <li>Nav 2</li>
+    </ol>
+    <ol class="content">
+      <li class="active">Content 1</li>
+      <li>Content 2</li>
+    </ol>
+  </x-tab>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $('x-tab').on('click', '.nav > li', (e) => {
+      let $li = $(e.currentTarget)
+      $li.addClass('active')
+        .siblings()
+        .removeClass('active')
+      let index = $li.index()
+      $li.closest('x-tab')
+        .find('.content > li')
+        .eq(index)
+        .addClass('active')
+        .siblings()
+        .removeClass('active')
+    })
+  </script>
+</body>
+
+</html>
