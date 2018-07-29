@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS 跳转到页面顶部</title>
+    <style>
+        body { padding: 10px; border: 1px solid green; }
+        p { height: 2000px; border: 1px solid red; }
+    </style>
 </head>
 <body>
-    <h1>请滚动到页面底部</h1>
-    <p style="height: 300vh; border: 1px solid red;"></p>
-
+    <h1 id="h1">请滚动到页面底部</h1>
+    <p></p>
     <div class="back-to-top">
         <a href="">回到顶部-空字符串</a>
         <a href="#">回到顶部-#</a>
