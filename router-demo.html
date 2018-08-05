@@ -16,8 +16,12 @@
 <body>
   <x-tab>
     <ol class="nav">
-      <li class="active">Nav 1</li>
-      <li>Nav 2</li>
+      <li class="active">
+        <a href="#0">Nav 1</a>
+      </li>
+      <li>
+        <a href="#1">Nav 2</a>
+      </li>
     </ol>
     <ol class="content">
       <li class="active">Content 1</li>
@@ -27,26 +31,20 @@
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
-    let index = window.location.hash.substring(1) || 0
-    $('x-tab > .nav > li').eq(index).addClass('active')
-      .siblings().removeClass('active')
-    $('x-tab > .content > li').eq(index).addClass('active')
-      .siblings().removeClass('active')
+    // 页面初始加载时
+    selectTab()
+    
+    // 用户点击链接时
+    window.onhashchange = () => selectTab()
 
-    $('x-tab').on('click', '.nav > li', (e) => {
-      let $li = $(e.currentTarget)
-      $li.addClass('active')
-        .siblings()
-        .removeClass('active')
-      let index = $li.index()
-      window.location.hash = index
-      $li.closest('x-tab')
-        .find('.content > li')
-        .eq(index)
-        .addClass('active')
-        .siblings()
-        .removeClass('active')
-    })
+    // 工具函数
+    function selectTab() {
+      let index = window.location.hash.substring(1)
+      $('x-tab > .nav > li').eq(index).addClass('active')
+        .siblings().removeClass('active')
+      $('x-tab > .content > li').eq(index).addClass('active')
+        .siblings().removeClass('active')
+    }
   </script>
 </body>
 
