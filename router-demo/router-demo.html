@@ -17,10 +17,10 @@
   <x-tab>
     <ol class="nav">
       <li class="active">
-        <a href="#0">Nav 1</a>
+        <a href="./tab1">Nav 1</a>
       </li>
       <li>
-        <a href="#1">Nav 2</a>
+        <a href="./tab2">Nav 2</a>
       </li>
     </ol>
     <ol class="content">
@@ -28,6 +28,7 @@
       <li>Content 2</li>
     </ol>
   </x-tab>
+  <a href="#top">回到顶部</a>
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
@@ -35,11 +36,16 @@
     selectTab()
     
     // 用户点击链接时
-    window.onhashchange = () => selectTab()
+    $('x-tab').on('click', '.nav > li > a', (event) => {
+      event.preventDefault()
+      let url = event.currentTarget.getAttribute('href')
+      window.history.pushState(null, null, url)
+      selectTab()
+    })
 
     // 工具函数
     function selectTab() {
-      let index = window.location.hash.substring(1)
+      let index = window.location.pathname.substring(4) - 1 || '0'
       $('x-tab > .nav > li').eq(index).addClass('active')
         .siblings().removeClass('active')
       $('x-tab > .content > li').eq(index).addClass('active')
