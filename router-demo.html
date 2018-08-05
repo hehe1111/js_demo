@@ -27,12 +27,19 @@
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>
+    let index = window.location.hash.substring(1) || 0
+    $('x-tab > .nav > li').eq(index).addClass('active')
+      .siblings().removeClass('active')
+    $('x-tab > .content > li').eq(index).addClass('active')
+      .siblings().removeClass('active')
+
     $('x-tab').on('click', '.nav > li', (e) => {
       let $li = $(e.currentTarget)
       $li.addClass('active')
         .siblings()
         .removeClass('active')
       let index = $li.index()
+      window.location.hash = index
       $li.closest('x-tab')
         .find('.content > li')
         .eq(index)
