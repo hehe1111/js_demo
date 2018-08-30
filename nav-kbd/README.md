@@ -214,3 +214,13 @@ function listenToUser(hash) {
 ```javascript
 key = key.replace(/编辑/g, '')
 ```
+
+---
+
+2018-08-30 更新
+
+更改背景图片
+
+- [点击查看背景图片来源](https://alpha.wallhaven.cc/wallpaper/444107)
+
+---
