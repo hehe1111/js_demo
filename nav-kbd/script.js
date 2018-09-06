@@ -71,7 +71,7 @@ function createButton(id) {
         if (x.length === 0) { return }
         hash[key] = x;
         var img2 = button2.previousSibling;
-        img2.src = 'http://' + x + '/favicon.ico';
+        img2.src = 'https://' + x + '/favicon.ico';
         img2.onerror = function (e) {
             e.target.src = './imgs/placeholder.png';
         }
@@ -85,7 +85,7 @@ function createButton(id) {
 function createImage(domain) {
     var img = tag('img', {});
     if (domain) {
-        img.src = 'http://' + domain + '/favicon.ico';
+        img.src = 'https://' + domain + '/favicon.ico';
     } else {
         img.src = './imgs/placeholder.png';
     }
@@ -155,8 +155,8 @@ function listenToUser(hash) {
             } else {
                 // 用户按的是字母键
                 var website = hash[key];                
-                // location.href = 'http://' + website; // 在当前窗口打开 website 对应的网址
-                window.open('http://' + website, '_blank');
+                // location.href = 'https://' + website; // 在当前窗口打开 website 对应的网址
+                window.open('https://' + website, '_blank');
             }
         }
     };
@@ -165,6 +165,6 @@ function listenToUser(hash) {
     document.querySelectorAll('.key').forEach(key => key.onclick = function (e) {
         var key = e['target']['innerText'].toLowerCase(); // e['target']['innerText'] 按键的键名
         key = key.replace(/编辑/g, '')
-        window.open('http://' + hash[key], '_blank');
+        window.open('https://' + hash[key], '_blank');
     });
 }
