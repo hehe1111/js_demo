@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分页组件</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        * { box-sizing: border-box; }
+        *::before { box-sizing: border-box; }
+        *::after { box-sizing: border-box; }
+        a { color: inherit; text-decoration: none; }
+        ol, ul { list-style: none; }
+        html { font-size: 18px; line-height: 1.5; font-family: Helvetica, sans-serif; }
+
+        #tabs {
+            padding: 10px;
+            border: 2px solid red;
+            background-clip: content-box;
+            /* background-clip: padding-box; */
+            /* background-clip: border-box; */ /* 边框为透明时才能看见效果 */
+        }
+        #tabs > .tab-bar { background-color: skyblue; display: flex; justify-content: space-around; align-items: center; }
+        #tabs > .tab-bar > li { border: 2px solid transparent; }
+        #tabs > .tab-bar > li:hover,
+        #tabs > .tab-bar > li.active { border-bottom: 2px solid red; }
+
+        #tabs > .tab-content { margin-top: 10px; }
+        #tabs > .tab-content > li {
+            height: 100px;
+            background-color: yellow;
+            /* 页面中不显示，也不会留空 */
+            display: none;
+            /* 页面看不见，但是会留空 */
+            /* visibility: visible; */
+        }
+        #tabs > .tab-content > li.active { width: 100%; display: block; }
+    </style>
+</head>
+<body>
+    <div id="tabs">
+        <ol class="tab-bar">
+            <li id="tab-1" class="active">推荐</li>
+            <li id="tab-2">热歌榜</li>
+            <li id="tab-3">搜索</li>
+        </ol>
+        <ol class="tab-content">
+            <li class="active" data-id="tab-1">推荐推荐推荐推荐推荐推荐推荐推荐推荐推荐推荐推荐</li>
+            <li data-id="tab-2">热歌榜热歌榜热歌榜热歌榜热歌榜热歌榜热歌榜热歌榜热歌榜热歌榜热歌榜</li>
+            <li data-id="tab-3">搜索搜索搜索搜索搜索搜索搜索搜索搜索搜索搜索搜索搜索搜索</li>
+        </ol>
+    </div>
+
+	<script src="./zepto-1.2.0.min.js"></script>
+    <script>
+        $('#tabs > .tab-bar').on('click', 'li', (event) =>{
+            console.log(event.currentTarget === event.target) // true
+
+            $(event.currentTarget).addClass('active')
+                .siblings('.active').removeClass('active')
+
+            let id = $(event.currentTarget).attr('id')
+            $('#tabs').find(`[data-id=${id}]`).addClass('active')
+                .siblings('.active').removeClass('active')
+        })
+    </script>
+</body>
+</html>
