@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索框组件</title>
+    <style>
+    .icon {
+        width: 1em; height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+    }
+    .search>form {
+        padding: 15px 10px;
+    }
+    .search>form>.row {
+        height: 30px;
+        padding: 0 30px;
+        border-radius: 30px;
+        background-color: #ebecec;
+        position: relative;
+    }
+    .search>form>.row>input {
+        width: 100%;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+        font-size: 14px;
+        line-height: 18px;
+        color: #333;
+        outline: none;
+    }
+    .search>form>.row>label {
+        background-color: transparent;
+        position: absolute;
+        left: 30px;
+        top: 5px;
+        font-size: 14px;
+        color: #c9c9c9;
+        pointer-events: none;
+    }
+    .search>form>.row .search-icon-container {
+        margin: 0 8px;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        vertical-align: middle;
+    }
+    .search>form>.row svg {
+        fill: #c9c9c9;
+    }
+    .search>form>.row .cross-icon-container {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 28px;
+        text-align: center;
+        visibility: hidden;
+    }
+    .search>form>.row .cross-icon-container.active {
+        visibility: visible;
+    }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <form>
+            <div class="row">
+                <div class="search-icon-container">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-search"></use>
+                    </svg>
+                </div>
+                <input type="text">
+                <label>搜索</label>
+                <div class="cross-icon-container">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-cross"></use>
+                    </svg>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://at.alicdn.com/t/font_866059_m2nu53vlp9s.js"></script>
+    <script>
+        let form = document.querySelector('form')
+        let input = document.querySelector('input')
+        let placeholder = document.querySelector('label')
+        let crossIcon = document.querySelector('.cross-icon-container')
+        input.focus()
+        input.addEventListener('input', (event) => {
+            if (input.value.length === 0) {
+                placeholder.textContent = '搜索'
+                crossIcon.classList.remove('active')
+            } else {
+                placeholder.textContent = ''
+                crossIcon.classList.add('active')
+            }
+        })
+        form.addEventListener('submit', (event) => {
+            event.preventDefault()
+            console.log(input.value)
+        })
+        crossIcon.addEventListener('click', (event) => {
+            input.value = ''
+            input.focus()
+            placeholder.textContent = '搜索'
+            crossIcon.classList.remove('active')
+        })
+    </script>
+    
+</body>
+</html>
