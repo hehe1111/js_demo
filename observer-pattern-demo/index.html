@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发布订阅模式</title>
+</head>
+<body>
+    <p>这是一个关于发布/订阅模式（观察者模式）的练习。请打开开发者工具查看结果。</p>
+
+    <pre>
+        // eventHub.js
+        window.eventHub = {
+            events: {
+                // 'xxx': [fn1, fn2]
+            },
+            publish(eventName, data) {
+                if (this.events[eventName] && this.events[eventName].length !== 0) {
+                    this.events[eventName].map(fn => fn.call(undefined, data))
+                }
+            },
+            subscribe(eventName, fn) {
+                if (!this.events[eventName]) this.events[eventName] = []
+                this.events[eventName].push(fn)
+            },
+            unsubscribe(eventName, fn) {
+                if (this.events[eventName] && this.events[eventName].length !== 0) {
+                    this.events[eventName].splice(this.events[eventName].indexOf(fn), 1)
+                }
+            },
+        }
+    </pre>
+    <pre>
+        // subscribe1.js
+        {
+            window.eventHub.subscribe('xxx', data => console.log(data))
+        }
+    </pre>
+    <pre>
+        // subscribe2.js
+        {
+            window.eventHub.subscribe('xxx', data => console.log(data))
+            window.eventHub.unsubscribe('xxx', data => console.log(data))
+        }
+    </pre>
+    <pre>
+        // subscribe3.js
+        {
+            window.eventHub.subscribe('xxx', data => console.log(data))
+        }
+    </pre>
+    <pre>
+        // subscribe4.js
+        {
+            window.eventHub.subscribe('yyy', data => console.log(data))
+        }
+    </pre>
+    <pre>
+        // publish.js
+        {
+            window.eventHub.publish('xxx', '这是 eventHub 测试，这段话应该输出两次，分别由 subscribe1.js 和 subscribe3.js 输出')
+            window.eventHub.publish('yyy', '\n这是另一个事件。输出 yyy')
+        }
+    </pre>
+    
+    <script src="./eventHub.js"></script>
+    <script src="./subscribe1.js"></script>
+    <script src="./subscribe2.js"></script>
+    <script src="./subscribe3.js"></script>
+    <script src="./subscribe4.js"></script>
+    <script src="./publish.js"></script>
+
+</body>
+</html>
