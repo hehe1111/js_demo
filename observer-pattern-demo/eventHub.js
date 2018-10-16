@@ -13,7 +13,9 @@ window.eventHub = {
     },
     unsubscribe(eventName, fn) {
         if (this.events[eventName] && this.events[eventName].length !== 0) {
-            this.events[eventName].splice(this.events[eventName].indexOf(fn), 1)
+            if (this.events[eventName].indexOf(fn) !== -1) {
+                this.events[eventName].splice(this.events[eventName].indexOf(fn), 1)
+            }
         }
     },
 }
