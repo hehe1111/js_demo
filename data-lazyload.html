@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>用懒加载模拟渲染大量数据但页面不能卡顿</title>
+  <style>
+    * { margin: 0; }
+    body, pre { padding: 20px; }
+    h2 { margin: 10px 0; }
+    pre { font: 18px/1.5 Hervetical; border: 1px solid red; word-break: break-all; }
+    .new-appended-div { padding: 20px 0; border: 1px solid red; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h2>用懒加载来渲染大量数据，避免因为要渲染的数据太多导致页面卡顿</h2>
+  <h2>通过判断目标容器元素的底部与视口底部的距离差 delta</h2>
+  <h2>element.getBoundingCh2entRect().bottom - window.innerHeight</h2>
+  <h2>如果 delta 小于某一个临界值，就触发渲染新数据到页面尾部</h2>
+  <h2>可以指定每一次要渲染多少条新数据到页面</h2>
+  <h2>用 DOM 片段来暂时保存新元素，避免多次操作 DOM</h2>
+  <pre>
+    let container = document.querySelector('#container')
+    let count = 0 // 计算已经渲染的数据条数
+
+    document.addEventListener('scroll', (event) => {
+      // window.innerHeight >> 视口高度
+      // container.getBoundingClientRect().bottom) >> container 元素的底部与视口底部的距离
+      if (container.getBoundingClientRect().bottom - window.innerHeight > 0) return
+      lazyloadDiv(container, 100000000, 20)
+    })
+
+    /**
+     * @param {Object} target 存放数据渲染后的元素的容器
+     * @param {number} total 模拟要渲染的数据条数
+     * @param {number} range 每次懒加载要渲染的数据条数
+     */
+    function lazyloadDiv(target, total, range) {
+      let fragment = document.createDocumentFragment()
+      for (let i = 0; i < range; i++) {
+        if (count >= total) return
+
+        let div = document.createElement('div')
+        count += 1
+        div.textContent = `第${count}个 div`
+        div.classList.add('new-appended-div')
+        fragment.appendChild(div)
+      }
+      target.appendChild(fragment)
+    }
+  </pre>
+  <div id="container">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum obcaecati omnis suscipit necessitatibus numquam alias, explicabo dolor minus cumque atque animi delectus beatae eligendi, mollitia totam libero eveniet error tempora!</p>
+  </div>
+  <script>
+    let container = document.querySelector('#container')
+    let count = 0 // 计算已经渲染的数据条数
+
+    document.addEventListener('scroll', (event) => {
+      // window.innerHeight >> 视口高度
+      // container.getBoundingClientRect().bottom) >> container 元素的底部与视口底部的距离
+      if (container.getBoundingClientRect().bottom - window.innerHeight > 0) return
+      lazyloadDiv(container, 100000000, 20)
+    })
+
+    /**
+     * @param {Object} target 存放数据渲染后的元素的容器
+     * @param {number} total 模拟要渲染的数据条数
+     * @param {number} range 每次懒加载要渲染的数据条数
+     */
+    function lazyloadDiv(target, total, range) {
+      let fragment = document.createDocumentFragment()
+      for (let i = 0; i < range; i++) {
+        if (count >= total) return
+
+        let div = document.createElement('div')
+        count += 1
+        div.textContent = `第${count}个 div`
+        div.classList.add('new-appended-div')
+        fragment.appendChild(div)
+      }
+      target.appendChild(fragment)
+    }
+  </script>
+</body>
+</html>
