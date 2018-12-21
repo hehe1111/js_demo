@@ -75,14 +75,19 @@
 
 ## 极简 demo
 
-- [文本溢出省略](./text-overflow-ellipsis.html)
-- [JS 跳转到页面顶部](./js-scroll-back-to-top.html)
-- [图片懒加载 - 简单实现](./image-lazyload.html)
+- [文本溢出省略](./text-overflow-ellipsis.html) - [预览](https://hehe1111.github.io/js_demo/text-overflow-ellipsis.html)
+- [JS 跳转到页面顶部](./js-scroll-back-to-top.html) - [预览](https://hehe1111.github.io/js_demo/js-scroll-back-to-top.html)
+  - 空字符串
+  - `#`
+  - `window.scroll(0, 0)`
+  - `window.scrollTo({ top: 0, behavior: "smooth" })`
+  - `window.scrollBy({ top: -innerHeight * 10000, behavior: 'smooth' })`
+- [图片懒加载 - 简单实现](./image-lazyload.html) - [预览](https://hehe1111.github.io/js_demo/image-lazyload.html)
   - `image.getBoundingClientRect().top`
   - `window.innerHeight`
-- [用懒加载模拟渲染大量数据但页面不能卡顿](./data-lazyload.html)
+- [用懒加载模拟渲染大量数据但页面不能卡顿](./data-lazyload.html) - [预览](https://hehe1111.github.io/js_demo/data-lazyload.html)
   - `container.getBoundingClientRect().bottom - window.innerHeight > 0`
   - `document.createDocumentFragment()`
-- [逐个字符自动打印输出](./type-something-out.html)
+- [逐个字符自动打印输出](./type-something-out.html) - [预览](https://hehe1111.github.io/js_demo/type-something-out.html)
   - `setTimeout(insideType, 20)`
   - `window.requestAnimationFrame(insideType)`
