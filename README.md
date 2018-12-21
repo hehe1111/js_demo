@@ -5,11 +5,10 @@
 开坑于：2017.11.22
 
 是 JavaScript30 的仿写项目：
-> [JavaScript30](https://javascript30.com) 教程原作者：[Wes Bos](https://github.com/wesbos)    
-> 完整指南在 [GitHub](https://github.com/soyaine/JavaScript30)  
-> 中文参考指南：[GitHub](https://github.com/soyaine/JavaScript30)  
+> [JavaScript30](https://javascript30.com) 教程原作者：[Wes Bos](https://github.com/wesbos)
+> 完整指南在 [GitHub](https://github.com/soyaine/JavaScript30)
+> 中文参考指南：[GitHub](https://github.com/soyaine/JavaScript30)
 > 作者：[缉熙Soyaine](https://github.com/soyaine)
-
 
 ```css
 .js-30>.inner-wrapper>ol>li>a {
@@ -29,10 +28,11 @@
 - `flex`布局
 - `text-overflow: ellipsis;`
 - 媒体查询
+
 ```css
 @media screen and (max-width: 980px) {
     section>.inner-wrapper>ol>li {
-        width: 100% !important; 
+        width: 100% !important;
         /* 不加 !important, 则在移动端时，canvas-demo、visual-dom-event-model 下的两个预览链接仍是并排，原因暂不明，猜测是优先级？哪个更具体用哪个？ */
     }
 }
@@ -40,12 +40,14 @@
 
 ---
 
-## canvas-demo 
+## canvas-demo
+
 - 用 `canvas` 写画板 - [预览链接](https://hehe1111.github.io/js_demo/canvas-demo/using-canvas-as-canvas/index.html)
 
 ---
 
 ## carousel-demos
+
 - 无限轮播 - [预览链接](https://hehe1111.github.io/js_demo/carousel-demos/loop-carousel/)
 - 无缝轮播 - [预览链接](https://hehe1111.github.io/js_demo/carousel-demos/loop-carousel-2/)
 - 苹果风格的轮播 - [预览链接](https://hehe1111.github.io/js_demo/carousel-demos/apple-like-carousel/)
@@ -53,35 +55,34 @@
 ---
 
 ## nav-kbd
+
 - 键盘导航 - [预览链接](https://hehe1111.github.io/js_demo/nav-kbd/index.html)
 
 ---
 
 ## popover-demo
+
 - 点击别处关闭浮层 - [预览链接](https://hehe1111.github.io/js_demo/popover-demo/index.html)
 
 ---
 
 ## visual-dom-event-model
+
 - 冒泡模型可视化 - [预览链接](https://hehe1111.github.io/js_demo/visual-dom-event-model/bubble.html)
 - 捕获与冒泡模型可视化 - [预览链接](https://hehe1111.github.io/js_demo/visual-dom-event-model/capture-bubble.html)
 
 ---
 
-### 提交记录
-- 代码
-    - 【新增】
-    - 【添加】
-    - 【修改】
-    - 【删除】
-- `README.md` 记录 
-    - 【新增记录】 `README.md` 文件
-    - 【添加记录】
-    - 【修改记录】
-    - 【删除记录】
-- 图片
-    - 【新增图片】
-    - 【修改图片】
-    - 【删除图片】
+## 极简 demo
 
----
+- [文本溢出省略](./text-overflow-ellipsis.html)
+- [JS 跳转到页面顶部](./js-scroll-back-to-top.html)
+- [图片懒加载 - 简单实现](./image-lazyload.html)
+  - `image.getBoundingClientRect().top`
+  - `window.innerHeight`
+- [用懒加载模拟渲染大量数据但页面不能卡顿](./data-lazyload.html)
+  - `container.getBoundingClientRect().bottom - window.innerHeight > 0`
+  - `document.createDocumentFragment()`
+- [逐个字符自动打印输出](./type-something-out.html)
+  - `setTimeout(insideType, 20)`
+  - `window.requestAnimationFrame(insideType)`

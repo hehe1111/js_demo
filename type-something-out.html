@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>逐个字符自动打印输出</title>
+  <style>
+    body { text-align: center; }
+    input { width: 50%; }
+    #container { height: 4.5em; line-height: 1.5em; overflow: auto; }
+    pre { text-align: left; padding: 20px 10px; border: 1px solid red; font: 20px/1.5 Arial; }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <div id="container"></div>
+  <pre>
+    const input = document.querySelector('input')
+    const container = document.querySelector('#container')
+    const hint = '请在上面输入字符!!!\n请在上面输入字符!!!\n请在上面输入字符!!!'
+
+    function typeOut(string) {
+      let n = 0
+      let length = string.length
+
+      !function insideType() {
+        if (n > string.length) return
+
+        container.innerText = string.slice(0, n)
+        n += 1
+        // 可以手动控制两次 type 函数调用之间的时间间隔
+        // setTimeout(insideType, 20)
+        // 不可手动控制，而是由显示器的刷新频率（一般是60Hz，即时间间隔为 16.7 ms 左右）决定
+        window.requestAnimationFrame(insideType)
+      }()
+    }
+
+    input.addEventListener('input', (event) => {
+      typeOut(event.target.value)
+    })
+
+    // 进入页面时，打印提示
+    typeOut(hint)
+  </pre>
+
+  <script>
+    const input = document.querySelector('input')
+    const container = document.querySelector('#container')
+    const hint = '请在上面输入字符!!!\n请在上面输入字符!!!\n请在上面输入字符!!!'
+
+    function typeOut(string) {
+      let n = 0
+      let length = string.length
+
+      !function insideType() {
+        if (n > string.length) return
+
+        container.innerText = string.slice(0, n)
+        n += 1
+        // 可以手动控制两次 type 函数调用之间的时间间隔
+        // setTimeout(insideType, 20)
+        // 不可手动控制，而是由显示器的刷新频率（一般是60Hz，即时间间隔为 16.7 ms 左右）决定
+        window.requestAnimationFrame(insideType)
+      }()
+    }
+
+    input.addEventListener('input', (event) => {
+      typeOut(event.target.value)
+    })
+
+    // 进入页面时，打印提示
+    typeOut(hint)
+  </script>
+</body>
+</html>
