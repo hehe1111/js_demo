@@ -91,3 +91,4 @@
 - [逐个字符自动打印输出](./type-something-out.html) - [预览](https://hehe1111.github.io/js_demo/type-something-out.html)
   - `setTimeout(insideType, 20)`
   - `window.requestAnimationFrame(insideType)`
+- [搜索框组件](https://github.com/hehe1111/js_demo/blob/master/form-demo/search-input-box.html) - [预览](https://hehe1111.github.io/js_demo/form-demo/search-input-box.html)
