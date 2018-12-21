@@ -14,7 +14,7 @@
 <body>
   <h2>用懒加载来渲染大量数据，避免因为要渲染的数据太多导致页面卡顿</h2>
   <h2>通过判断目标容器元素的底部与视口底部的距离差 delta</h2>
-  <h2>element.getBoundingCh2entRect().bottom - window.innerHeight</h2>
+  <h2>element.getBoundingClientRect().bottom - window.innerHeight</h2>
   <h2>如果 delta 小于某一个临界值，就触发渲染新数据到页面尾部</h2>
   <h2>可以指定每一次要渲染多少条新数据到页面</h2>
   <h2>用 DOM 片段来暂时保存新元素，避免多次操作 DOM</h2>
