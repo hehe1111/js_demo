@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>跟随鼠标的小圆点</title>
+  <style>
+    #shadow {
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      margin-top: -10px;
+      margin-left: -10px;
+      transition: all linear 0.2s;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="shadow"></div>
+
+  <script>
+    let timerId
+    let shadow = document.querySelector('#shadow')
+
+    document.documentElement.addEventListener('mousemove', (event) => {
+      shadow.style.top = event.y +'px'
+      shadow.style.left = event.x + 'px'
+      shadow.style.visibility = 'visible'
+      timerId && clearTimeout(timerId)
+      timerId = setTimeout(() => {
+        shadow.style.visibility = 'hidden'
+      }, 500)
+    })
+  </script>
+</body>
+</html>
